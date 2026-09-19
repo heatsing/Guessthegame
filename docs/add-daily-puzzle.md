@@ -2,7 +2,7 @@
 
 Catalog data lives in Git as JSON. There is no CMS. Edit the seed files, then run the validator before you open a PR.
 
-UTC midnight is the day boundary. One puzzle per `YYYY-MM-DD`. The homepage (`/` and `/api/daily`) loads that UTC date. Set `DAILY_PUZZLE_DATE` only for local demos.
+UTC midnight is the day boundary. One puzzle per `YYYY-MM-DD`. The homepage (`/` and `/api/daily`) loads that UTC date. `/archive` lists the last 30 already-open published days. `/puzzle/[YYYY-MM-DD]` replays a day with the same play loop; future or unpublished dates 404 even if a seed row exists. Set `DAILY_PUZZLE_DATE` only for local demos.
 
 ## 1. Make sure the game exists
 

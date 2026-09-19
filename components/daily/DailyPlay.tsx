@@ -14,22 +14,33 @@ import { readDailyRun, writeDailyRun } from "@/lib/daily/storage";
 import { EmptyPuzzle } from "./EmptyPuzzle";
 import { PuzzleBoard } from "./PuzzleBoard";
 
+type DailyPlayProps = {
+  /** UTC `YYYY-MM-DD`. Omit to load today's puzzle from `/api/daily`. */
+  date?: string;
+};
+
 type LoadState =
   | { status: "loading" }
   | { status: "error"; message: string }
   | { status: "ready"; daily: DailyApiResponse; play: PlayState | null };
 
-export function DailyPlay() {
+export function DailyPlay({ date }: DailyPlayProps = {}) {
   const [load, setLoad] = useState<LoadState>({ status: "loading" });
 
   useEffect(() => {
     let cancelled = false;
+    const loadError = date
+      ? "Could not load this puzzle."
+      : "Could not load today's puzzle.";
 
     async function loadDaily() {
       try {
-        const response = await fetch("/api/daily", { cache: "no-store" });
+        const path = date
+          ? `/api/daily?date=${encodeURIComponent(date)}`
+          : "/api/daily";
+        const response = await fetch(path, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error("Could not load today's puzzle.");
+          throw new Error(loadError);
         }
         const daily = (await response.json()) as DailyApiResponse;
         if (cancelled) return;
@@ -44,10 +55,7 @@ export function DailyPlay() {
         if (cancelled) return;
         setLoad({
           status: "error",
-          message:
-            error instanceof Error
-              ? error.message
-              : "Could not load today's puzzle.",
+          message: error instanceof Error ? error.message : loadError,
         });
       }
     }
@@ -56,7 +64,7 @@ export function DailyPlay() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [date]);
 
   function updatePlay(updater: (current: PlayState) => PlayState) {
     setLoad((current) => {
@@ -74,7 +82,7 @@ export function DailyPlay() {
         className="flex aspect-video w-full items-center justify-center rounded-xl border border-white/10 bg-[color:var(--surface)] text-sm text-[color:var(--muted)]"
         role="status"
       >
-        Loading today&apos;s ThemeShot…
+        {date ? "Loading this ThemeShot…" : "Loading today's ThemeShot…"}
       </div>
     );
   }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { DailyPlay } from "@/components/daily/DailyPlay";
 import { site } from "@/lib/site";
 
@@ -45,7 +47,19 @@ export default function Home() {
             Open Stats for your local streak and guess distribution. Nothing is
             uploaded.
           </li>
+          <li>
+            Missed a day? Replay recent ThemeShots from the Archive. Historical
+            puzzle pages are not indexed.
+          </li>
         </ol>
+        <p className="mt-4">
+          <Link
+            href="/archive"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--accent)] underline-offset-4 hover:underline"
+          >
+            Open the Archive
+          </Link>
+        </p>
       </section>
     </main>
   );

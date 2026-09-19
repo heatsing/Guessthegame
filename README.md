@@ -2,7 +2,7 @@
 
 Daily curated video-game screenshot guessing puzzle.
 
-This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip).
+This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip). `/archive` lists the last ~30 published days; `/puzzle/[YYYY-MM-DD]` replays a day with the same play components.
 
 - Domain: https://guessthegame.net
 - Product: ThemeShot Daily
@@ -42,7 +42,7 @@ Copy `.env.example` to `.env.local`. There are **no secrets** in this scaffold.
 | Name | Purpose | Example |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical / Open Graph origin | `https://guessthegame.net` |
-| `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/` and `/api/daily`. Leave unset in production. | `2026-01-15` |
+| `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/`, `/archive`, `/puzzle/[date]`, and `/api/daily`. Leave unset in production. | `2026-01-15` |
 
 `.env.local` is gitignored. Do not commit API keys.
 
@@ -83,7 +83,7 @@ If production DNS is not ready yet, use the Vercel preview URL from the PR to ve
 - No ads until rights coverage ≥ 90%
 - No multi-mode / App / UGC in MVP
 
-Daily play (Issue #3) lives on `/`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Local stats (Issue #5) live in the same `themeshot.daily.v1` key: played UTC dates, win/loss counts, guess distribution, and a win streak. A loss still counts as played and breaks the win streak. Same-day replay is not counted twice. There is no account, cloud sync, or leaderboard. Ads, login, and extra modes stay out of scope.
+Daily play (Issue #3) lives on `/`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Local stats (Issue #5) live in the same `themeshot.daily.v1` key: played UTC dates, win/loss counts, guess distribution, and a win streak. A loss still counts as played and breaks the win streak. Same-day replay is not counted twice. The archive hub (Issue #8) is `/archive` (indexable) and lists the last 30 already-open published days. `/puzzle/[YYYY-MM-DD]` reuses Daily play to replay a day and is `noindex,follow`. Future, unpublished, and invalid dates 404. Played dates are marked from localStorage. There is no account, cloud sync, or leaderboard. Ads, login, and extra modes stay out of scope.
 
 ## Catalog (Issue #2)
 

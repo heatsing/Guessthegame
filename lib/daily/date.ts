@@ -27,6 +27,18 @@ export function isIsoDate(value: string): boolean {
   return ISO_DATE.test(value);
 }
 
+/**
+ * True when `value` is a real UTC calendar day (`YYYY-MM-DD`), not just
+ * four-digit year / two-digit month / two-digit day tokens. `2026-02-31`
+ * and `2026-13-01` fail.
+ */
+export function isValidUtcIsoDate(value: string): boolean {
+  if (!ISO_DATE.test(value)) return false;
+  const [year, month, day] = value.split("-").map(Number);
+  const utc = new Date(Date.UTC(year, month - 1, day));
+  return utc.toISOString().slice(0, 10) === value;
+}
+
 /** Shift a UTC `YYYY-MM-DD` key by a whole number of calendar days. */
 export function shiftUtcDate(isoDate: string, deltaDays: number): string {
   const [year, month, day] = isoDate.split("-").map(Number);
