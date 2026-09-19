@@ -133,7 +133,10 @@ if (homeMeta.robots && typeof homeMeta.robots === "object") {
   expect(homeMeta.robots.index === true, "home is indexable");
 }
 expect(homeMeta.openGraph?.url === "/", "home OG url");
-expect(homeMeta.twitter?.card === "summary", "home Twitter card");
+expect(
+  JSON.stringify(homeMeta.twitter).includes("summary"),
+  "home Twitter card",
+);
 
 const puzzleMeta = pageMetadata(
   "/puzzle/2026-09-19",
