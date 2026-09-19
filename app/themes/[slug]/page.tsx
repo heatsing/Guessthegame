@@ -35,6 +35,11 @@ export async function generateMetadata({
       description,
       url: `/themes/${theme.slug}`,
     },
+    twitter: {
+      card: "summary",
+      title: `${theme.title} — ${site.product}`,
+      description,
+    },
   };
 }
 

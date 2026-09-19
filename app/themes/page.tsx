@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     description,
     url: "/themes",
   },
+  twitter: {
+    card: "summary",
+    title: `Theme weeks | ${site.name}`,
+    description,
+  },
 };
 
 export default async function ThemesIndexPage() {
