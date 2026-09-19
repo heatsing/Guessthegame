@@ -1,3 +1,6 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { readSeedCatalog } from "../lib/catalog/load";
 import {
   validateLicenseArchives,
@@ -228,5 +231,24 @@ if (
   fail("launch-window shots must have known rights");
 }
 console.log("ok — four launch themes cover the 60-day UTC window");
+
+function listSvgFiles(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listSvgFiles(full));
+    else if (entry.name.endsWith(".svg")) out.push(full);
+  }
+  return out;
+}
+
+const rawAmp = /&(?!amp;|lt;|gt;|quot;|apos;|#\d+;|#x[0-9a-fA-F]+;)/;
+for (const file of listSvgFiles(join(process.cwd(), "public/media"))) {
+  const text = readFileSync(file, "utf8");
+  if (rawAmp.test(text)) {
+    fail(`unescaped & in ${file} (SVG will not parse in <img>)`);
+  }
+}
+console.log("ok — self-hosted SVGs have no raw ampersands");
 
 console.log("All catalog validation tests passed.");
