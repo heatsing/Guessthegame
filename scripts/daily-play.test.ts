@@ -139,4 +139,27 @@ for (const relative of spoilerFiles) {
 }
 console.log("ok — no-JS source files omit answer strings");
 
+const placeholderDir = join(process.cwd(), "public/media/placeholders");
+const playablePlaceholders = [
+  "hades-01.svg",
+  "hades-02.svg",
+  "hades-03.svg",
+  "hades-04.svg",
+  "hades-05.svg",
+  "hades-06.svg",
+  "celeste-01.svg",
+  "celeste-02.svg",
+  "hollow-knight-01.svg",
+  "stardew-01.svg",
+];
+for (const name of playablePlaceholders) {
+  const svg = readFileSync(join(placeholderDir, name), "utf8");
+  for (const needle of spoilers) {
+    if (svg.includes(needle)) {
+      fail(`playable placeholder ${name} must not contain "${needle}"`);
+    }
+  }
+}
+console.log("ok — playable placeholders omit answer strings");
+
 console.log("All daily play tests passed.");

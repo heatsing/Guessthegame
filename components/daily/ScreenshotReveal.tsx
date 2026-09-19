@@ -10,6 +10,61 @@ type ScreenshotRevealProps = {
   finished: boolean;
 };
 
+function ShotFrame({
+  shot,
+  label,
+  className,
+}: {
+  shot: PlayableScreenshot;
+  label: string;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  const [nonce, setNonce] = useState(0);
+
+  return (
+    <div
+      className={`relative overflow-hidden rounded-xl border border-white/10 bg-[color:var(--surface)] ${className ?? ""}`}
+    >
+      {failed ? (
+        <div
+          className="flex h-full min-h-40 w-full flex-col items-center justify-center gap-3 px-6 py-8 text-center"
+          role="alert"
+        >
+          <p className="text-base font-medium text-[color:var(--foreground)]">
+            Screenshot failed to load
+          </p>
+          <p className="text-sm text-[color:var(--muted)]">
+            Check your connection, then try again.
+          </p>
+          <button
+            type="button"
+            className="min-h-11 rounded-xl border border-white/20 px-4 text-sm font-semibold text-[color:var(--foreground)] outline-none ring-[color:var(--accent)] focus-visible:ring-2"
+            onClick={() => {
+              setFailed(false);
+              setNonce((value) => value + 1);
+            }}
+          >
+            Try again
+          </button>
+        </div>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={`${shot.id}-${nonce}`}
+          src={shot.src}
+          alt={label}
+          width={shot.width}
+          height={shot.height}
+          className="h-full w-full object-cover"
+          decoding="async"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  );
+}
+
 export function ScreenshotReveal({
   screenshots,
   revealedCount,
@@ -17,7 +72,7 @@ export function ScreenshotReveal({
 }: ScreenshotRevealProps) {
   const visible = screenshots.slice(0, Math.max(revealedCount, 0));
   const current = visible[visible.length - 1] ?? null;
-  const [failedIds, setFailedIds] = useState<Set<string>>(new Set());
+  const total = screenshots.length;
 
   if (!current) {
     return (
@@ -30,64 +85,43 @@ export function ScreenshotReveal({
     );
   }
 
-  const failed = failedIds.has(current.id);
-  const index = visible.length;
-  const total = screenshots.length;
-
   return (
     <figure className="w-full">
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[color:var(--surface)]">
-        {failed ? (
-          <div
-            className="flex h-full w-full flex-col items-center justify-center gap-2 px-6 text-center"
-            role="alert"
-          >
-            <p className="text-base font-medium text-[color:var(--foreground)]">
-              Screenshot failed to load
-            </p>
-            <p className="text-sm text-[color:var(--muted)]">
-              Check your connection, then refresh to try again.
-            </p>
-          </div>
-        ) : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={current.id}
-            src={current.src}
-            alt={`Screenshot ${index} of today's puzzle`}
-            width={current.width}
-            height={current.height}
-            className="h-full w-full object-cover"
-            decoding="async"
-            onError={() =>
-              setFailedIds((prev) => {
-                const next = new Set(prev);
-                next.add(current.id);
-                return next;
-              })
-            }
-          />
-        )}
-      </div>
+      {finished && visible.length > 1 ? (
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {visible.map((shot, index) => (
+            <ShotFrame
+              key={shot.id}
+              shot={shot}
+              label={`Screenshot ${index + 1} of today's puzzle`}
+              className="aspect-video"
+            />
+          ))}
+        </div>
+      ) : (
+        <ShotFrame
+          shot={current}
+          label={`Screenshot ${visible.length} of today's puzzle`}
+          className="aspect-video w-full"
+        />
+      )}
       <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-2 text-sm text-[color:var(--muted)]">
         <span>
-          Screenshot {index} of {total}
-          {finished ? " · all revealed" : null}
+          {finished
+            ? `All ${total} screenshots revealed`
+            : `Screenshot ${visible.length} of ${total}`}
         </span>
         <ol className="flex gap-1.5" aria-hidden="true">
-          {screenshots.map((shot, shotIndex) => {
-            const on = shotIndex < revealedCount;
-            return (
-              <li
-                key={shot.id}
-                className={`h-2 w-2 rounded-full ${
-                  on
-                    ? "bg-[color:var(--accent)]"
-                    : "bg-white/20"
-                }`}
-              />
-            );
-          })}
+          {screenshots.map((shot, shotIndex) => (
+            <li
+              key={shot.id}
+              className={`h-2 w-2 rounded-full ${
+                shotIndex < revealedCount
+                  ? "bg-[color:var(--accent)]"
+                  : "bg-white/20"
+              }`}
+            />
+          ))}
         </ol>
       </figcaption>
     </figure>

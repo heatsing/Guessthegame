@@ -27,7 +27,11 @@ export function PuzzleBoard({ daily, play, onGuess, onSkip }: PuzzleBoardProps) 
           Puzzle for {formatPuzzleDate(daily.date)} · resets 00:00 UTC
         </p>
         <p className="mt-1 text-sm text-[color:var(--muted)]">
-          {remainingGuesses(play)} of {MAX_GUESSES} guesses left
+          {finished
+            ? play.status === "won"
+              ? `Solved in ${play.guesses.length} of ${MAX_GUESSES}`
+              : `No guesses left · ${MAX_GUESSES} of ${MAX_GUESSES} used`
+            : `${remainingGuesses(play)} of ${MAX_GUESSES} guesses left`}
         </p>
       </div>
 
