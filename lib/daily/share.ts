@@ -45,6 +45,23 @@ export function buildShareText(
   ].join("\n");
 }
 
+function copyNodeContents(node: HTMLElement): boolean {
+  const selection = window.getSelection();
+  if (!selection) return false;
+  const range = document.createRange();
+  range.selectNodeContents(node);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch {
+    ok = false;
+  }
+  selection.removeAllRanges();
+  return ok;
+}
+
 function copyWithExecCommand(text: string): boolean {
   if (typeof document === "undefined") return false;
 
@@ -77,17 +94,40 @@ function copyWithExecCommand(text: string): boolean {
   return ok;
 }
 
+const CLIPBOARD_TIMEOUT_MS = 1000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error("clipboard-timeout")), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error: unknown) => {
+        clearTimeout(timer);
+        reject(error);
+      },
+    );
+  });
+}
+
 /**
  * Copy in the same user-gesture tick first (`execCommand`), then Clipboard API.
  * Awaiting the Clipboard API before the fallback can drop the gesture on iOS
- * and in permission-gated automation browsers.
+ * and in permission-gated automation browsers. Clipboard writes are timed out
+ * so the UI never hangs waiting for a permission prompt.
  */
-export async function copyTextToClipboard(text: string): Promise<boolean> {
+export async function copyTextToClipboard(
+  text: string,
+  sourceNode?: HTMLElement | null,
+): Promise<boolean> {
+  if (sourceNode && copyNodeContents(sourceNode)) return true;
   if (copyWithExecCommand(text)) return true;
 
   if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
     try {
-      await navigator.clipboard.writeText(text);
+      await withTimeout(navigator.clipboard.writeText(text), CLIPBOARD_TIMEOUT_MS);
       return true;
     } catch {
       return false;

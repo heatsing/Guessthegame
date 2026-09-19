@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { isFinished, type PlayState } from "@/lib/daily/play";
 import {
@@ -13,7 +13,7 @@ type ShareResultsProps = {
   play: PlayState;
 };
 
-type CopyStatus = "idle" | "copied" | "error";
+type CopyStatus = "idle" | "working" | "copied" | "error";
 
 function subscribeNever() {
   return () => {};
@@ -21,6 +21,7 @@ function subscribeNever() {
 
 export function ShareResults({ play }: ShareResultsProps) {
   const text = useMemo(() => buildShareText(play), [play]);
+  const previewRef = useRef<HTMLPreElement>(null);
   const [copyStatus, setCopyStatus] = useState<CopyStatus>("idle");
   const webShare = useSyncExternalStore(
     subscribeNever,
@@ -37,7 +38,8 @@ export function ShareResults({ play }: ShareResultsProps) {
   if (!isFinished(play.status)) return null;
 
   async function handleCopy() {
-    const ok = await copyTextToClipboard(text);
+    setCopyStatus("working");
+    const ok = await copyTextToClipboard(text, previewRef.current);
     setCopyStatus(ok ? "copied" : "error");
   }
 
@@ -50,7 +52,12 @@ export function ShareResults({ play }: ShareResultsProps) {
     }
   }
 
-  const copyLabel = copyStatus === "copied" ? "Copied" : "Copy";
+  const copyLabel =
+    copyStatus === "copied"
+      ? "Copied"
+      : copyStatus === "working"
+        ? "Copying…"
+        : "Copy";
 
   return (
     <div className="mt-5 border-t border-white/10 pt-4">
@@ -58,8 +65,10 @@ export function ShareResults({ play }: ShareResultsProps) {
         Share result
       </p>
       <pre
+        ref={previewRef}
         className="mt-3 overflow-x-auto rounded-lg bg-black/30 px-3 py-3 font-mono text-sm leading-6 whitespace-pre-wrap text-[color:var(--foreground)]"
         aria-label="Spoiler-free share text"
+        tabIndex={0}
       >
         {text}
       </pre>
