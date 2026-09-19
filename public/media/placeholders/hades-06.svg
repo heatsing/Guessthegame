@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Screenshot placeholder 2">
-  <rect width="1280" height="720" fill="#243b67"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Screenshot placeholder 6">
+  <rect width="1280" height="720" fill="#6b2430"/>
   <rect x="48" y="48" width="1184" height="624" fill="none" stroke="#e8e6e3" stroke-width="4" stroke-dasharray="16 12"/>
-  <text x="640" y="320" text-anchor="middle" fill="#f4f1ea" font-family="Georgia, serif" font-size="48">Shot 2</text>
+  <text x="640" y="320" text-anchor="middle" fill="#f4f1ea" font-family="Georgia, serif" font-size="48">Shot 6</text>
   <text x="640" y="380" text-anchor="middle" fill="#c9c4b8" font-family="ui-sans-serif, sans-serif" font-size="22">Placeholder screenshot — not licensed game art</text>
   <text x="640" y="640" text-anchor="middle" fill="#9a9589" font-family="ui-sans-serif, sans-serif" font-size="16">GuessTheGame.net seed placeholder · self-hosted · not Steam CDN</text>
 </svg>

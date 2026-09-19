@@ -14,6 +14,12 @@ export function Header() {
             {site.product}
           </span>
         </Link>
+        <Link
+          href="/#how-to-play"
+          className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+        >
+          How to play
+        </Link>
       </div>
     </header>
   );

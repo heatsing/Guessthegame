@@ -2,7 +2,7 @@
 
 Daily curated video-game screenshot guessing puzzle.
 
-This repository currently ships a **crawlable SSR scaffold** for [https://guessthegame.net](https://guessthegame.net): brand homepage, header/footer, and Vercel deploy docs. Gameplay is intentionally not included yet.
+This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip).
 
 - Domain: https://guessthegame.net
 - Product: ThemeShot Daily
@@ -19,7 +19,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). You should see **GuessTheGame.net**, **ThemeShot Daily**, and the one-line positioning copy.
+Open [http://localhost:3000](http://localhost:3000). You should see **GuessTheGame.net**, **ThemeShot Daily**, and today's puzzle (or **Puzzle not ready** if that UTC date has no seed).
 
 Useful scripts:
 
@@ -42,8 +42,11 @@ Copy `.env.example` to `.env.local`. There are **no secrets** in this scaffold.
 | Name | Purpose | Example |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical / Open Graph origin | `https://guessthegame.net` |
+| `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/` and `/api/daily`. Leave unset in production. | `2026-01-15` |
 
 `.env.local` is gitignored. Do not commit API keys.
+
+Production should use the **real UTC date**. The seed catalog includes playable days for 2026-09-18 through 2026-09-21 (plus the January sample days) so a live demo works without an override. Use `DAILY_PUZZLE_DATE` only for local demos or tests.
 
 ## Deploy on Vercel
 
@@ -80,7 +83,7 @@ If production DNS is not ready yet, use the Vercel preview URL from the PR to ve
 - No ads until rights coverage ≥ 90%
 - No multi-mode / App / UGC in MVP
 
-This Issue #1 scaffold does **not** add gameplay, ads, login, or multi-mode navigation.
+Daily play (Issue #3) lives on `/`. The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. Ads, login, and extra modes stay out of scope.
 
 ## Catalog (Issue #2)
 

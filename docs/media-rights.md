@@ -10,3 +10,5 @@ MVP policy (locked):
 - `rights_status: unknown` may exist in the catalog for intake, but it cannot be `approved` and cannot have `can_monetize: true`
 
 Replace placeholder SVGs under `public/media/placeholders/` before any production puzzle day. Keep the corresponding `license_doc_url` pointing at the archived permission (or this file for first-party placeholders).
+
+Playable placeholders must not include the game title (or aliases) in the image, `aria-label`, or visible text. Filenames may still be internal ids.

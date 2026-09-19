@@ -11,4 +11,4 @@ Checks:
 5. Duplicate ids / slugs / puzzle dates, and broken foreign keys
 6. Local `public/media/…` files exist and match `checksum`
 
-Types live in `lib/catalog/` (`schema.ts`, `validate.ts`). Gameplay UI is unchanged; import `@/lib/catalog` when a later issue needs to load a day.
+Types live in `lib/catalog/` (`schema.ts`, `validate.ts`). The homepage loads a day through `@/lib/catalog` (`loadBundledCatalog`) and `@/lib/daily`.
