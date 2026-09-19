@@ -35,7 +35,8 @@ export default function Home() {
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-[color:var(--muted)] sm:text-base">
           <li>Look at today&apos;s screenshot.</li>
           <li>
-            Type a game title. English, Chinese, and Japanese names all count.
+            Type a game title. Catalog suggestions (English, Chinese, and
+            Japanese names) appear as you type.
           </li>
           <li>A wrong guess or Skip reveals the next shot — up to six.</li>
           <li>You have six guesses. A new puzzle arrives at 00:00 UTC.</li>

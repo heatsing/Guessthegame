@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { loadBundledCatalog } from "@/lib/catalog/bundled";
+import { guessCatalogFromGames } from "@/lib/catalog/guess-index";
 import { MAX_GUESSES } from "@/lib/daily/constants";
 import { getDailyPuzzleDate } from "@/lib/daily/date";
 import { getPlayableDaily } from "@/lib/daily/load-puzzle";
@@ -11,7 +12,8 @@ export const dynamic = "force-dynamic";
 
 export function GET(): NextResponse<DailyApiResponse> {
   const date = getDailyPuzzleDate();
-  const daily = getPlayableDaily(loadBundledCatalog(), date);
+  const catalog = loadBundledCatalog();
+  const daily = getPlayableDaily(catalog, date);
 
   if (!daily) {
     return NextResponse.json({ ok: false, date, reason: "not_ready" });
@@ -23,5 +25,6 @@ export function GET(): NextResponse<DailyApiResponse> {
     screenshots: daily.screenshots,
     maxGuesses: MAX_GUESSES,
     answer: daily.answer,
+    games: guessCatalogFromGames(catalog.games),
   });
 }
