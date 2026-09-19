@@ -1,0 +1,122 @@
+[
+  {
+    "id": "g-hades",
+    "slug": "hades",
+    "title": "Hades",
+    "aliases": {
+      "en": ["Hades", "Hades I"],
+      "zh": ["哈迪斯", "黑帝斯"],
+      "ja": ["ハデス"]
+    },
+    "release_year": 2020,
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series"],
+    "genres": ["Roguelike", "Action"],
+    "developer": "Supergiant Games",
+    "publisher": "Supergiant Games",
+    "steam_app_id": 1145360,
+    "wikidata_qid": "Q65091671",
+    "rawg_id": 257342,
+    "igdb_id": 113112,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-01-10T00:00:00.000Z",
+    "updated_at": "2026-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "g-celeste",
+    "slug": "celeste",
+    "title": "Celeste",
+    "aliases": {
+      "en": ["Celeste"],
+      "zh": ["蔚蓝"],
+      "ja": ["セレステ"]
+    },
+    "release_year": 2018,
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
+    "genres": ["Platformer"],
+    "developer": "Maddy Makes Games",
+    "publisher": "Maddy Makes Games",
+    "steam_app_id": 504230,
+    "wikidata_qid": "Q47089246",
+    "rawg_id": 24734,
+    "igdb_id": 26286,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-01-10T00:00:00.000Z",
+    "updated_at": "2026-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "g-stardew-valley",
+    "slug": "stardew-valley",
+    "title": "Stardew Valley",
+    "aliases": {
+      "en": ["Stardew Valley", "Stardew"],
+      "zh": ["星露谷物语"],
+      "ja": ["スターデューバレー"]
+    },
+    "release_year": 2016,
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One", "iOS", "Android"],
+    "genres": ["Simulation", "Farming"],
+    "developer": "ConcernedApe",
+    "publisher": "ConcernedApe",
+    "steam_app_id": 413150,
+    "wikidata_qid": "Q24907531",
+    "rawg_id": 654,
+    "igdb_id": 12517,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-01-10T00:00:00.000Z",
+    "updated_at": "2026-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "g-hollow-knight",
+    "slug": "hollow-knight",
+    "title": "Hollow Knight",
+    "aliases": {
+      "en": ["Hollow Knight"],
+      "zh": ["空洞骑士"],
+      "ja": ["ホロウナイト"]
+    },
+    "release_year": 2017,
+    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
+    "genres": ["Metroidvania", "Action"],
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "steam_app_id": 367520,
+    "wikidata_qid": "Q29399164",
+    "rawg_id": 9767,
+    "igdb_id": 19006,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-01-10T00:00:00.000Z",
+    "updated_at": "2026-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "g-portal-2",
+    "slug": "portal-2",
+    "title": "Portal 2",
+    "aliases": {
+      "en": ["Portal 2", "Portal II"],
+      "zh": ["传送门2", "传送门 2"],
+      "ja": ["ポータル2", "ポータル 2"]
+    },
+    "release_year": 2011,
+    "platforms": ["PC", "PlayStation 3", "Xbox 360"],
+    "genres": ["Puzzle", "First-person"],
+    "developer": "Valve",
+    "publisher": "Valve",
+    "steam_app_id": 620,
+    "wikidata_qid": "Q259914",
+    "rawg_id": 12020,
+    "igdb_id": 72,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-01-10T00:00:00.000Z",
+    "updated_at": "2026-01-10T00:00:00.000Z"
+  }
+]
