@@ -62,7 +62,7 @@ Rules:
 - `puzzle_date` is unique
 - `asset_ids` is the reveal order (1–6). The first id is the primary shot
 - `scheduled` or `published` puzzles may only reference `approved` assets with known rights
-- `theme_id` may be `null`. Theme weeks live in `data/seed/themes.json` and do not change the rules
+- `theme_id` may be `null`. Theme weeks live in `data/seed/themes.json` (`slug`, display `title`, unique `description`, inclusive UTC `start_date` / `end_date`). Only one theme window may cover a given UTC day. The homepage badge and `/themes/[slug]` read that file; they never print the puzzle answer.
 
 Use `pulled` if a day has to come down (DMCA / mistake). Do not reuse that date for a different answer without an explicit ops decision.
 

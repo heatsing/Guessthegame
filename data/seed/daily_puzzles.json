@@ -34,7 +34,7 @@
     "puzzle_date": "2026-09-18",
     "game_id": "g-celeste",
     "asset_ids": ["m-celeste-01", "m-celeste-02"],
-    "theme_id": null,
+    "theme_id": "t-autumn-showcase",
     "difficulty": "easy",
     "hints": [],
     "status": "published"
@@ -51,7 +51,7 @@
       "m-hades-05",
       "m-hades-06"
     ],
-    "theme_id": null,
+    "theme_id": "t-autumn-showcase",
     "difficulty": "med",
     "hints": [],
     "status": "published"
@@ -61,7 +61,7 @@
     "puzzle_date": "2026-09-20",
     "game_id": "g-hollow-knight",
     "asset_ids": ["m-hollow-knight-01"],
-    "theme_id": null,
+    "theme_id": "t-autumn-showcase",
     "difficulty": "med",
     "hints": [],
     "status": "published"
@@ -71,7 +71,7 @@
     "puzzle_date": "2026-09-21",
     "game_id": "g-stardew-valley",
     "asset_ids": ["m-stardew-01"],
-    "theme_id": null,
+    "theme_id": "t-autumn-showcase",
     "difficulty": "easy",
     "hints": [],
     "status": "published"

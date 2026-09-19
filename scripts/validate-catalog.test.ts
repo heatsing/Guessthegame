@@ -69,4 +69,33 @@ if (!firstApproved) fail("seed should include an approved asset");
 firstApproved.rights_status = "unknown";
 expectFail(unknownApproved, "publishable", "unknown + approved");
 
+const overlap: Catalog = structuredClone(catalog);
+const firstTheme = overlap.themes[0];
+if (!firstTheme) fail("seed should include a theme");
+overlap.themes.push({
+  ...firstTheme,
+  id: "t-overlap",
+  slug: "overlap-week",
+  title: "Overlap Week",
+  description:
+    "A second unique paragraph written only to fail the overlapping UTC window check between two theme weeks on purpose for tests.",
+  start_date: firstTheme.start_date,
+  end_date: firstTheme.end_date,
+});
+expectFail(overlap, "overlaps", "overlapping theme UTC windows");
+
+const dupeDesc: Catalog = structuredClone(catalog);
+const seedTheme = dupeDesc.themes[0];
+if (!seedTheme) fail("seed should include a theme");
+dupeDesc.themes.push({
+  ...seedTheme,
+  id: "t-dupe-desc",
+  slug: "dupe-desc-week",
+  title: "Dupe Desc Week",
+  description: seedTheme.description,
+  start_date: "2025-01-06",
+  end_date: "2025-01-12",
+});
+expectFail(dupeDesc, "duplicate theme description", "duplicate theme description");
+
 console.log("All catalog validation tests passed.");
