@@ -30,6 +30,16 @@
     "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
   },
   {
+    "id": "gs-hades-press-kit",
+    "game_id": "g-hades",
+    "source_system": "press_kit",
+    "source_id": "m-hades-pk-01",
+    "source_url": "data/licenses/hades/m-hades-pk-01.md",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Pipeline demo archive for press-kit intake. Not a publisher grant. Do not set can_monetize until a real written permission is archived."
+  },
+  {
     "id": "gs-celeste-wikidata",
     "game_id": "g-celeste",
     "source_system": "wikidata",

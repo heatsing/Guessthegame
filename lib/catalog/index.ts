@@ -39,6 +39,23 @@ export {
 export { isSteamCdnUrl, STEAM_CDN_HOST_SUFFIXES } from "./steam";
 
 export {
+  applyMediaTakedown,
+  type MediaTakedownOptions,
+  type MediaTakedownResult,
+  type PuzzleTakedownAction,
+} from "./takedown";
+
+export {
+  LICENSE_ARCHIVE_ROOT,
+  LOCAL_MEDIA_ROOT,
+  OBJECT_STORAGE_KEY_PREFIX,
+  PLACEHOLDER_MEDIA_PREFIX,
+  TAKEDOWN_QUARANTINE_ROOT,
+  canonicalMediaPath,
+  mediaStoragePathIssue,
+} from "./media-path";
+
+export {
   guessCatalogFromGames,
   type GuessCatalogGame,
 } from "./guess-index";

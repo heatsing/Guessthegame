@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint",
     "validate": "tsx scripts/validate-catalog.ts",
-    "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts && tsx scripts/archive.test.ts && tsx scripts/themes.test.ts && tsx scripts/legal-pages.test.ts && tsx scripts/seo.test.ts"
+    "takedown": "tsx scripts/takedown-media.ts",
+    "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts && tsx scripts/archive.test.ts && tsx scripts/themes.test.ts && tsx scripts/legal-pages.test.ts && tsx scripts/seo.test.ts && tsx scripts/takedown-media.test.ts"
   },
   "dependencies": {
     "next": "16.3.5",

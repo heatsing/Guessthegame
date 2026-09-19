@@ -16,7 +16,11 @@ Record where the metadata came from in `data/seed/game_sources.json` (`source_sy
 
 ## 2. Add self-hosted screenshots
 
-Put 1–6 images under `public/media/` (never a Steam CDN URL). Append matching rows to `data/seed/media_assets.json`.
+Follow [media-pipeline.md](media-pipeline.md). Put 1–6 images under
+`public/media/{game-slug}/{asset-id}.{ext}` (never a Steam CDN URL). Seed
+placeholders may stay in `public/media/placeholders/`. Append matching rows
+to `data/seed/media_assets.json`. Archive the grant at
+`data/licenses/{game-slug}/{asset-id}.md`.
 
 Every asset **must** include the rights fields:
 
@@ -32,7 +36,9 @@ Also set `moderation_status`. Production rules enforced by the validator:
 
 - `unknown` + `can_monetize: true` → fail
 - `unknown` + `moderation_status: approved` → fail (not publishable)
+- `approved` + Steam CDN `storage_url` → fail
 - `storage_url` or theme `hero_image` pointing at a Steam CDN host → fail
+- `storage_url` not under `/media/placeholders/` or `/media/{slug}/{id}.{ext}` → fail
 
 Compute `checksum` as the SHA-256 hex of the file bytes, for example:
 
@@ -74,7 +80,13 @@ npm run validate
 
 The script exits **0** only when the schema, rights rules, Steam CDN ban, referential integrity, and local `/media/` checksums all pass. It exits **non-zero** on the first failing catalog.
 
-`npm test` re-runs the legal seed and asserts that a Steam CDN URL or `unknown` publishable/monetizable asset is rejected.
+`npm test` re-runs the legal seed and asserts that a Steam CDN URL or `unknown` publishable/monetizable asset is rejected. It also runs the takedown drill (`scripts/takedown-media.test.ts`).
+
+To pull one still after publish:
+
+```bash
+npm run takedown -- --id m-example-01 --reason "DMCA notice"
+```
 
 ## 5. Ship
 

@@ -185,5 +185,22 @@
     "moderation_status": "rejected",
     "takedown_at": null,
     "takedown_reason": null
+  },
+  {
+    "id": "m-hades-pk-01",
+    "game_id": "g-hades",
+    "asset_type": "screenshot",
+    "storage_url": "/media/hades/m-hades-pk-01.svg",
+    "width": 1280,
+    "height": 720,
+    "checksum": "68d584f75dc1f4f0110b2d9b041315d56a795ddc8e3817eebdc71325c8868fd3",
+    "rights_status": "press_kit",
+    "licensor": "GuessTheGame.net (pipeline demo)",
+    "license_doc_url": "data/licenses/hades/m-hades-pk-01.md",
+    "attribution_text": "First-party press-kit intake example. Not official game artwork. Not a publisher license.",
+    "can_monetize": false,
+    "moderation_status": "approved",
+    "takedown_at": null,
+    "takedown_reason": null
   }
 ]

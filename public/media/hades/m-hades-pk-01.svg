@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Press kit intake example screenshot">
+  <rect width="1280" height="720" fill="#2c1e12"/>
+  <rect x="48" y="48" width="1184" height="624" fill="none" stroke="#f0c36a" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="640" y="300" text-anchor="middle" fill="#f4f1ea" font-family="Georgia, serif" font-size="44">Press kit intake example</text>
+  <text x="640" y="360" text-anchor="middle" fill="#d7c7a2" font-family="ui-sans-serif, sans-serif" font-size="22">Self-hosted under public/media/{slug}/{asset-id}.ext</text>
+  <text x="640" y="420" text-anchor="middle" fill="#c9c4b8" font-family="ui-sans-serif, sans-serif" font-size="20">Not official game artwork · license archive required · not Steam CDN</text>
+  <text x="640" y="640" text-anchor="middle" fill="#9a9589" font-family="ui-sans-serif, sans-serif" font-size="16">GuessTheGame.net media pipeline demo · can_monetize false until a real grant</text>
+</svg>
