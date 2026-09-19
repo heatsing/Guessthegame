@@ -176,8 +176,11 @@ console.log("ok — miss-lose share text");
 const spoilerFiles = [
   "app/page.tsx",
   "app/layout.tsx",
+  "app/archive/page.tsx",
+  "app/puzzle/[date]/page.tsx",
   "components/Header.tsx",
   "components/Footer.tsx",
+  "components/archive/ArchiveList.tsx",
   "components/daily/DailyPlay.tsx",
   "components/daily/EmptyPuzzle.tsx",
   "components/daily/GuessInput.tsx",
@@ -189,6 +192,7 @@ const spoilerFiles = [
   "lib/daily/share.ts",
   "lib/daily/stats.ts",
   "lib/daily/storage.ts",
+  "lib/daily/archive.ts",
 ];
 const spoilers = [
   "Hades",

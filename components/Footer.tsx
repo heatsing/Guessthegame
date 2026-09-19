@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -11,6 +13,20 @@ export function Footer() {
           </span>
           <span className="mt-1 block">{site.attributionPlaceholder}</span>
         </p>
+        <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <Link
+            href="/"
+            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+          >
+            Today
+          </Link>
+          <Link
+            href="/archive"
+            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+          >
+            Archive
+          </Link>
+        </nav>
         <p className="text-xs">Privacy · Terms · DMCA · About — coming soon</p>
       </div>
     </footer>
