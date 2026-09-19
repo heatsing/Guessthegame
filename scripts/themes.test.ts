@@ -79,7 +79,10 @@ expect(
   getActiveTheme(catalog.themes, beforeEndRoll)?.slug === "autumn-showcase",
   "badge still current at 23:59:59.999Z on end date",
 );
-expect(getActiveTheme(catalog.themes, afterEnd) === null, "badge hidden after end instant");
+expect(
+  getActiveTheme(catalog.themes, afterEnd)?.slug === "hearth-harvest",
+  "Hearth & Harvest starts the UTC day after Autumn Showcase",
+);
 expect(getActiveTheme(catalog.themes, "2026-01-15")?.slug === "indie-first-week", "January window");
 expect(getActiveTheme(catalog.themes, "2026-06-01") === null, "gap month has no theme");
 console.log("ok — UTC instant boundaries + hide badge when none");
@@ -119,16 +122,14 @@ expect(
 );
 console.log("ok — pulled puzzles omitted");
 
-for (const game of catalog.games) {
-  const accepted = acceptedAnswersForGame(game);
-  expect(
-    !themeCopyContainsAnswer(autumnOn19, accepted),
-    `autumn copy must not contain ${game.title}`,
-  );
-  if (indieCopy) {
+for (const theme of catalog.themes) {
+  const copy = getThemePageCopy(catalog, theme.slug, theme.end_date);
+  if (!copy) fail(`missing copy for ${theme.slug}`);
+  for (const game of catalog.games) {
+    const accepted = acceptedAnswersForGame(game);
     expect(
-      !themeCopyContainsAnswer(indieCopy, accepted),
-      `indie copy must not contain ${game.title}`,
+      !themeCopyContainsAnswer(copy, accepted),
+      `${theme.slug} copy must not contain ${game.title}`,
     );
   }
 }
@@ -144,7 +145,7 @@ expect(
   "English UTC range label",
 );
 expect(
-  listThemesNewestFirst(catalog.themes)[0]?.slug === "autumn-showcase",
+  listThemesNewestFirst(catalog.themes)[0]?.slug === "far-roads",
   "list newest start_date first",
 );
 console.log("ok — English labels + list order");

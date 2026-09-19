@@ -33,5 +33,9 @@ legal files in `public/`.
 `can_monetize` stays `false` until the grant explicitly allows advertising.
 `rights_status: unknown` cannot be monetized and cannot be `approved`.
 
+Launch-window seed SVGs share [seed-placeholders.md](seed-placeholders.md).
+That note is honest: they are original first-party placeholders, not publisher
+press kits. Replace them before ads.
+
 There is no player upload UI. Operators add files in Git (or the documented
 bucket) only.

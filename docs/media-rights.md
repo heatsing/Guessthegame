@@ -12,7 +12,7 @@ MVP policy (locked):
 - `rights_status: unknown` may exist in the catalog for intake, but it cannot be `approved` and cannot have `can_monetize: true`
 - Written grants are archived under `data/licenses/{game-slug}/{asset-id}.md` (see that folder's README). `license_doc_url` must point at the archive
 
-Replace placeholder SVGs under `public/media/placeholders/` before any production puzzle day. Keep the corresponding `license_doc_url` pointing at the archived permission (or this file for first-party placeholders).
+Replace placeholder SVGs under `public/media/placeholders/` before ads. Keep the corresponding `license_doc_url` pointing at the archived permission. First-party launch placeholders use [data/licenses/seed-placeholders.md](../data/licenses/seed-placeholders.md) — they are original SVG/ASCII graphics, **not** press kits, and `can_monetize` stays `false`.
 
 `m-hades-pk-01` is a first-party **press-kit intake example** (`/media/hades/m-hades-pk-01.svg`) referenced by `2026-01-15`. It is not official artwork and is not ad-safe.
 

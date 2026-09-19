@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Theme week placeholder">
+  <rect width="1280" height="720" fill="hsl(210, 38%, 14%)"/>
+  <polygon points="220,520 360,220 500,520" fill="hsl(238, 52%, 62%)" fill-opacity="0.28"/>
+  <rect x="720" y="180" width="360" height="200" fill="none" stroke="hsl(238, 52%, 62%)" stroke-width="8"/>
+  <circle cx="900" cy="500" r="90" fill="hsl(238, 52%, 62%)" fill-opacity="0.3"/>
+  <rect x="48" y="48" width="1184" height="624" fill="none" stroke="hsl(250, 22%, 92%)" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="640" y="300" text-anchor="middle" fill="hsl(250, 22%, 92%)" font-family="Georgia, serif" font-size="48">Theme week</text>
+  <text x="640" y="360" text-anchor="middle" fill="hsl(230, 14%, 72%)" font-family="ui-sans-serif, sans-serif" font-size="22">Labyrinth Logic - brand art, not a puzzle answer</text>
+  <text x="640" y="640" text-anchor="middle" fill="hsl(230, 14%, 72%)" font-family="ui-sans-serif, sans-serif" font-size="16">GuessTheGame.net seed placeholder - self-hosted - not Steam CDN</text>
+</svg>
