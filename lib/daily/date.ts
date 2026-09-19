@@ -27,6 +27,18 @@ export function isIsoDate(value: string): boolean {
   return ISO_DATE.test(value);
 }
 
+/** Shift a UTC `YYYY-MM-DD` key by a whole number of calendar days. */
+export function shiftUtcDate(isoDate: string, deltaDays: number): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  const utc = new Date(Date.UTC(year, month - 1, day));
+  utc.setUTCDate(utc.getUTCDate() + deltaDays);
+  return utc.toISOString().slice(0, 10);
+}
+
+export function previousUtcDate(isoDate: string): string {
+  return shiftUtcDate(isoDate, -1);
+}
+
 export function formatPuzzleDate(isoDate: string): string {
   const [year, month, day] = isoDate.split("-").map(Number);
   if (!year || !month || !day) return isoDate;

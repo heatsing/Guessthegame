@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint",
     "validate": "tsx scripts/validate-catalog.ts",
-    "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts"
+    "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts"
   },
   "dependencies": {
     "next": "16.3.5",

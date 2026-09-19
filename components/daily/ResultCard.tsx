@@ -1,3 +1,4 @@
+import { ViewStatsButton } from "@/components/stats/StatsEntry";
 import type { DailyAnswer } from "@/lib/daily/load-puzzle";
 import type { PlayState } from "@/lib/daily/play";
 
@@ -62,6 +63,7 @@ export function ResultCard({ play, answer }: ResultCardProps) {
         </p>
       ) : null}
       <ShareResults play={play} />
+      <ViewStatsButton />
     </section>
   );
 }

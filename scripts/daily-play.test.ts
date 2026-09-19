@@ -185,7 +185,10 @@ const spoilerFiles = [
   "components/daily/PuzzleBoard.tsx",
   "components/daily/ScreenshotReveal.tsx",
   "components/daily/ShareResults.tsx",
+  "components/stats/StatsEntry.tsx",
   "lib/daily/share.ts",
+  "lib/daily/stats.ts",
+  "lib/daily/storage.ts",
 ];
 const spoilers = [
   "Hades",
