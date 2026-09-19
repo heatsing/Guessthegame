@@ -45,16 +45,7 @@ export function buildShareText(
   ].join("\n");
 }
 
-export async function copyTextToClipboard(text: string): Promise<boolean> {
-  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch {
-      // Private mode, missing permission, or non-secure context.
-    }
-  }
-
+function copyWithExecCommand(text: string): boolean {
   if (typeof document === "undefined") return false;
 
   const textarea = document.createElement("textarea");
@@ -64,9 +55,13 @@ export async function copyTextToClipboard(text: string): Promise<boolean> {
   textarea.style.position = "fixed";
   textarea.style.top = "0";
   textarea.style.left = "0";
-  textarea.style.width = "1px";
-  textarea.style.height = "1px";
-  textarea.style.opacity = "0";
+  textarea.style.width = "2em";
+  textarea.style.height = "2em";
+  textarea.style.padding = "0";
+  textarea.style.border = "none";
+  textarea.style.outline = "none";
+  textarea.style.boxShadow = "none";
+  textarea.style.background = "transparent";
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
@@ -80,6 +75,26 @@ export async function copyTextToClipboard(text: string): Promise<boolean> {
   }
   document.body.removeChild(textarea);
   return ok;
+}
+
+/**
+ * Copy in the same user-gesture tick first (`execCommand`), then Clipboard API.
+ * Awaiting the Clipboard API before the fallback can drop the gesture on iOS
+ * and in permission-gated automation browsers.
+ */
+export async function copyTextToClipboard(text: string): Promise<boolean> {
+  if (copyWithExecCommand(text)) return true;
+
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  return false;
 }
 
 export function canUseWebShare(text: string): boolean {

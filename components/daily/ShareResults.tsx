@@ -76,6 +76,8 @@ export function ShareResults({ play }: ShareResultsProps) {
         <button
           type="button"
           onClick={() => void handleCopy()}
+          aria-label={copyStatus === "copied" ? "Copied to clipboard" : "Copy share text"}
+          data-copy-status={copyStatus}
           className={
             webShare
               ? "min-h-12 rounded-xl border border-white/20 bg-transparent px-4 text-base font-semibold text-[color:var(--foreground)] outline-none ring-[color:var(--accent)] focus-visible:ring-2"
@@ -92,6 +94,11 @@ export function ShareResults({ play }: ShareResultsProps) {
             ? "Could not copy. Select the share text instead."
             : ""}
       </p>
+      {copyStatus === "copied" ? (
+        <p className="mt-2 text-sm text-[color:var(--accent)]" role="status">
+          Copied to clipboard.
+        </p>
+      ) : null}
       {copyStatus === "error" ? (
         <p className="mt-2 text-sm text-red-300" role="status">
           Could not copy. Select the share text above instead.
