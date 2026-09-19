@@ -25,9 +25,8 @@ export default function DmcaPage() {
       <p>
         Send DMCA notices and counter-notices by email to{" "}
         <a href={contactMailto("DMCA takedown notice")}>{site.contactEmail}</a>
-        . This address is a configurable public placeholder (
-        <code>NEXT_PUBLIC_CONTACT_EMAIL</code>) until a registered agent is
-        published.
+        . This is the public contact for this site and can be changed via
+        configuration before a registered agent is published.
       </p>
       <p>
         Put <strong>DMCA takedown notice</strong> or{" "}
