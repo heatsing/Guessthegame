@@ -56,12 +56,30 @@ export default function Home() {
             puzzle pages are not indexed.
           </li>
         </ol>
-        <p className="mt-4">
+        <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <Link
+            href="/how-to-play"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--accent)] underline-offset-4 hover:underline"
+          >
+            Full rules and FAQ
+          </Link>
+          <span className="text-[color:var(--muted)]" aria-hidden="true">
+            ·
+          </span>
           <Link
             href="/archive"
             className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--accent)] underline-offset-4 hover:underline"
           >
             Open the Archive
+          </Link>
+          <span className="text-[color:var(--muted)]" aria-hidden="true">
+            ·
+          </span>
+          <Link
+            href="/themes"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--accent)] underline-offset-4 hover:underline"
+          >
+            Theme weeks
           </Link>
         </p>
       </section>

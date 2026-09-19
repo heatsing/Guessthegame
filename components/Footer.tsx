@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { footerNav } from "@/lib/legal/nav";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -11,29 +12,33 @@ export function Footer() {
           <span className="font-medium text-[color:var(--foreground)]">
             Attribution
           </span>
-          <span className="mt-1 block">{site.attributionPlaceholder}</span>
+          <span className="mt-1 block">
+            Game metadata may include data from{" "}
+            <a
+              href={site.rawg.url}
+              rel="noopener noreferrer"
+              className="text-[color:var(--accent)] underline-offset-4 hover:underline"
+            >
+              {site.rawg.name}
+            </a>
+            . {site.rawg.name} does not grant screenshot or artwork rights.
+            ThemeShot images are self-hosted with recorded rights.
+          </span>
         </p>
-        <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-          <Link
-            href="/"
-            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
-          >
-            Today
-          </Link>
-          <Link
-            href="/archive"
-            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
-          >
-            Archive
-          </Link>
-          <Link
-            href="/themes"
-            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
-          >
-            Themes
-          </Link>
+        <nav
+          aria-label="Footer"
+          className="flex flex-wrap gap-x-4 gap-y-1 text-sm"
+        >
+          {footerNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
-        <p className="text-xs">Privacy · Terms · DMCA · About — coming soon</p>
       </div>
     </footer>
   );
