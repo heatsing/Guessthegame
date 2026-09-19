@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { connection } from "next/server";
 
 import { loadBundledCatalog } from "@/lib/catalog/bundled";
 import { getDailyPuzzleDate } from "@/lib/daily/date";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 import {
   formatThemeUtcRange,
@@ -12,24 +12,11 @@ import {
   themeOneLiner,
 } from "@/lib/themes";
 
-const description = `Curated ThemeShot weeks on ${site.name}. Each week has its own screenshot puzzles — answers stay off these pages.`;
-
-export const metadata: Metadata = {
-  title: `Theme weeks | ${site.name}`,
-  description,
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/themes" },
-  openGraph: {
-    title: `Theme weeks | ${site.name}`,
-    description,
-    url: "/themes",
-  },
-  twitter: {
-    card: "summary",
-    title: `Theme weeks | ${site.name}`,
-    description,
-  },
-};
+export const metadata = pageMetadata(
+  "/themes",
+  "Theme weeks",
+  `Curated ThemeShot weeks on ${site.name}. Each week has its own screenshot puzzles — answers stay off these pages.`,
+);
 
 export default async function ThemesIndexPage() {
   await connection();

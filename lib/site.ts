@@ -19,6 +19,12 @@ export const site = {
   },
   attributionPlaceholder:
     "Game metadata may include data from RAWG. RAWG does not grant screenshot or artwork rights. ThemeShot images are self-hosted with recorded rights.",
+  /**
+   * Google Search Console HTML-tag token. Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+   * in production after creating the URL-prefix property. Leave empty locally.
+   */
+  googleSiteVerification:
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
 } as const;
 
 export function contactMailto(subject?: string): string {
