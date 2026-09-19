@@ -9,6 +9,20 @@ export const site = {
   comingSoon: "Daily play is coming soon. No ads, no extra modes — just one ThemeShot each day.",
   disclaimer:
     "GuessTheGame.net is an independent ThemeShot Daily site. Not affiliated with guessthe.game.",
+  /** Public legal/contact inbox. Override with NEXT_PUBLIC_CONTACT_EMAIL. */
+  contactEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "legal@guessthegame.net",
+  legalUpdated: "2026-09-19",
+  rawg: {
+    name: "RAWG",
+    url: "https://rawg.io",
+  },
   attributionPlaceholder:
-    "Game data and media attribution will appear here when daily puzzles ship.",
+    "Game metadata may include data from RAWG. RAWG does not grant screenshot or artwork rights. ThemeShot images are self-hosted with recorded rights.",
 } as const;
+
+export function contactMailto(subject?: string): string {
+  const base = `mailto:${site.contactEmail}`;
+  if (!subject) return base;
+  return `${base}?subject=${encodeURIComponent(subject)}`;
+}

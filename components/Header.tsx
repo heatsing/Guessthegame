@@ -26,7 +26,7 @@ export function Header() {
             Archive
           </Link>
           <Link
-            href="/#how-to-play"
+            href="/how-to-play"
             className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
           >
             How to play
