@@ -62,11 +62,7 @@ export function PuzzleBoard({ daily, play, onGuess, onSkip }: PuzzleBoardProps) 
       ) : null}
 
       {finished && (play.status === "won" || play.status === "lost") ? (
-        <ResultCard
-          status={play.status}
-          answer={daily.answer}
-          guessCount={play.guesses.length}
-        />
+        <ResultCard play={play} answer={daily.answer} />
       ) : (
         <div className="sticky bottom-0 z-10 -mx-4 border-t border-white/10 bg-[color:var(--background)] px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:-mx-6 sm:px-6">
           <GuessInput
