@@ -28,5 +28,52 @@
       }
     ],
     "status": "published"
+  },
+  {
+    "id": "p-2026-09-18",
+    "puzzle_date": "2026-09-18",
+    "game_id": "g-celeste",
+    "asset_ids": ["m-celeste-01", "m-celeste-02"],
+    "theme_id": null,
+    "difficulty": "easy",
+    "hints": [],
+    "status": "published"
+  },
+  {
+    "id": "p-2026-09-19",
+    "puzzle_date": "2026-09-19",
+    "game_id": "g-hades",
+    "asset_ids": [
+      "m-hades-01",
+      "m-hades-02",
+      "m-hades-03",
+      "m-hades-04",
+      "m-hades-05",
+      "m-hades-06"
+    ],
+    "theme_id": null,
+    "difficulty": "med",
+    "hints": [],
+    "status": "published"
+  },
+  {
+    "id": "p-2026-09-20",
+    "puzzle_date": "2026-09-20",
+    "game_id": "g-hollow-knight",
+    "asset_ids": ["m-hollow-knight-01"],
+    "theme_id": null,
+    "difficulty": "med",
+    "hints": [],
+    "status": "published"
+  },
+  {
+    "id": "p-2026-09-21",
+    "puzzle_date": "2026-09-21",
+    "game_id": "g-stardew-valley",
+    "asset_ids": ["m-stardew-01"],
+    "theme_id": null,
+    "difficulty": "easy",
+    "hints": [],
+    "status": "published"
   }
 ]
