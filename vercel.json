@@ -1,0 +1,16 @@
+{
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.guessthegame.net"
+        }
+      ],
+      "destination": "https://guessthegame.net/:path*",
+      "permanent": true
+    }
+  ]
+}
