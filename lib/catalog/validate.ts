@@ -55,6 +55,7 @@ function rightsBlockPublishable(asset: MediaAsset): boolean {
  * - Known-rights rows need licensor / license_doc_url / attribution_text
  * - storage_url follows /media/placeholders/… or /media/{slug}/{id}.{ext}
  * - scheduled/published puzzles may only reference approved, known-rights assets
+ * - scheduled/published puzzles cannot use `nsfw_flag: true` games
  * - Referential integrity + unique ids / puzzle dates
  * - Theme descriptions are unique; UTC windows do not overlap
  */
@@ -261,6 +262,16 @@ export function validateCatalog(input: unknown): CatalogValidationResult {
         issue(
           `${path}.game_id`,
           `publishable puzzle cannot use hidden game "${puzzle.game_id}"`,
+        ),
+      );
+    } else if (
+      PUBLISHABLE_PUZZLE_STATUSES.has(puzzle.status) &&
+      game.nsfw_flag
+    ) {
+      issues.push(
+        issue(
+          `${path}.game_id`,
+          `publishable puzzle cannot use NSFW-flagged game "${puzzle.game_id}"`,
         ),
       );
     }

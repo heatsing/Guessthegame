@@ -16,5 +16,32 @@
     "start_date": "2026-09-15",
     "end_date": "2026-09-21",
     "hero_image": "/media/placeholders/theme-autumn-showcase.svg"
+  },
+  {
+    "id": "t-hearth-harvest",
+    "slug": "hearth-harvest",
+    "title": "Hearth & Harvest",
+    "description": "Hearth & Harvest is a mid-autumn ThemeShot window about everyday systems: kitchens, workshops, towns you tend, and the quiet loop of making a place livable. Read the room, not a logo. Dates appear only after they publish. Titles stay off this page so you can still play fair.",
+    "start_date": "2026-09-22",
+    "end_date": "2026-10-06",
+    "hero_image": "/media/placeholders/theme-hearth-harvest.svg"
+  },
+  {
+    "id": "t-labyrinth-logic",
+    "slug": "labyrinth-logic",
+    "title": "Labyrinth Logic",
+    "description": "Labyrinth Logic asks you to study machines, rooms, and spatial jokes. Each UTC day is one curated still from a clever world — not a cover, not a title card. This page lists only dates that have already opened. Solutions never appear here.",
+    "start_date": "2026-10-07",
+    "end_date": "2026-10-21",
+    "hero_image": "/media/placeholders/theme-labyrinth-logic.svg"
+  },
+  {
+    "id": "t-far-roads",
+    "slug": "far-roads",
+    "title": "Far Roads",
+    "description": "Far Roads is a longer ThemeShot stretch about leaving camp and reading a landscape. Watch weather, paths, and how a world is framed in motion. Published dates only; no covers, no answer dumps, no spoiler SEO.",
+    "start_date": "2026-10-22",
+    "end_date": "2026-11-16",
+    "hero_image": "/media/placeholders/theme-far-roads.svg"
   }
 ]

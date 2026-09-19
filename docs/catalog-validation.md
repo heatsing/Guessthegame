@@ -9,7 +9,7 @@ Checks:
 3. `unknown` rights marked `can_monetize` or `moderation_status: approved`
 4. Known-rights rows missing `licensor` / `license_doc_url` / `attribution_text`
 5. `storage_url` naming: `/media/placeholders/…` or `/media/{game-slug}/{asset-id}.{ext}` (same path on a non-Steam object-storage origin is allowed)
-6. Scheduled/published puzzles referencing missing, unapproved, or unknown-rights assets
+6. Scheduled/published puzzles referencing missing, unapproved, or unknown-rights assets, hidden games, or `nsfw_flag: true` answers
 7. Duplicate ids / slugs / puzzle dates, and broken foreign keys
 8. Theme weeks: unique descriptions (min 80 chars), inclusive UTC windows that do not overlap
 9. Local `public/media/…` files exist and match `checksum` (takedown rows skipped)

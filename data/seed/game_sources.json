@@ -118,5 +118,1005 @@
     "raw_payload_ref": null,
     "fetched_at": "2026-01-10T00:00:00.000Z",
     "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-animal-crossing-new-horizons-wikidata",
+    "game_id": "g-animal-crossing-new-horizons",
+    "source_system": "wikidata",
+    "source_id": "Q64566657",
+    "source_url": "https://www.wikidata.org/wiki/Q64566657",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-spiritfarer-wikidata",
+    "game_id": "g-spiritfarer",
+    "source_system": "wikidata",
+    "source_id": "Q80533334",
+    "source_url": "https://www.wikidata.org/wiki/Q80533334",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-spiritfarer-steam",
+    "game_id": "g-spiritfarer",
+    "source_system": "steam",
+    "source_id": "972660",
+    "source_url": "https://store.steampowered.com/app/972660/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-slime-rancher-wikidata",
+    "game_id": "g-slime-rancher",
+    "source_system": "wikidata",
+    "source_id": "Q22344828",
+    "source_url": "https://www.wikidata.org/wiki/Q22344828",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-slime-rancher-steam",
+    "game_id": "g-slime-rancher",
+    "source_system": "steam",
+    "source_id": "433340",
+    "source_url": "https://store.steampowered.com/app/433340/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-terraria-wikidata",
+    "game_id": "g-terraria",
+    "source_system": "wikidata",
+    "source_id": "Q332697",
+    "source_url": "https://www.wikidata.org/wiki/Q332697",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-terraria-steam",
+    "game_id": "g-terraria",
+    "source_system": "steam",
+    "source_id": "105600",
+    "source_url": "https://store.steampowered.com/app/105600/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-minecraft-wikidata",
+    "game_id": "g-minecraft",
+    "source_system": "wikidata",
+    "source_id": "Q49740",
+    "source_url": "https://www.wikidata.org/wiki/Q49740",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-factorio-wikidata",
+    "game_id": "g-factorio",
+    "source_system": "wikidata",
+    "source_id": "Q16972008",
+    "source_url": "https://www.wikidata.org/wiki/Q16972008",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-factorio-steam",
+    "game_id": "g-factorio",
+    "source_system": "steam",
+    "source_id": "427520",
+    "source_url": "https://store.steampowered.com/app/427520/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-cities-skylines-wikidata",
+    "game_id": "g-cities-skylines",
+    "source_system": "wikidata",
+    "source_id": "Q18149274",
+    "source_url": "https://www.wikidata.org/wiki/Q18149274",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-cities-skylines-steam",
+    "game_id": "g-cities-skylines",
+    "source_system": "steam",
+    "source_id": "255710",
+    "source_url": "https://store.steampowered.com/app/255710/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-the-sims-4-wikidata",
+    "game_id": "g-the-sims-4",
+    "source_system": "wikidata",
+    "source_id": "Q12579896",
+    "source_url": "https://www.wikidata.org/wiki/Q12579896",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-the-sims-4-steam",
+    "game_id": "g-the-sims-4",
+    "source_system": "steam",
+    "source_id": "1222670",
+    "source_url": "https://store.steampowered.com/app/1222670/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-unpacking-wikidata",
+    "game_id": "g-unpacking",
+    "source_system": "wikidata",
+    "source_id": "Q105063670",
+    "source_url": "https://www.wikidata.org/wiki/Q105063670",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-unpacking-steam",
+    "game_id": "g-unpacking",
+    "source_system": "steam",
+    "source_id": "1135690",
+    "source_url": "https://store.steampowered.com/app/1135690/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-coffee-talk-wikidata",
+    "game_id": "g-coffee-talk",
+    "source_system": "wikidata",
+    "source_id": "Q85753234",
+    "source_url": "https://www.wikidata.org/wiki/Q85753234",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-coffee-talk-steam",
+    "game_id": "g-coffee-talk",
+    "source_system": "steam",
+    "source_id": "914710",
+    "source_url": "https://store.steampowered.com/app/914710/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-valheim-wikidata",
+    "game_id": "g-valheim",
+    "source_system": "wikidata",
+    "source_id": "Q105100327",
+    "source_url": "https://www.wikidata.org/wiki/Q105100327",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-valheim-steam",
+    "game_id": "g-valheim",
+    "source_system": "steam",
+    "source_id": "892970",
+    "source_url": "https://store.steampowered.com/app/892970/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-dont-starve-wikidata",
+    "game_id": "g-dont-starve",
+    "source_system": "wikidata",
+    "source_id": "Q3208174",
+    "source_url": "https://www.wikidata.org/wiki/Q3208174",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-dont-starve-steam",
+    "game_id": "g-dont-starve",
+    "source_system": "steam",
+    "source_id": "219740",
+    "source_url": "https://store.steampowered.com/app/219740/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-powerwash-simulator-wikidata",
+    "game_id": "g-powerwash-simulator",
+    "source_system": "wikidata",
+    "source_id": "Q107303968",
+    "source_url": "https://www.wikidata.org/wiki/Q107303968",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-powerwash-simulator-steam",
+    "game_id": "g-powerwash-simulator",
+    "source_system": "steam",
+    "source_id": "1290000",
+    "source_url": "https://store.steampowered.com/app/1290000/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-katamari-damacy-reroll-wikidata",
+    "game_id": "g-katamari-damacy-reroll",
+    "source_system": "wikidata",
+    "source_id": "Q93133333",
+    "source_url": "https://www.wikidata.org/wiki/Q93133333",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-katamari-damacy-reroll-steam",
+    "game_id": "g-katamari-damacy-reroll",
+    "source_system": "steam",
+    "source_id": "846470",
+    "source_url": "https://store.steampowered.com/app/846470/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-a-short-hike-wikidata",
+    "game_id": "g-a-short-hike",
+    "source_system": "wikidata",
+    "source_id": "Q66035140",
+    "source_url": "https://www.wikidata.org/wiki/Q66035140",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-a-short-hike-steam",
+    "game_id": "g-a-short-hike",
+    "source_system": "steam",
+    "source_id": "1054490",
+    "source_url": "https://store.steampowered.com/app/1054490/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-the-witness-wikidata",
+    "game_id": "g-the-witness",
+    "source_system": "wikidata",
+    "source_id": "Q1711359",
+    "source_url": "https://www.wikidata.org/wiki/Q1711359",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-the-witness-steam",
+    "game_id": "g-the-witness",
+    "source_system": "steam",
+    "source_id": "210970",
+    "source_url": "https://store.steampowered.com/app/210970/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-baba-is-you-wikidata",
+    "game_id": "g-baba-is-you",
+    "source_system": "wikidata",
+    "source_id": "Q62061666",
+    "source_url": "https://www.wikidata.org/wiki/Q62061666",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-baba-is-you-steam",
+    "game_id": "g-baba-is-you",
+    "source_system": "steam",
+    "source_id": "736260",
+    "source_url": "https://store.steampowered.com/app/736260/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-outer-wilds-wikidata",
+    "game_id": "g-outer-wilds",
+    "source_system": "wikidata",
+    "source_id": "Q19631660",
+    "source_url": "https://www.wikidata.org/wiki/Q19631660",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-outer-wilds-steam",
+    "game_id": "g-outer-wilds",
+    "source_system": "steam",
+    "source_id": "753640",
+    "source_url": "https://store.steampowered.com/app/753640/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-return-of-the-obra-dinn-wikidata",
+    "game_id": "g-return-of-the-obra-dinn",
+    "source_system": "wikidata",
+    "source_id": "Q48987695",
+    "source_url": "https://www.wikidata.org/wiki/Q48987695",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-return-of-the-obra-dinn-steam",
+    "game_id": "g-return-of-the-obra-dinn",
+    "source_system": "steam",
+    "source_id": "653530",
+    "source_url": "https://store.steampowered.com/app/653530/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-tetris-effect-wikidata",
+    "game_id": "g-tetris-effect",
+    "source_system": "wikidata",
+    "source_id": "Q55381938",
+    "source_url": "https://www.wikidata.org/wiki/Q55381938",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-tetris-effect-steam",
+    "game_id": "g-tetris-effect",
+    "source_system": "steam",
+    "source_id": "1003590",
+    "source_url": "https://store.steampowered.com/app/1003590/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-monument-valley-wikidata",
+    "game_id": "g-monument-valley",
+    "source_system": "wikidata",
+    "source_id": "Q15553298",
+    "source_url": "https://www.wikidata.org/wiki/Q15553298",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-superliminal-wikidata",
+    "game_id": "g-superliminal",
+    "source_system": "wikidata",
+    "source_id": "Q66914100",
+    "source_url": "https://www.wikidata.org/wiki/Q66914100",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-superliminal-steam",
+    "game_id": "g-superliminal",
+    "source_system": "steam",
+    "source_id": "1049410",
+    "source_url": "https://store.steampowered.com/app/1049410/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-the-talos-principle-wikidata",
+    "game_id": "g-the-talos-principle",
+    "source_system": "wikidata",
+    "source_id": "Q18620506",
+    "source_url": "https://www.wikidata.org/wiki/Q18620506",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-the-talos-principle-steam",
+    "game_id": "g-the-talos-principle",
+    "source_system": "steam",
+    "source_id": "257510",
+    "source_url": "https://store.steampowered.com/app/257510/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-gorogoa-wikidata",
+    "game_id": "g-gorogoa",
+    "source_system": "wikidata",
+    "source_id": "Q16267809",
+    "source_url": "https://www.wikidata.org/wiki/Q16267809",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-gorogoa-steam",
+    "game_id": "g-gorogoa",
+    "source_system": "steam",
+    "source_id": "557600",
+    "source_url": "https://store.steampowered.com/app/557600/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-patricks-parabox-wikidata",
+    "game_id": "g-patricks-parabox",
+    "source_system": "wikidata",
+    "source_id": "Q111420821",
+    "source_url": "https://www.wikidata.org/wiki/Q111420821",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-patricks-parabox-steam",
+    "game_id": "g-patricks-parabox",
+    "source_system": "steam",
+    "source_id": "1260520",
+    "source_url": "https://store.steampowered.com/app/1260520/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-pikmin-4-wikidata",
+    "game_id": "g-pikmin-4",
+    "source_system": "wikidata",
+    "source_id": "Q113956704",
+    "source_url": "https://www.wikidata.org/wiki/Q113956704",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-overcooked-2-wikidata",
+    "game_id": "g-overcooked-2",
+    "source_system": "wikidata",
+    "source_id": "Q55713667",
+    "source_url": "https://www.wikidata.org/wiki/Q55713667",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-overcooked-2-steam",
+    "game_id": "g-overcooked-2",
+    "source_system": "steam",
+    "source_id": "728880",
+    "source_url": "https://store.steampowered.com/app/728880/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-untitled-goose-game-wikidata",
+    "game_id": "g-untitled-goose-game",
+    "source_system": "wikidata",
+    "source_id": "Q59618073",
+    "source_url": "https://www.wikidata.org/wiki/Q59618073",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-untitled-goose-game-steam",
+    "game_id": "g-untitled-goose-game",
+    "source_system": "steam",
+    "source_id": "837470",
+    "source_url": "https://store.steampowered.com/app/837470/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-mini-motorways-wikidata",
+    "game_id": "g-mini-motorways",
+    "source_system": "wikidata",
+    "source_id": "Q75192959",
+    "source_url": "https://www.wikidata.org/wiki/Q75192959",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-mini-motorways-steam",
+    "game_id": "g-mini-motorways",
+    "source_system": "steam",
+    "source_id": "1424230",
+    "source_url": "https://store.steampowered.com/app/1424230/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-zelda-breath-of-the-wild-wikidata",
+    "game_id": "g-zelda-breath-of-the-wild",
+    "source_system": "wikidata",
+    "source_id": "Q17185964",
+    "source_url": "https://www.wikidata.org/wiki/Q17185964",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-zelda-tears-of-the-kingdom-wikidata",
+    "game_id": "g-zelda-tears-of-the-kingdom",
+    "source_system": "wikidata",
+    "source_id": "Q64577191",
+    "source_url": "https://www.wikidata.org/wiki/Q64577191",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-firewatch-wikidata",
+    "game_id": "g-firewatch",
+    "source_system": "wikidata",
+    "source_id": "Q19627426",
+    "source_url": "https://www.wikidata.org/wiki/Q19627426",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-firewatch-steam",
+    "game_id": "g-firewatch",
+    "source_system": "steam",
+    "source_id": "383870",
+    "source_url": "https://store.steampowered.com/app/383870/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-super-mario-odyssey-wikidata",
+    "game_id": "g-super-mario-odyssey",
+    "source_system": "wikidata",
+    "source_id": "Q28234671",
+    "source_url": "https://www.wikidata.org/wiki/Q28234671",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-ori-and-the-blind-forest-wikidata",
+    "game_id": "g-ori-and-the-blind-forest",
+    "source_system": "wikidata",
+    "source_id": "Q17513672",
+    "source_url": "https://www.wikidata.org/wiki/Q17513672",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-ori-and-the-blind-forest-steam",
+    "game_id": "g-ori-and-the-blind-forest",
+    "source_system": "steam",
+    "source_id": "387290",
+    "source_url": "https://store.steampowered.com/app/387290/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-ori-and-the-will-of-the-wisps-wikidata",
+    "game_id": "g-ori-and-the-will-of-the-wisps",
+    "source_system": "wikidata",
+    "source_id": "Q30325568",
+    "source_url": "https://www.wikidata.org/wiki/Q30325568",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-ori-and-the-will-of-the-wisps-steam",
+    "game_id": "g-ori-and-the-will-of-the-wisps",
+    "source_system": "steam",
+    "source_id": "1057090",
+    "source_url": "https://store.steampowered.com/app/1057090/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-horizon-zero-dawn-wikidata",
+    "game_id": "g-horizon-zero-dawn",
+    "source_system": "wikidata",
+    "source_id": "Q20155528",
+    "source_url": "https://www.wikidata.org/wiki/Q20155528",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-horizon-zero-dawn-steam",
+    "game_id": "g-horizon-zero-dawn",
+    "source_system": "steam",
+    "source_id": "1151640",
+    "source_url": "https://store.steampowered.com/app/1151640/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-ghost-of-tsushima-wikidata",
+    "game_id": "g-ghost-of-tsushima",
+    "source_system": "wikidata",
+    "source_id": "Q42564798",
+    "source_url": "https://www.wikidata.org/wiki/Q42564798",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-ghost-of-tsushima-steam",
+    "game_id": "g-ghost-of-tsushima",
+    "source_system": "steam",
+    "source_id": "2215430",
+    "source_url": "https://store.steampowered.com/app/2215430/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-uncharted-4-wikidata",
+    "game_id": "g-uncharted-4",
+    "source_system": "wikidata",
+    "source_id": "Q16681843",
+    "source_url": "https://www.wikidata.org/wiki/Q16681843",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-uncharted-4-steam",
+    "game_id": "g-uncharted-4",
+    "source_system": "steam",
+    "source_id": "1659420",
+    "source_url": "https://store.steampowered.com/app/1659420/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-god-of-war-2018-wikidata",
+    "game_id": "g-god-of-war-2018",
+    "source_system": "wikidata",
+    "source_id": "Q18345138",
+    "source_url": "https://www.wikidata.org/wiki/Q18345138",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-god-of-war-2018-steam",
+    "game_id": "g-god-of-war-2018",
+    "source_system": "steam",
+    "source_id": "1593500",
+    "source_url": "https://store.steampowered.com/app/1593500/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-marvels-spider-man-wikidata",
+    "game_id": "g-marvels-spider-man",
+    "source_system": "wikidata",
+    "source_id": "Q25340029",
+    "source_url": "https://www.wikidata.org/wiki/Q25340029",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-marvels-spider-man-steam",
+    "game_id": "g-marvels-spider-man",
+    "source_system": "steam",
+    "source_id": "1817070",
+    "source_url": "https://store.steampowered.com/app/1817070/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-persona-5-royal-wikidata",
+    "game_id": "g-persona-5-royal",
+    "source_system": "wikidata",
+    "source_id": "Q63385672",
+    "source_url": "https://www.wikidata.org/wiki/Q63385672",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-persona-5-royal-steam",
+    "game_id": "g-persona-5-royal",
+    "source_system": "steam",
+    "source_id": "1687950",
+    "source_url": "https://store.steampowered.com/app/1687950/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-disco-elysium-wikidata",
+    "game_id": "g-disco-elysium",
+    "source_system": "wikidata",
+    "source_id": "Q71693825",
+    "source_url": "https://www.wikidata.org/wiki/Q71693825",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-disco-elysium-steam",
+    "game_id": "g-disco-elysium",
+    "source_system": "steam",
+    "source_id": "632470",
+    "source_url": "https://store.steampowered.com/app/632470/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-subnautica-wikidata",
+    "game_id": "g-subnautica",
+    "source_system": "wikidata",
+    "source_id": "Q21039915",
+    "source_url": "https://www.wikidata.org/wiki/Q21039915",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-subnautica-steam",
+    "game_id": "g-subnautica",
+    "source_system": "steam",
+    "source_id": "264710",
+    "source_url": "https://store.steampowered.com/app/264710/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-no-mans-sky-wikidata",
+    "game_id": "g-no-mans-sky",
+    "source_system": "wikidata",
+    "source_id": "Q15297043",
+    "source_url": "https://www.wikidata.org/wiki/Q15297043",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-no-mans-sky-steam",
+    "game_id": "g-no-mans-sky",
+    "source_system": "steam",
+    "source_id": "275850",
+    "source_url": "https://store.steampowered.com/app/275850/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-sea-of-stars-wikidata",
+    "game_id": "g-sea-of-stars",
+    "source_system": "wikidata",
+    "source_id": "Q106974937",
+    "source_url": "https://www.wikidata.org/wiki/Q106974937",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-sea-of-stars-steam",
+    "game_id": "g-sea-of-stars",
+    "source_system": "steam",
+    "source_id": "1209400",
+    "source_url": "https://store.steampowered.com/app/1209400/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-eastward-wikidata",
+    "game_id": "g-eastward",
+    "source_system": "wikidata",
+    "source_id": "Q106996604",
+    "source_url": "https://www.wikidata.org/wiki/Q106996604",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-eastward-steam",
+    "game_id": "g-eastward",
+    "source_system": "steam",
+    "source_id": "977880",
+    "source_url": "https://store.steampowered.com/app/977880/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-crosscode-wikidata",
+    "game_id": "g-crosscode",
+    "source_system": "wikidata",
+    "source_id": "Q30632190",
+    "source_url": "https://www.wikidata.org/wiki/Q30632190",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-crosscode-steam",
+    "game_id": "g-crosscode",
+    "source_system": "steam",
+    "source_id": "368340",
+    "source_url": "https://store.steampowered.com/app/368340/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-death-stranding-wikidata",
+    "game_id": "g-death-stranding",
+    "source_system": "wikidata",
+    "source_id": "Q24666782",
+    "source_url": "https://www.wikidata.org/wiki/Q24666782",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-death-stranding-steam",
+    "game_id": "g-death-stranding",
+    "source_system": "steam",
+    "source_id": "1190460",
+    "source_url": "https://store.steampowered.com/app/1190460/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-red-dead-redemption-2-wikidata",
+    "game_id": "g-red-dead-redemption-2",
+    "source_system": "wikidata",
+    "source_id": "Q27438120",
+    "source_url": "https://www.wikidata.org/wiki/Q27438120",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-red-dead-redemption-2-steam",
+    "game_id": "g-red-dead-redemption-2",
+    "source_system": "steam",
+    "source_id": "1174180",
+    "source_url": "https://store.steampowered.com/app/1174180/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-elden-ring-wikidata",
+    "game_id": "g-elden-ring",
+    "source_system": "wikidata",
+    "source_id": "Q64826862",
+    "source_url": "https://www.wikidata.org/wiki/Q64826862",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-elden-ring-steam",
+    "game_id": "g-elden-ring",
+    "source_system": "steam",
+    "source_id": "1245620",
+    "source_url": "https://store.steampowered.com/app/1245620/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-super-mario-bros-wonder-wikidata",
+    "game_id": "g-super-mario-bros-wonder",
+    "source_system": "wikidata",
+    "source_id": "Q119819453",
+    "source_url": "https://www.wikidata.org/wiki/Q119819453",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-kirby-and-the-forgotten-land-wikidata",
+    "game_id": "g-kirby-and-the-forgotten-land",
+    "source_system": "wikidata",
+    "source_id": "Q108670544",
+    "source_url": "https://www.wikidata.org/wiki/Q108670544",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-xenoblade-chronicles-3-wikidata",
+    "game_id": "g-xenoblade-chronicles-3",
+    "source_system": "wikidata",
+    "source_id": "Q110875814",
+    "source_url": "https://www.wikidata.org/wiki/Q110875814",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-final-fantasy-xiv-wikidata",
+    "game_id": "g-final-fantasy-xiv",
+    "source_system": "wikidata",
+    "source_id": "Q5449393",
+    "source_url": "https://www.wikidata.org/wiki/Q5449393",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-final-fantasy-xiv-steam",
+    "game_id": "g-final-fantasy-xiv",
+    "source_system": "steam",
+    "source_id": "39210",
+    "source_url": "https://store.steampowered.com/app/39210/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-skyrim-wikidata",
+    "game_id": "g-skyrim",
+    "source_system": "wikidata",
+    "source_id": "Q323862",
+    "source_url": "https://www.wikidata.org/wiki/Q323862",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-skyrim-steam",
+    "game_id": "g-skyrim",
+    "source_system": "steam",
+    "source_id": "489830",
+    "source_url": "https://store.steampowered.com/app/489830/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-09-19T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
   }
 ]

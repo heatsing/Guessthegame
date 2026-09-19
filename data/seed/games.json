@@ -4,13 +4,31 @@
     "slug": "hades",
     "title": "Hades",
     "aliases": {
-      "en": ["Hades", "Hades I"],
-      "zh": ["哈迪斯", "黑帝斯"],
-      "ja": ["ハデス"]
+      "en": [
+        "Hades",
+        "Hades I"
+      ],
+      "zh": [
+        "哈迪斯",
+        "黑帝斯"
+      ],
+      "ja": [
+        "ハデス"
+      ]
     },
     "release_year": 2020,
-    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series"],
-    "genres": ["Roguelike", "Action"],
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Roguelike",
+      "Action"
+    ],
     "developer": "Supergiant Games",
     "publisher": "Supergiant Games",
     "steam_app_id": 1145360,
@@ -28,13 +46,26 @@
     "slug": "celeste",
     "title": "Celeste",
     "aliases": {
-      "en": ["Celeste"],
-      "zh": ["蔚蓝"],
-      "ja": ["セレステ"]
+      "en": [
+        "Celeste"
+      ],
+      "zh": [
+        "蔚蓝"
+      ],
+      "ja": [
+        "セレステ"
+      ]
     },
     "release_year": 2018,
-    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
-    "genres": ["Platformer"],
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Platformer"
+    ],
     "developer": "Maddy Makes Games",
     "publisher": "Maddy Makes Games",
     "steam_app_id": 504230,
@@ -52,13 +83,30 @@
     "slug": "stardew-valley",
     "title": "Stardew Valley",
     "aliases": {
-      "en": ["Stardew Valley", "Stardew"],
-      "zh": ["星露谷物语"],
-      "ja": ["スターデューバレー"]
+      "en": [
+        "Stardew Valley",
+        "Stardew"
+      ],
+      "zh": [
+        "星露谷物语"
+      ],
+      "ja": [
+        "スターデューバレー"
+      ]
     },
     "release_year": 2016,
-    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One", "iOS", "Android"],
-    "genres": ["Simulation", "Farming"],
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One",
+      "iOS",
+      "Android"
+    ],
+    "genres": [
+      "Simulation",
+      "Farming"
+    ],
     "developer": "ConcernedApe",
     "publisher": "ConcernedApe",
     "steam_app_id": 413150,
@@ -76,13 +124,27 @@
     "slug": "hollow-knight",
     "title": "Hollow Knight",
     "aliases": {
-      "en": ["Hollow Knight"],
-      "zh": ["空洞骑士"],
-      "ja": ["ホロウナイト"]
+      "en": [
+        "Hollow Knight"
+      ],
+      "zh": [
+        "空洞骑士"
+      ],
+      "ja": [
+        "ホロウナイト"
+      ]
     },
     "release_year": 2017,
-    "platforms": ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"],
-    "genres": ["Metroidvania", "Action"],
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Metroidvania",
+      "Action"
+    ],
     "developer": "Team Cherry",
     "publisher": "Team Cherry",
     "steam_app_id": 367520,
@@ -100,13 +162,29 @@
     "slug": "portal-2",
     "title": "Portal 2",
     "aliases": {
-      "en": ["Portal 2", "Portal II"],
-      "zh": ["传送门2", "传送门 2"],
-      "ja": ["ポータル2", "ポータル 2"]
+      "en": [
+        "Portal 2",
+        "Portal II"
+      ],
+      "zh": [
+        "传送门2",
+        "传送门 2"
+      ],
+      "ja": [
+        "ポータル2",
+        "ポータル 2"
+      ]
     },
     "release_year": 2011,
-    "platforms": ["PC", "PlayStation 3", "Xbox 360"],
-    "genres": ["Puzzle", "First-person"],
+    "platforms": [
+      "PC",
+      "PlayStation 3",
+      "Xbox 360"
+    ],
+    "genres": [
+      "Puzzle",
+      "First-person"
+    ],
     "developer": "Valve",
     "publisher": "Valve",
     "steam_app_id": 620,
@@ -118,5 +196,2113 @@
     "status": "active",
     "created_at": "2026-01-10T00:00:00.000Z",
     "updated_at": "2026-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "g-animal-crossing-new-horizons",
+    "slug": "animal-crossing-new-horizons",
+    "title": "Animal Crossing: New Horizons",
+    "aliases": {
+      "en": [
+        "Animal Crossing: New Horizons",
+        "ACNH",
+        "Animal Crossing NH"
+      ],
+      "zh": [
+        "集合啦！动物森友会",
+        "动物森友会",
+        "动森"
+      ],
+      "ja": [
+        "あつまれ どうぶつの森"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Simulation",
+      "Life sim"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q64566657",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-spiritfarer",
+    "slug": "spiritfarer",
+    "title": "Spiritfarer",
+    "aliases": {
+      "en": [
+        "Spiritfarer"
+      ],
+      "zh": [
+        "灵魂摆渡人"
+      ],
+      "ja": [
+        "スピリットフェアラー"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Management",
+      "Adventure"
+    ],
+    "developer": "Thunder Lotus Games",
+    "publisher": "Thunder Lotus Games",
+    "steam_app_id": 972660,
+    "wikidata_qid": "Q80533334",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-slime-rancher",
+    "slug": "slime-rancher",
+    "title": "Slime Rancher",
+    "aliases": {
+      "en": [
+        "Slime Rancher"
+      ],
+      "zh": [
+        "史莱姆牧场"
+      ],
+      "ja": [
+        "スライムランチャー"
+      ]
+    },
+    "release_year": 2017,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Simulation",
+      "Adventure"
+    ],
+    "developer": "Monomi Park",
+    "publisher": "Monomi Park",
+    "steam_app_id": 433340,
+    "wikidata_qid": "Q22344828",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-terraria",
+    "slug": "terraria",
+    "title": "Terraria",
+    "aliases": {
+      "en": [
+        "Terraria"
+      ],
+      "zh": [
+        "泰拉瑞亚"
+      ],
+      "ja": [
+        "テラリア"
+      ]
+    },
+    "release_year": 2011,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Sandbox",
+      "Action"
+    ],
+    "developer": "Re-Logic",
+    "publisher": "Re-Logic",
+    "steam_app_id": 105600,
+    "wikidata_qid": "Q332697",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-minecraft",
+    "slug": "minecraft",
+    "title": "Minecraft",
+    "aliases": {
+      "en": [
+        "Minecraft"
+      ],
+      "zh": [
+        "我的世界"
+      ],
+      "ja": [
+        "マインクラフト"
+      ]
+    },
+    "release_year": 2011,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One",
+      "Mobile"
+    ],
+    "genres": [
+      "Sandbox",
+      "Survival"
+    ],
+    "developer": "Mojang Studios",
+    "publisher": "Mojang Studios",
+    "steam_app_id": null,
+    "wikidata_qid": "Q49740",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-factorio",
+    "slug": "factorio",
+    "title": "Factorio",
+    "aliases": {
+      "en": [
+        "Factorio"
+      ],
+      "zh": [
+        "异星工厂"
+      ],
+      "ja": [
+        "ファクトリオ"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "PC"
+    ],
+    "genres": [
+      "Simulation",
+      "Strategy"
+    ],
+    "developer": "Wube Software",
+    "publisher": "Wube Software",
+    "steam_app_id": 427520,
+    "wikidata_qid": "Q16972008",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-cities-skylines",
+    "slug": "cities-skylines",
+    "title": "Cities: Skylines",
+    "aliases": {
+      "en": [
+        "Cities: Skylines",
+        "Cities Skylines"
+      ],
+      "zh": [
+        "城市：天际线",
+        "城市天际线"
+      ],
+      "ja": [
+        "シティーズ：スカイライン"
+      ]
+    },
+    "release_year": 2015,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Simulation",
+      "City builder"
+    ],
+    "developer": "Colossal Order",
+    "publisher": "Paradox Interactive",
+    "steam_app_id": 255710,
+    "wikidata_qid": "Q18149274",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-the-sims-4",
+    "slug": "the-sims-4",
+    "title": "The Sims 4",
+    "aliases": {
+      "en": [
+        "The Sims 4",
+        "Sims 4"
+      ],
+      "zh": [
+        "模拟人生4",
+        "模拟人生 4"
+      ],
+      "ja": [
+        "ザ・シムズ4"
+      ]
+    },
+    "release_year": 2014,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Simulation",
+      "Life sim"
+    ],
+    "developer": "Maxis",
+    "publisher": "Electronic Arts",
+    "steam_app_id": 1222670,
+    "wikidata_qid": "Q12579896",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-unpacking",
+    "slug": "unpacking",
+    "title": "Unpacking",
+    "aliases": {
+      "en": [
+        "Unpacking"
+      ],
+      "zh": [
+        "开箱"
+      ],
+      "ja": [
+        "アンパッキング"
+      ]
+    },
+    "release_year": 2021,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Cozy"
+    ],
+    "developer": "Witch Beam",
+    "publisher": "Humble Games",
+    "steam_app_id": 1135690,
+    "wikidata_qid": "Q105063670",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-coffee-talk",
+    "slug": "coffee-talk",
+    "title": "Coffee Talk",
+    "aliases": {
+      "en": [
+        "Coffee Talk"
+      ],
+      "zh": [
+        "深夜咖啡馆",
+        "咖啡心语"
+      ],
+      "ja": [
+        "コーヒートーク"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Visual novel",
+      "Simulation"
+    ],
+    "developer": "Toge Productions",
+    "publisher": "Toge Productions",
+    "steam_app_id": 914710,
+    "wikidata_qid": "Q85753234",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-valheim",
+    "slug": "valheim",
+    "title": "Valheim",
+    "aliases": {
+      "en": [
+        "Valheim"
+      ],
+      "zh": [
+        "英灵神殿"
+      ],
+      "ja": [
+        "ヴァルヘイム"
+      ]
+    },
+    "release_year": 2021,
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Survival",
+      "Sandbox"
+    ],
+    "developer": "Iron Gate Studio",
+    "publisher": "Coffee Stain Publishing",
+    "steam_app_id": 892970,
+    "wikidata_qid": "Q105100327",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-dont-starve",
+    "slug": "dont-starve",
+    "title": "Don't Starve",
+    "aliases": {
+      "en": [
+        "Don't Starve",
+        "Dont Starve"
+      ],
+      "zh": [
+        "饥荒"
+      ],
+      "ja": [
+        "ドントスターブ"
+      ]
+    },
+    "release_year": 2013,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Survival",
+      "Adventure"
+    ],
+    "developer": "Klei Entertainment",
+    "publisher": "Klei Entertainment",
+    "steam_app_id": 219740,
+    "wikidata_qid": "Q3208174",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-powerwash-simulator",
+    "slug": "powerwash-simulator",
+    "title": "PowerWash Simulator",
+    "aliases": {
+      "en": [
+        "PowerWash Simulator",
+        "Power Wash Simulator"
+      ],
+      "zh": [
+        "高压清洗模拟器",
+        "冲就完事模拟器"
+      ],
+      "ja": [
+        "パワーウォッシュシミュレーター"
+      ]
+    },
+    "release_year": 2022,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series",
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Simulation",
+      "Cozy"
+    ],
+    "developer": "FuturLab",
+    "publisher": "Square Enix Collective",
+    "steam_app_id": 1290000,
+    "wikidata_qid": "Q107303968",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-katamari-damacy-reroll",
+    "slug": "katamari-damacy-reroll",
+    "title": "Katamari Damacy REROLL",
+    "aliases": {
+      "en": [
+        "Katamari Damacy REROLL",
+        "Katamari Damacy",
+        "Katamari"
+      ],
+      "zh": [
+        "块魂 REROLL",
+        "块魂"
+      ],
+      "ja": [
+        "塊魂アンコール",
+        "塊魂"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4"
+    ],
+    "genres": [
+      "Action",
+      "Puzzle"
+    ],
+    "developer": "Bandai Namco Studios",
+    "publisher": "Bandai Namco Entertainment",
+    "steam_app_id": 846470,
+    "wikidata_qid": "Q93133333",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-a-short-hike",
+    "slug": "a-short-hike",
+    "title": "A Short Hike",
+    "aliases": {
+      "en": [
+        "A Short Hike"
+      ],
+      "zh": [
+        "一次短途徒步"
+      ],
+      "ja": [
+        "ア・ショート・ハイク"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Adventure",
+      "Exploration"
+    ],
+    "developer": "adamgryu",
+    "publisher": "adamgryu",
+    "steam_app_id": 1054490,
+    "wikidata_qid": "Q66035140",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-the-witness",
+    "slug": "the-witness",
+    "title": "The Witness",
+    "aliases": {
+      "en": [
+        "The Witness"
+      ],
+      "zh": [
+        "见证者"
+      ],
+      "ja": [
+        "ザ・ウィットネス"
+      ]
+    },
+    "release_year": 2016,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Exploration"
+    ],
+    "developer": "Thekla, Inc.",
+    "publisher": "Thekla, Inc.",
+    "steam_app_id": 210970,
+    "wikidata_qid": "Q1711359",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-baba-is-you",
+    "slug": "baba-is-you",
+    "title": "Baba Is You",
+    "aliases": {
+      "en": [
+        "Baba Is You"
+      ],
+      "zh": [
+        "巴巴是你"
+      ],
+      "ja": [
+        "Baba Is You"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle"
+    ],
+    "developer": "Hempuli",
+    "publisher": "Hempuli",
+    "steam_app_id": 736260,
+    "wikidata_qid": "Q62061666",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-outer-wilds",
+    "slug": "outer-wilds",
+    "title": "Outer Wilds",
+    "aliases": {
+      "en": [
+        "Outer Wilds"
+      ],
+      "zh": [
+        "星际拓荒"
+      ],
+      "ja": [
+        "アウターワイルド"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Exploration",
+      "Puzzle"
+    ],
+    "developer": "Mobius Digital",
+    "publisher": "Annapurna Interactive",
+    "steam_app_id": 753640,
+    "wikidata_qid": "Q19631660",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-return-of-the-obra-dinn",
+    "slug": "return-of-the-obra-dinn",
+    "title": "Return of the Obra Dinn",
+    "aliases": {
+      "en": [
+        "Return of the Obra Dinn",
+        "Obra Dinn"
+      ],
+      "zh": [
+        "奥伯拉丁的回归"
+      ],
+      "ja": [
+        "リターン・オブ・ジ・オブラ・ディン"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Mystery"
+    ],
+    "developer": "Lucas Pope",
+    "publisher": "3909 LLC",
+    "steam_app_id": 653530,
+    "wikidata_qid": "Q48987695",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-tetris-effect",
+    "slug": "tetris-effect",
+    "title": "Tetris Effect",
+    "aliases": {
+      "en": [
+        "Tetris Effect",
+        "Tetris Effect: Connected"
+      ],
+      "zh": [
+        "俄罗斯方块效应"
+      ],
+      "ja": [
+        "テトリス エフェクト"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Puzzle"
+    ],
+    "developer": "Monstars / Resonair",
+    "publisher": "Enhance",
+    "steam_app_id": 1003590,
+    "wikidata_qid": "Q55381938",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-monument-valley",
+    "slug": "monument-valley",
+    "title": "Monument Valley",
+    "aliases": {
+      "en": [
+        "Monument Valley"
+      ],
+      "zh": [
+        "纪念碑谷"
+      ],
+      "ja": [
+        "モニュメントバレー"
+      ]
+    },
+    "release_year": 2014,
+    "platforms": [
+      "iOS",
+      "Android",
+      "Nintendo Switch",
+      "PC"
+    ],
+    "genres": [
+      "Puzzle",
+      "Adventure"
+    ],
+    "developer": "ustwo games",
+    "publisher": "ustwo games",
+    "steam_app_id": null,
+    "wikidata_qid": "Q15553298",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-superliminal",
+    "slug": "superliminal",
+    "title": "Superliminal",
+    "aliases": {
+      "en": [
+        "Superliminal"
+      ],
+      "zh": [
+        "超阈限空间"
+      ],
+      "ja": [
+        "スーパーリミナル"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "First-person"
+    ],
+    "developer": "Pillow Castle",
+    "publisher": "Pillow Castle",
+    "steam_app_id": 1049410,
+    "wikidata_qid": "Q66914100",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-the-talos-principle",
+    "slug": "the-talos-principle",
+    "title": "The Talos Principle",
+    "aliases": {
+      "en": [
+        "The Talos Principle"
+      ],
+      "zh": [
+        "塔洛斯的法则"
+      ],
+      "ja": [
+        "タロスの原理"
+      ]
+    },
+    "release_year": 2014,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Philosophy"
+    ],
+    "developer": "Croteam",
+    "publisher": "Devolver Digital",
+    "steam_app_id": 257510,
+    "wikidata_qid": "Q18620506",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-gorogoa",
+    "slug": "gorogoa",
+    "title": "Gorogoa",
+    "aliases": {
+      "en": [
+        "Gorogoa"
+      ],
+      "zh": [
+        "Gorogoa"
+      ],
+      "ja": [
+        "ゴロゴア"
+      ]
+    },
+    "release_year": 2017,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Art"
+    ],
+    "developer": "Buried Signal",
+    "publisher": "Annapurna Interactive",
+    "steam_app_id": 557600,
+    "wikidata_qid": "Q16267809",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-patricks-parabox",
+    "slug": "patricks-parabox",
+    "title": "Patrick's Parabox",
+    "aliases": {
+      "en": [
+        "Patrick's Parabox",
+        "Patricks Parabox"
+      ],
+      "zh": [
+        "帕特里克的复方块"
+      ],
+      "ja": [
+        "パトリックのパラボックス"
+      ]
+    },
+    "release_year": 2022,
+    "platforms": [
+      "PC",
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Puzzle"
+    ],
+    "developer": "Patrick Traynor",
+    "publisher": "Patrick Traynor",
+    "steam_app_id": 1260520,
+    "wikidata_qid": "Q111420821",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-pikmin-4",
+    "slug": "pikmin-4",
+    "title": "Pikmin 4",
+    "aliases": {
+      "en": [
+        "Pikmin 4"
+      ],
+      "zh": [
+        "皮克敏4",
+        "皮克敏 4"
+      ],
+      "ja": [
+        "ピクミン4"
+      ]
+    },
+    "release_year": 2023,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Strategy",
+      "Adventure"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q113956704",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-overcooked-2",
+    "slug": "overcooked-2",
+    "title": "Overcooked! 2",
+    "aliases": {
+      "en": [
+        "Overcooked! 2",
+        "Overcooked 2",
+        "Overcooked Two"
+      ],
+      "zh": [
+        "胡闹厨房2",
+        "煮糊了2"
+      ],
+      "ja": [
+        "オーバークック2"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Party",
+      "Simulation"
+    ],
+    "developer": "Ghost Town Games",
+    "publisher": "Team17",
+    "steam_app_id": 728880,
+    "wikidata_qid": "Q55713667",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-untitled-goose-game",
+    "slug": "untitled-goose-game",
+    "title": "Untitled Goose Game",
+    "aliases": {
+      "en": [
+        "Untitled Goose Game",
+        "Goose Game"
+      ],
+      "zh": [
+        "无名鹅",
+        "捣蛋鹅"
+      ],
+      "ja": [
+        "Untitled Goose Game"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Puzzle",
+      "Stealth"
+    ],
+    "developer": "House House",
+    "publisher": "Panic",
+    "steam_app_id": 837470,
+    "wikidata_qid": "Q59618073",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-mini-motorways",
+    "slug": "mini-motorways",
+    "title": "Mini Motorways",
+    "aliases": {
+      "en": [
+        "Mini Motorways"
+      ],
+      "zh": [
+        "迷你高速"
+      ],
+      "ja": [
+        "ミニモーターウェイズ"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "iOS"
+    ],
+    "genres": [
+      "Puzzle",
+      "Simulation"
+    ],
+    "developer": "Dinosaur Polo Club",
+    "publisher": "Dinosaur Polo Club",
+    "steam_app_id": 1424230,
+    "wikidata_qid": "Q75192959",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-zelda-breath-of-the-wild",
+    "slug": "zelda-breath-of-the-wild",
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "aliases": {
+      "en": [
+        "The Legend of Zelda: Breath of the Wild",
+        "Breath of the Wild",
+        "BotW",
+        "BOTW"
+      ],
+      "zh": [
+        "塞尔达传说 旷野之息",
+        "旷野之息",
+        "野炊"
+      ],
+      "ja": [
+        "ゼルダの伝説 ブレス オブ ザ ワイルド"
+      ]
+    },
+    "release_year": 2017,
+    "platforms": [
+      "Nintendo Switch",
+      "Wii U"
+    ],
+    "genres": [
+      "Action-adventure",
+      "Open world"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q17185964",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-zelda-tears-of-the-kingdom",
+    "slug": "zelda-tears-of-the-kingdom",
+    "title": "The Legend of Zelda: Tears of the Kingdom",
+    "aliases": {
+      "en": [
+        "The Legend of Zelda: Tears of the Kingdom",
+        "Tears of the Kingdom",
+        "TotK",
+        "TOTK"
+      ],
+      "zh": [
+        "塞尔达传说 王国之泪",
+        "王国之泪"
+      ],
+      "ja": [
+        "ゼルダの伝説 ティアーズ オブ ザ キングダム"
+      ]
+    },
+    "release_year": 2023,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Action-adventure",
+      "Open world"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q64577191",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-firewatch",
+    "slug": "firewatch",
+    "title": "Firewatch",
+    "aliases": {
+      "en": [
+        "Firewatch"
+      ],
+      "zh": [
+        "看火人"
+      ],
+      "ja": [
+        "ファイアウォッチ"
+      ]
+    },
+    "release_year": 2016,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Adventure",
+      "Walking sim"
+    ],
+    "developer": "Campo Santo",
+    "publisher": "Panic",
+    "steam_app_id": 383870,
+    "wikidata_qid": "Q19627426",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-super-mario-odyssey",
+    "slug": "super-mario-odyssey",
+    "title": "Super Mario Odyssey",
+    "aliases": {
+      "en": [
+        "Super Mario Odyssey",
+        "Mario Odyssey"
+      ],
+      "zh": [
+        "超级马力欧 奥德赛",
+        "马里奥奥德赛"
+      ],
+      "ja": [
+        "スーパーマリオ オデッセイ"
+      ]
+    },
+    "release_year": 2017,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Platformer"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q28234671",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-ori-and-the-blind-forest",
+    "slug": "ori-and-the-blind-forest",
+    "title": "Ori and the Blind Forest",
+    "aliases": {
+      "en": [
+        "Ori and the Blind Forest"
+      ],
+      "zh": [
+        "奥日与黑暗森林"
+      ],
+      "ja": [
+        "オリとくらやみの森"
+      ]
+    },
+    "release_year": 2015,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "Xbox One"
+    ],
+    "genres": [
+      "Metroidvania",
+      "Platformer"
+    ],
+    "developer": "Moon Studios",
+    "publisher": "Microsoft Studios",
+    "steam_app_id": 387290,
+    "wikidata_qid": "Q17513672",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-ori-and-the-will-of-the-wisps",
+    "slug": "ori-and-the-will-of-the-wisps",
+    "title": "Ori and the Will of the Wisps",
+    "aliases": {
+      "en": [
+        "Ori and the Will of the Wisps"
+      ],
+      "zh": [
+        "奥日与精灵意志"
+      ],
+      "ja": [
+        "オリとウィスプの意志"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Metroidvania",
+      "Platformer"
+    ],
+    "developer": "Moon Studios",
+    "publisher": "Xbox Game Studios",
+    "steam_app_id": 1057090,
+    "wikidata_qid": "Q30325568",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-horizon-zero-dawn",
+    "slug": "horizon-zero-dawn",
+    "title": "Horizon Zero Dawn",
+    "aliases": {
+      "en": [
+        "Horizon Zero Dawn"
+      ],
+      "zh": [
+        "地平线 零之曙光",
+        "地平线黎明时分"
+      ],
+      "ja": [
+        "ホライゾン ゼロ・ドーン"
+      ]
+    },
+    "release_year": 2017,
+    "platforms": [
+      "PC",
+      "PlayStation 4"
+    ],
+    "genres": [
+      "Action RPG",
+      "Open world"
+    ],
+    "developer": "Guerrilla Games",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 1151640,
+    "wikidata_qid": "Q20155528",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-ghost-of-tsushima",
+    "slug": "ghost-of-tsushima",
+    "title": "Ghost of Tsushima",
+    "aliases": {
+      "en": [
+        "Ghost of Tsushima"
+      ],
+      "zh": [
+        "对马岛之魂"
+      ],
+      "ja": [
+        "ゴースト オブ ツシマ"
+      ]
+    },
+    "release_year": 2020,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5"
+    ],
+    "genres": [
+      "Action-adventure",
+      "Open world"
+    ],
+    "developer": "Sucker Punch Productions",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 2215430,
+    "wikidata_qid": "Q42564798",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-uncharted-4",
+    "slug": "uncharted-4",
+    "title": "Uncharted 4: A Thief's End",
+    "aliases": {
+      "en": [
+        "Uncharted 4: A Thief's End",
+        "Uncharted 4"
+      ],
+      "zh": [
+        "神秘海域4",
+        "神秘海域 4"
+      ],
+      "ja": [
+        "アンチャーテッド 海賊王と最後の秘宝"
+      ]
+    },
+    "release_year": 2016,
+    "platforms": [
+      "PlayStation 4",
+      "PlayStation 5",
+      "PC"
+    ],
+    "genres": [
+      "Action-adventure"
+    ],
+    "developer": "Naughty Dog",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 1659420,
+    "wikidata_qid": "Q16681843",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-god-of-war-2018",
+    "slug": "god-of-war-2018",
+    "title": "God of War",
+    "aliases": {
+      "en": [
+        "God of War",
+        "God of War 2018",
+        "God of War (2018)",
+        "God of War 4"
+      ],
+      "zh": [
+        "战神",
+        "战神4",
+        "战神2018"
+      ],
+      "ja": [
+        "ゴッド・オブ・ウォー"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "PlayStation 4"
+    ],
+    "genres": [
+      "Action-adventure"
+    ],
+    "developer": "Santa Monica Studio",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 1593500,
+    "wikidata_qid": "Q18345138",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-marvels-spider-man",
+    "slug": "marvels-spider-man",
+    "title": "Marvel's Spider-Man",
+    "aliases": {
+      "en": [
+        "Marvel's Spider-Man",
+        "Spider-Man 2018",
+        "Spider-Man PS4"
+      ],
+      "zh": [
+        "漫威蜘蛛侠",
+        "蜘蛛侠"
+      ],
+      "ja": [
+        "Marvel's Spider-Man"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PlayStation 4",
+      "PlayStation 5",
+      "PC"
+    ],
+    "genres": [
+      "Action-adventure"
+    ],
+    "developer": "Insomniac Games",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 1817070,
+    "wikidata_qid": "Q25340029",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-persona-5-royal",
+    "slug": "persona-5-royal",
+    "title": "Persona 5 Royal",
+    "aliases": {
+      "en": [
+        "Persona 5 Royal",
+        "P5R",
+        "Persona 5"
+      ],
+      "zh": [
+        "女神异闻录5皇家版",
+        "女神异闻录5"
+      ],
+      "ja": [
+        "ペルソナ5 ザ・ロイヤル",
+        "ペルソナ5"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series",
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "JRPG"
+    ],
+    "developer": "P-Studio",
+    "publisher": "Atlus",
+    "steam_app_id": 1687950,
+    "wikidata_qid": "Q63385672",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-disco-elysium",
+    "slug": "disco-elysium",
+    "title": "Disco Elysium",
+    "aliases": {
+      "en": [
+        "Disco Elysium"
+      ],
+      "zh": [
+        "极乐迪斯科"
+      ],
+      "ja": [
+        "ディスコ エリジウム"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "RPG",
+      "Mystery"
+    ],
+    "developer": "ZA/UM",
+    "publisher": "ZA/UM",
+    "steam_app_id": 632470,
+    "wikidata_qid": "Q71693825",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-subnautica",
+    "slug": "subnautica",
+    "title": "Subnautica",
+    "aliases": {
+      "en": [
+        "Subnautica"
+      ],
+      "zh": [
+        "深海迷航"
+      ],
+      "ja": [
+        "サブノーティカ"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Survival",
+      "Adventure"
+    ],
+    "developer": "Unknown Worlds Entertainment",
+    "publisher": "Unknown Worlds Entertainment",
+    "steam_app_id": 264710,
+    "wikidata_qid": "Q21039915",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-no-mans-sky",
+    "slug": "no-mans-sky",
+    "title": "No Man's Sky",
+    "aliases": {
+      "en": [
+        "No Man's Sky",
+        "No Mans Sky"
+      ],
+      "zh": [
+        "无人深空"
+      ],
+      "ja": [
+        "ノーマンズスカイ"
+      ]
+    },
+    "release_year": 2016,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Exploration",
+      "Survival"
+    ],
+    "developer": "Hello Games",
+    "publisher": "Hello Games",
+    "steam_app_id": 275850,
+    "wikidata_qid": "Q15297043",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-sea-of-stars",
+    "slug": "sea-of-stars",
+    "title": "Sea of Stars",
+    "aliases": {
+      "en": [
+        "Sea of Stars"
+      ],
+      "zh": [
+        "星之海"
+      ],
+      "ja": [
+        "シー・オブ・スターズ"
+      ]
+    },
+    "release_year": 2023,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "RPG"
+    ],
+    "developer": "Sabotage Studio",
+    "publisher": "Sabotage Studio",
+    "steam_app_id": 1209400,
+    "wikidata_qid": "Q106974937",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-eastward",
+    "slug": "eastward",
+    "title": "Eastward",
+    "aliases": {
+      "en": [
+        "Eastward"
+      ],
+      "zh": [
+        "风来之国"
+      ],
+      "ja": [
+        "イーストワード"
+      ]
+    },
+    "release_year": 2021,
+    "platforms": [
+      "PC",
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "RPG",
+      "Adventure"
+    ],
+    "developer": "Pixpil",
+    "publisher": "Chucklefish",
+    "steam_app_id": 977880,
+    "wikidata_qid": "Q106996604",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-crosscode",
+    "slug": "crosscode",
+    "title": "CrossCode",
+    "aliases": {
+      "en": [
+        "CrossCode"
+      ],
+      "zh": [
+        "交叉码"
+      ],
+      "ja": [
+        "クロスコード"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Action RPG"
+    ],
+    "developer": "Radical Fish Games",
+    "publisher": "Deck13 Spotlight",
+    "steam_app_id": 368340,
+    "wikidata_qid": "Q30632190",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E10+",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-death-stranding",
+    "slug": "death-stranding",
+    "title": "Death Stranding",
+    "aliases": {
+      "en": [
+        "Death Stranding"
+      ],
+      "zh": [
+        "死亡搁浅"
+      ],
+      "ja": [
+        "デス・ストランディング"
+      ]
+    },
+    "release_year": 2019,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5"
+    ],
+    "genres": [
+      "Action",
+      "Traversal"
+    ],
+    "developer": "Kojima Productions",
+    "publisher": "Sony Interactive Entertainment",
+    "steam_app_id": 1190460,
+    "wikidata_qid": "Q24666782",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-red-dead-redemption-2",
+    "slug": "red-dead-redemption-2",
+    "title": "Red Dead Redemption 2",
+    "aliases": {
+      "en": [
+        "Red Dead Redemption 2",
+        "RDR2",
+        "Red Dead 2"
+      ],
+      "zh": [
+        "荒野大镖客2",
+        "荒野大镖客 救赎2"
+      ],
+      "ja": [
+        "レッド・デッド・リデンプション2"
+      ]
+    },
+    "release_year": 2018,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "Action-adventure",
+      "Open world"
+    ],
+    "developer": "Rockstar Games",
+    "publisher": "Rockstar Games",
+    "steam_app_id": 1174180,
+    "wikidata_qid": "Q27438120",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-elden-ring",
+    "slug": "elden-ring",
+    "title": "Elden Ring",
+    "aliases": {
+      "en": [
+        "Elden Ring"
+      ],
+      "zh": [
+        "艾尔登法环",
+        "老环"
+      ],
+      "ja": [
+        "エルデンリング"
+      ]
+    },
+    "release_year": 2022,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox One",
+      "Xbox Series"
+    ],
+    "genres": [
+      "Action RPG"
+    ],
+    "developer": "FromSoftware",
+    "publisher": "Bandai Namco Entertainment",
+    "steam_app_id": 1245620,
+    "wikidata_qid": "Q64826862",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-super-mario-bros-wonder",
+    "slug": "super-mario-bros-wonder",
+    "title": "Super Mario Bros. Wonder",
+    "aliases": {
+      "en": [
+        "Super Mario Bros. Wonder",
+        "Mario Wonder"
+      ],
+      "zh": [
+        "超级马力欧兄弟 惊奇",
+        "马里奥惊奇"
+      ],
+      "ja": [
+        "スーパーマリオブラザーズ ワンダー"
+      ]
+    },
+    "release_year": 2023,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Platformer"
+    ],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q119819453",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-kirby-and-the-forgotten-land",
+    "slug": "kirby-and-the-forgotten-land",
+    "title": "Kirby and the Forgotten Land",
+    "aliases": {
+      "en": [
+        "Kirby and the Forgotten Land"
+      ],
+      "zh": [
+        "星之卡比 探索发现"
+      ],
+      "ja": [
+        "星のカービィ ディスカバリー"
+      ]
+    },
+    "release_year": 2022,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "Platformer"
+    ],
+    "developer": "HAL Laboratory",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q108670544",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "E",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-xenoblade-chronicles-3",
+    "slug": "xenoblade-chronicles-3",
+    "title": "Xenoblade Chronicles 3",
+    "aliases": {
+      "en": [
+        "Xenoblade Chronicles 3",
+        "Xenoblade 3"
+      ],
+      "zh": [
+        "异度神剑3"
+      ],
+      "ja": [
+        "ゼノブレイド3"
+      ]
+    },
+    "release_year": 2022,
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "genres": [
+      "JRPG"
+    ],
+    "developer": "Monolith Soft",
+    "publisher": "Nintendo",
+    "steam_app_id": null,
+    "wikidata_qid": "Q110875814",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-final-fantasy-xiv",
+    "slug": "final-fantasy-xiv",
+    "title": "Final Fantasy XIV",
+    "aliases": {
+      "en": [
+        "Final Fantasy XIV",
+        "FFXIV",
+        "FF14",
+        "Final Fantasy 14"
+      ],
+      "zh": [
+        "最终幻想14",
+        "FF14"
+      ],
+      "ja": [
+        "ファイナルファンタジーXIV"
+      ]
+    },
+    "release_year": 2013,
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "PlayStation 5",
+      "Xbox Series"
+    ],
+    "genres": [
+      "MMORPG"
+    ],
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "steam_app_id": 39210,
+    "wikidata_qid": "Q5449393",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "T",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "g-skyrim",
+    "slug": "skyrim",
+    "title": "The Elder Scrolls V: Skyrim",
+    "aliases": {
+      "en": [
+        "The Elder Scrolls V: Skyrim",
+        "Skyrim",
+        "TES V",
+        "TES 5"
+      ],
+      "zh": [
+        "上古卷轴5：天际",
+        "上古卷轴5",
+        "天际"
+      ],
+      "ja": [
+        "ザ エルダースクロールズ V: スカイリム"
+      ]
+    },
+    "release_year": 2011,
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "genres": [
+      "RPG",
+      "Open world"
+    ],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "steam_app_id": 489830,
+    "wikidata_qid": "Q323862",
+    "rawg_id": null,
+    "igdb_id": null,
+    "age_rating": "M",
+    "nsfw_flag": false,
+    "status": "active",
+    "created_at": "2026-09-19T00:00:00.000Z",
+    "updated_at": "2026-09-19T00:00:00.000Z"
   }
 ]

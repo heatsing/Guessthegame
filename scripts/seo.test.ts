@@ -47,6 +47,9 @@ const paths = listSitemapPaths(catalog.themes);
 expect(paths.includes("/"), "sitemap paths include home");
 expect(paths.includes("/themes/autumn-showcase"), "published autumn theme");
 expect(paths.includes("/themes/indie-first-week"), "published indie theme");
+expect(paths.includes("/themes/hearth-harvest"), "published hearth theme");
+expect(paths.includes("/themes/labyrinth-logic"), "published labyrinth theme");
+expect(paths.includes("/themes/far-roads"), "published far-roads theme");
 expect(
   paths.every((path) => !isPuzzlePath(path)),
   "sitemap paths exclude /puzzle/*",

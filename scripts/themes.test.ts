@@ -119,16 +119,14 @@ expect(
 );
 console.log("ok — pulled puzzles omitted");
 
-for (const game of catalog.games) {
-  const accepted = acceptedAnswersForGame(game);
-  expect(
-    !themeCopyContainsAnswer(autumnOn19, accepted),
-    `autumn copy must not contain ${game.title}`,
-  );
-  if (indieCopy) {
+for (const theme of catalog.themes) {
+  const copy = getThemePageCopy(catalog, theme.slug, theme.end_date);
+  if (!copy) fail(`missing copy for ${theme.slug}`);
+  for (const game of catalog.games) {
+    const accepted = acceptedAnswersForGame(game);
     expect(
-      !themeCopyContainsAnswer(indieCopy, accepted),
-      `indie copy must not contain ${game.title}`,
+      !themeCopyContainsAnswer(copy, accepted),
+      `${theme.slug} copy must not contain ${game.title}`,
     );
   }
 }
@@ -144,7 +142,7 @@ expect(
   "English UTC range label",
 );
 expect(
-  listThemesNewestFirst(catalog.themes)[0]?.slug === "autumn-showcase",
+  listThemesNewestFirst(catalog.themes)[0]?.slug === "far-roads",
   "list newest start_date first",
 );
 console.log("ok — English labels + list order");
