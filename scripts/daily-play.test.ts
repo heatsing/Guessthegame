@@ -235,6 +235,12 @@ for (const relative of playableStills) {
     }
   }
 }
+const pressKitSvg = readFileSync(
+  join(process.cwd(), "public/media/hades/m-hades-pk-01.svg"),
+);
+if (pressKitSvg.some((byte) => byte > 127)) {
+  fail("press-kit example SVG must be ASCII so <img src> can parse it");
+}
 console.log("ok — playable placeholders omit answer strings");
 
 console.log("All daily play tests passed.");
