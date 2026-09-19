@@ -214,26 +214,32 @@ for (const relative of spoilerFiles) {
 }
 console.log("ok — no-JS source files omit answer strings");
 
-const placeholderDir = join(process.cwd(), "public/media/placeholders");
-const playablePlaceholders = [
-  "hades-01.svg",
-  "hades-02.svg",
-  "hades-03.svg",
-  "hades-04.svg",
-  "hades-05.svg",
-  "hades-06.svg",
-  "celeste-01.svg",
-  "celeste-02.svg",
-  "hollow-knight-01.svg",
-  "stardew-01.svg",
+const playableStills = [
+  "public/media/placeholders/hades-01.svg",
+  "public/media/placeholders/hades-02.svg",
+  "public/media/placeholders/hades-03.svg",
+  "public/media/placeholders/hades-04.svg",
+  "public/media/placeholders/hades-05.svg",
+  "public/media/placeholders/hades-06.svg",
+  "public/media/placeholders/celeste-01.svg",
+  "public/media/placeholders/celeste-02.svg",
+  "public/media/placeholders/hollow-knight-01.svg",
+  "public/media/placeholders/stardew-01.svg",
+  "public/media/hades/m-hades-pk-01.svg",
 ];
-for (const name of playablePlaceholders) {
-  const svg = readFileSync(join(placeholderDir, name), "utf8");
+for (const relative of playableStills) {
+  const svg = readFileSync(join(process.cwd(), relative), "utf8");
   for (const needle of spoilers) {
     if (svg.includes(needle)) {
-      fail(`playable placeholder ${name} must not contain "${needle}"`);
+      fail(`playable still ${relative} must not contain "${needle}"`);
     }
   }
+}
+const pressKitSvg = readFileSync(
+  join(process.cwd(), "public/media/hades/m-hades-pk-01.svg"),
+);
+if (pressKitSvg.some((byte) => byte > 127)) {
+  fail("press-kit example SVG must be ASCII so <img src> can parse it");
 }
 console.log("ok — playable placeholders omit answer strings");
 

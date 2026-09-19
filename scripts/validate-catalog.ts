@@ -1,5 +1,8 @@
 import { loadAndValidateCatalog } from "../lib/catalog/load";
-import { validateLocalMediaFiles } from "../lib/catalog/local-media";
+import {
+  validateLicenseArchives,
+  validateLocalMediaFiles,
+} from "../lib/catalog/local-media";
 import { formatIssues } from "../lib/catalog/validate";
 
 function main(): void {
@@ -10,10 +13,14 @@ function main(): void {
     process.exit(1);
   }
 
-  const localIssues = validateLocalMediaFiles(result.catalog);
+  const localIssues = [
+    ...validateLocalMediaFiles(result.catalog),
+    ...validateLicenseArchives(result.catalog),
+  ];
   if (localIssues.length > 0) {
     console.error(
-      "Catalog validation failed (local media):\n" + formatIssues(localIssues),
+      "Catalog validation failed (local media / license archive):\n" +
+        formatIssues(localIssues),
     );
     process.exit(1);
   }

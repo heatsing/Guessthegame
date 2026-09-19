@@ -33,7 +33,11 @@ npm test
 
 `npm run build` must succeed before opening a PR.
 
-`npm run validate` checks the Git-managed catalog in `data/seed/` (schema, rights fields, Steam CDN ban, local media checksums) and exits non-zero on failure. `npm test` asserts the legal seed passes and that a Steam CDN URL or `unknown` publishable/monetizable asset is rejected. See [docs/catalog-validation.md](docs/catalog-validation.md) and [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md).
+`npm run validate` checks the Git-managed catalog in `data/seed/` (schema, rights fields, Steam CDN ban, `/media/{slug}/{id}` naming, license archives, local media checksums) and exits non-zero on failure. `npm test` asserts the legal seed passes, that a Steam CDN URL or `unknown` publishable/monetizable asset is rejected, and that takedown by media id skips or replaces Daily slots. See [docs/catalog-validation.md](docs/catalog-validation.md), [docs/media-pipeline.md](docs/media-pipeline.md), and [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md).
+
+```bash
+npm run takedown -- --id m-hades-pk-01 --reason "DMCA notice" --dry-run
+```
 
 ## Environment variables
 
@@ -95,7 +99,7 @@ Technical SEO (Issue #10) uses the Metadata API on every public page (title, des
 
 ## Catalog (Issue #2)
 
-Versioned puzzle data lives in `data/seed/` (`games`, `game_sources`, `media_assets`, `daily_puzzles`, `themes`). TypeScript + Zod types are in `lib/catalog/`. Seed screenshots are self-hosted placeholders under `public/media/placeholders/` with rights fields filled in — never Steam CDN URLs.
+Versioned puzzle data lives in `data/seed/` (`games`, `game_sources`, `media_assets`, `daily_puzzles`, `themes`). TypeScript + Zod types are in `lib/catalog/`. Seed screenshots are self-hosted under `public/media/` (placeholders plus the press-kit intake example `public/media/hades/m-hades-pk-01.svg`) with rights fields filled in — never Steam CDN URLs. Written grants are archived in `data/licenses/`.
 
 To schedule a day, follow [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md), then `npm run validate`.
 
@@ -103,6 +107,7 @@ To schedule a day, follow [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md), 
 
 - [How to add a daily puzzle](docs/add-daily-puzzle.md)
 - [Catalog validation](docs/catalog-validation.md)
+- [Media pipeline (intake + takedown)](docs/media-pipeline.md)
 - [Media rights](docs/media-rights.md)
 - [Google Search Console](docs/google-search-console.md)
 

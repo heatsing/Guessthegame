@@ -3,7 +3,7 @@
     "id": "p-2026-01-15",
     "puzzle_date": "2026-01-15",
     "game_id": "g-hades",
-    "asset_ids": ["m-hades-01", "m-hades-02", "m-hades-03"],
+    "asset_ids": ["m-hades-01", "m-hades-02", "m-hades-03", "m-hades-pk-01"],
     "theme_id": "t-indie-first-week",
     "difficulty": "med",
     "hints": [

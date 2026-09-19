@@ -1,3 +1,4 @@
+import { mediaStoragePathIssue } from "./media-path";
 import { CatalogSchema, type Catalog, type MediaAsset } from "./schema";
 import { isSteamCdnUrl } from "./steam";
 
@@ -48,8 +49,11 @@ function rightsBlockPublishable(asset: MediaAsset): boolean {
 /**
  * Business rules on top of the Zod shape:
  * - No Steam CDN on media `storage_url` or theme `hero_image`
+ * - Approved assets cannot use a Steam CDN URL
  * - `unknown` rights cannot be `can_monetize`
  * - `unknown` rights cannot be `approved` (publishable)
+ * - Known-rights rows need licensor / license_doc_url / attribution_text
+ * - storage_url follows /media/placeholders/… or /media/{slug}/{id}.{ext}
  * - scheduled/published puzzles may only reference approved, known-rights assets
  * - Referential integrity + unique ids / puzzle dates
  * - Theme descriptions are unique; UTC windows do not overlap
@@ -121,6 +125,31 @@ export function validateCatalog(input: unknown): CatalogValidationResult {
 
     assertNoSteamCdn(issues, `${path}.storage_url`, asset.storage_url);
 
+    if (asset.moderation_status === "approved" && isSteamCdnUrl(asset.storage_url)) {
+      issues.push(
+        issue(
+          `${path}.storage_url`,
+          "approved assets cannot use a Steam CDN URL",
+        ),
+      );
+    }
+
+    const game = gamesById.get(asset.game_id);
+    if (
+      game &&
+      asset.moderation_status !== "takedown" &&
+      !isSteamCdnUrl(asset.storage_url)
+    ) {
+      const pathIssue = mediaStoragePathIssue(
+        asset.storage_url,
+        game.slug,
+        asset.id,
+      );
+      if (pathIssue) {
+        issues.push(issue(`${path}.storage_url`, pathIssue));
+      }
+    }
+
     if (asset.rights_status === "unknown" && asset.can_monetize) {
       issues.push(
         issue(
@@ -128,6 +157,36 @@ export function validateCatalog(input: unknown): CatalogValidationResult {
           "unknown rights cannot be marked can_monetize",
         ),
       );
+    }
+
+    if (asset.moderation_status === "takedown" && asset.can_monetize) {
+      issues.push(
+        issue(`${path}.can_monetize`, "takedown assets cannot be marked can_monetize"),
+      );
+    }
+
+    if (asset.rights_status !== "unknown") {
+      if (!asset.licensor.trim()) {
+        issues.push(
+          issue(`${path}.licensor`, "known rights require a non-empty licensor"),
+        );
+      }
+      if (!asset.license_doc_url.trim()) {
+        issues.push(
+          issue(
+            `${path}.license_doc_url`,
+            "known rights require a license archive path or URL",
+          ),
+        );
+      }
+      if (!asset.attribution_text.trim()) {
+        issues.push(
+          issue(
+            `${path}.attribution_text`,
+            "known rights require attribution_text",
+          ),
+        );
+      }
     }
 
     if (rightsBlockPublishable(asset) && asset.moderation_status === "approved") {
