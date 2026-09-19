@@ -38,6 +38,11 @@ export {
 
 export { isSteamCdnUrl, STEAM_CDN_HOST_SUFFIXES } from "./steam";
 
+export {
+  guessCatalogFromGames,
+  type GuessCatalogGame,
+} from "./guess-index";
+
 /** Disk loaders (`./load`) are Node/script only — they use `fs`. */
 
 export {

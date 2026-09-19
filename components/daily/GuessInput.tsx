@@ -2,10 +2,16 @@
 
 import { FormEvent, useState } from "react";
 
+import type { GuessCatalogGame } from "@/lib/catalog/guess-index";
+import { resolveGuessValue, suggestGames } from "@/lib/daily/autocomplete";
+
+import { GuessAutocomplete } from "./GuessAutocomplete";
+
 type GuessInputProps = {
   guessNumber: number;
   maxGuesses: number;
   disabled?: boolean;
+  games: readonly GuessCatalogGame[];
   onGuess: (value: string) => void;
   onSkip: () => void;
 };
@@ -14,17 +20,27 @@ export function GuessInput({
   guessNumber,
   maxGuesses,
   disabled = false,
+  games,
   onGuess,
   onSkip,
 }: GuessInputProps) {
   const [value, setValue] = useState("");
+  const [listOpen, setListOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const next = value.trim();
+  function submitGuess(raw: string) {
+    const next = raw.trim();
     if (!next || disabled) return;
     onGuess(next);
     setValue("");
+    setListOpen(false);
+    setActiveIndex(-1);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const suggestions = suggestGames(value, games);
+    submitGuess(resolveGuessValue(value, suggestions, activeIndex, listOpen));
   }
 
   return (
@@ -35,21 +51,19 @@ export function GuessInput({
       >
         Guess {guessNumber} of {maxGuesses}
       </label>
-      <input
+      <GuessAutocomplete
         id="daily-guess"
-        name="guess"
-        type="text"
-        inputMode="text"
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-        enterKeyHint="send"
-        placeholder="Type a game title"
         value={value}
         disabled={disabled}
-        onChange={(event) => setValue(event.target.value)}
-        className="min-h-12 w-full rounded-xl border border-white/15 bg-[color:var(--surface)] px-4 text-base text-[color:var(--foreground)] outline-none ring-[color:var(--accent)] placeholder:text-[color:var(--muted)] focus-visible:ring-2 disabled:opacity-60"
+        games={games}
+        listOpen={listOpen}
+        activeIndex={activeIndex}
+        onListOpenChange={setListOpen}
+        onActiveIndexChange={setActiveIndex}
+        onChange={setValue}
+        onSelectSuggestion={(suggestion) => {
+          submitGuess(suggestion.title);
+        }}
       />
       <div className="grid grid-cols-2 gap-3">
         <button

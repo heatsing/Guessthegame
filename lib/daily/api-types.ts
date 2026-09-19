@@ -1,3 +1,5 @@
+import type { GuessCatalogGame } from "@/lib/catalog/guess-index";
+
 import type { DailyAnswer, PlayableScreenshot } from "./load-puzzle";
 
 export type DailyApiOk = {
@@ -6,6 +8,12 @@ export type DailyApiOk = {
   screenshots: PlayableScreenshot[];
   maxGuesses: number;
   answer: DailyAnswer;
+  /** Slim catalog for autocomplete (titles + EN/ZH/JA aliases). */
+  games: GuessCatalogGame[];
+};
+
+export type GamesApiResponse = {
+  games: GuessCatalogGame[];
 };
 
 export type DailyApiEmpty = {

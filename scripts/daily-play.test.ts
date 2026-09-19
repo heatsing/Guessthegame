@@ -181,6 +181,7 @@ const spoilerFiles = [
   "components/daily/DailyPlay.tsx",
   "components/daily/EmptyPuzzle.tsx",
   "components/daily/GuessInput.tsx",
+  "components/daily/GuessAutocomplete.tsx",
   "components/daily/PuzzleBoard.tsx",
   "components/daily/ScreenshotReveal.tsx",
   "components/daily/ShareResults.tsx",

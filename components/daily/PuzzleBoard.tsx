@@ -68,6 +68,7 @@ export function PuzzleBoard({ daily, play, onGuess, onSkip }: PuzzleBoardProps) 
           <GuessInput
             guessNumber={play.guesses.length + 1}
             maxGuesses={MAX_GUESSES}
+            games={daily.games}
             onGuess={onGuess}
             onSkip={onSkip}
           />
