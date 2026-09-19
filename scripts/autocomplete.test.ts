@@ -86,7 +86,14 @@ const punct = suggestGames("Hades!", games);
 expect(punct[0]?.title === "Hades", "punctuation is ignored via normalizeGuess");
 
 const token = suggestGames("valley", games);
-expect(token[0]?.title === "Stardew Valley", "token / substring match works");
+expect(
+  token.some((item) => item.title === "Stardew Valley"),
+  "token / substring match hits Stardew Valley",
+);
+expect(
+  token.some((item) => item.title === "Monument Valley"),
+  "shared token can hit more than one catalog title",
+);
 
 expect(
   !suggestGames("not-a-real-game-title", games).some((item) => item.title === "Hades"),

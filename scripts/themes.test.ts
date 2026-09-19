@@ -79,7 +79,10 @@ expect(
   getActiveTheme(catalog.themes, beforeEndRoll)?.slug === "autumn-showcase",
   "badge still current at 23:59:59.999Z on end date",
 );
-expect(getActiveTheme(catalog.themes, afterEnd) === null, "badge hidden after end instant");
+expect(
+  getActiveTheme(catalog.themes, afterEnd)?.slug === "hearth-harvest",
+  "Hearth & Harvest starts the UTC day after Autumn Showcase",
+);
 expect(getActiveTheme(catalog.themes, "2026-01-15")?.slug === "indie-first-week", "January window");
 expect(getActiveTheme(catalog.themes, "2026-06-01") === null, "gap month has no theme");
 console.log("ok — UTC instant boundaries + hide badge when none");
