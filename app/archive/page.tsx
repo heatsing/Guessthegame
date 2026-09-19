@@ -1,33 +1,18 @@
-import type { Metadata } from "next";
-
 import { ArchiveList } from "@/components/archive/ArchiveList";
 import { loadBundledCatalog } from "@/lib/catalog/bundled";
 import { listArchiveDates } from "@/lib/daily/archive";
 import { ARCHIVE_LIMIT } from "@/lib/daily/constants";
 import { getDailyPuzzleDate } from "@/lib/daily/date";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: `Archive — ${site.name}`,
-  description: `Replay the last ${ARCHIVE_LIMIT} published ThemeShot daily puzzles. Guess the game from curated screenshots.`,
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "/archive",
-  },
-  openGraph: {
-    title: `Archive — ${site.name}`,
-    description: `Replay recent ThemeShot daily puzzles on ${site.name}.`,
-    url: "/archive",
-    siteName: site.name,
-    locale: "en_US",
-    type: "website",
-  },
-};
+export const metadata = pageMetadata(
+  "/archive",
+  "Archive",
+  `Replay the last ${ARCHIVE_LIMIT} published ThemeShot daily puzzles. Guess the game from curated screenshots.`,
+);
 
 export default function ArchivePage() {
   const today = getDailyPuzzleDate();

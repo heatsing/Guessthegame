@@ -6,6 +6,7 @@ import { DailyPlay } from "@/components/daily/DailyPlay";
 import { loadBundledCatalog } from "@/lib/catalog/bundled";
 import { resolveReplayPuzzle } from "@/lib/daily/archive";
 import { formatPuzzleDate, getDailyPuzzleDate } from "@/lib/daily/date";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -21,28 +22,12 @@ export async function generateMetadata({
   const puzzle = resolveReplayPuzzle(loadBundledCatalog(), date);
   if (!puzzle) notFound();
 
-  const title = `ThemeShot ${date} — ${site.name}`;
-  const description = `Replay the ${date} ThemeShot daily puzzle. Guess the game from curated screenshots.`;
-
-  return {
-    title,
-    description,
-    robots: {
-      index: false,
-      follow: true,
-    },
-    alternates: {
-      canonical: `/puzzle/${date}`,
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/puzzle/${date}`,
-      siteName: site.name,
-      locale: "en_US",
-      type: "website",
-    },
-  };
+  return pageMetadata(
+    `/puzzle/${date}`,
+    `ThemeShot ${date}`,
+    `Replay the ${date} ThemeShot daily puzzle. Guess the game from curated screenshots.`,
+    { index: false },
+  );
 }
 
 export default async function PuzzlePage({ params }: PuzzlePageProps) {

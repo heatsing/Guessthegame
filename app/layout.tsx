@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import {
+  googleVerification,
+  homeDescription,
+  homeTitle,
+} from "@/lib/seo";
 import { site } from "@/lib/site";
 
 import "./globals.css";
@@ -17,34 +22,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = `${site.name} — ${site.product} | Daily Screenshot Puzzle`;
-const description = `${site.name} is ${site.product}, a daily screenshot puzzle. Guess the game from curated screenshots. Not affiliated with guessthe.game.`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title,
-  description,
+  title: {
+    default: homeTitle,
+    template: `%s — ${site.name}`,
+  },
+  description: homeDescription,
   applicationName: site.name,
   robots: {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    title: `${site.name} — ${site.product}`,
-    description,
-    url: "/",
     siteName: site.name,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: `${site.name} — ${site.product}`,
-    description,
   },
+  verification: googleVerification(),
 };
 
 export const viewport: Viewport = {

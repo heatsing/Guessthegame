@@ -2,7 +2,12 @@ import Link from "next/link";
 
 import { DailyPlay } from "@/components/daily/DailyPlay";
 import { ThemeBadge } from "@/components/themes/ThemeBadge";
+import { homeDescription, homeTitle, pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = pageMetadata("/", homeTitle, homeDescription, {
+  absoluteTitle: true,
+});
 
 export default function Home() {
   return (

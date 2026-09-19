@@ -2,7 +2,7 @@
 
 Daily curated video-game screenshot guessing puzzle.
 
-This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip). `/archive` lists the last ~30 published days; `/puzzle/[YYYY-MM-DD]` replays a day with the same play components. `/themes` and `/themes/[slug]` cover Theme Week. Rules, About, Privacy, Terms, DMCA, and Copyright are static SSR pages (`/how-to-play`, `/about`, `/privacy`, `/terms`, `/dmca`, `/copyright`) linked from the footer.
+This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip). `/archive` lists the last ~30 published days; `/puzzle/[YYYY-MM-DD]` replays a day with the same play components. `/themes` and `/themes/[slug]` cover Theme Week. Rules, About, Privacy, Terms, DMCA, and Copyright are static SSR pages (`/how-to-play`, `/about`, `/privacy`, `/terms`, `/dmca`, `/copyright`) linked from the footer. `/sitemap.xml` is an allowlist of those discovery URLs only — it never includes `/puzzle/*`. `/robots.txt` points crawlers at that sitemap.
 
 - Domain: https://guessthegame.net
 - Product: ThemeShot Daily
@@ -42,6 +42,7 @@ Copy `.env.example` to `.env.local`. There are **no secrets** in this scaffold.
 | Name | Purpose | Example |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical / Open Graph origin | `https://guessthegame.net` |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Optional Search Console HTML-tag token. See [docs/google-search-console.md](docs/google-search-console.md). | *(empty until you verify)* |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Public legal/contact inbox on Privacy, Terms, DMCA, and Copyright. | `legal@guessthegame.net` |
 | `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/`, `/archive`, `/puzzle/[date]`, and `/api/daily`. Leave unset in production. | `2026-01-15` |
 
@@ -90,6 +91,8 @@ Theme weeks (Issue #7) are the MVP differentiator. `data/seed/themes.json` store
 
 SSR info and legal pages (Issue #9) are English, indexable, and readable without JavaScript: `/how-to-play` (rules + FAQ, with FAQ JSON-LD), `/about` (ThemeShot Daily positioning; not affiliated with guessthe.game), `/privacy`, `/terms`, `/dmca`, and `/copyright`. The DMCA page explains how to submit a notice and shows the public contact email (`NEXT_PUBLIC_CONTACT_EMAIL`). The footer links every page and includes a RAWG attribution backlink because the catalog stores RAWG ids. There is no CMS.
 
+Technical SEO (Issue #10) uses the Metadata API on every public page (title, description, Open Graph, Twitter, canonical). `/robots.txt` allows `/` and lists `/sitemap.xml`. The sitemap is generated from published catalog themes plus a fixed hub allowlist (`/`, `/how-to-play`, `/about`, `/archive`, `/themes`, `/themes/[slug]`). Replay URLs under `/puzzle/` stay `noindex,follow` and are never written to the sitemap. Verify the production property with Search Console using [docs/google-search-console.md](docs/google-search-console.md).
+
 ## Catalog (Issue #2)
 
 Versioned puzzle data lives in `data/seed/` (`games`, `game_sources`, `media_assets`, `daily_puzzles`, `themes`). TypeScript + Zod types are in `lib/catalog/`. Seed screenshots are self-hosted placeholders under `public/media/placeholders/` with rights fields filled in — never Steam CDN URLs.
@@ -101,5 +104,6 @@ To schedule a day, follow [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md), 
 - [How to add a daily puzzle](docs/add-daily-puzzle.md)
 - [Catalog validation](docs/catalog-validation.md)
 - [Media rights](docs/media-rights.md)
+- [Google Search Console](docs/google-search-console.md)
 
 Project discovery and strategy live with the ops agent. The first batch of GitHub Issues tracks the MVP build.

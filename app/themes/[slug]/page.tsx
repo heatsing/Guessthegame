@@ -6,7 +6,7 @@ import { connection } from "next/server";
 
 import { loadBundledCatalog } from "@/lib/catalog/bundled";
 import { formatPuzzleDate, getDailyPuzzleDate } from "@/lib/daily/date";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 import { getThemeBySlug, getThemePageCopy } from "@/lib/themes";
 
 export const dynamicParams = false;
@@ -22,25 +22,11 @@ export async function generateMetadata({
   const theme = getThemeBySlug(loadBundledCatalog().themes, slug);
   if (!theme) notFound();
 
-  const title = `${theme.title} — Theme Week | ${site.name}`;
-  const description = theme.description;
-
-  return {
-    title,
-    description,
-    robots: { index: true, follow: true },
-    alternates: { canonical: `/themes/${theme.slug}` },
-    openGraph: {
-      title: `${theme.title} — ${site.product}`,
-      description,
-      url: `/themes/${theme.slug}`,
-    },
-    twitter: {
-      card: "summary",
-      title: `${theme.title} — ${site.product}`,
-      description,
-    },
-  };
+  return pageMetadata(
+    `/themes/${theme.slug}`,
+    `${theme.title} — Theme Week`,
+    theme.description,
+  );
 }
 
 export default async function ThemePage({
