@@ -21,7 +21,8 @@ export function siteOrigin(url: string = site.url): string {
 
 export function absoluteUrl(path: string, origin: string = site.url): string {
   const base = siteOrigin(origin);
-  if (path === "/") return `${base}/`;
+  // Match Next.js metadataBase + canonical "/" → https://guessthegame.net
+  if (path === "/") return base;
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${base}${normalized}`;
 }

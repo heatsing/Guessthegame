@@ -75,7 +75,9 @@ console.log("ok — published themes in, puzzles and legal out");
 const entries = buildSitemapEntries(catalog.themes, origin, "2026-09-19");
 expect(entries.length === paths.length, "one sitemap entry per allowlist path");
 expect(
-  entries.every((entry) => entry.url.startsWith(`${origin}/`)),
+  entries.every(
+    (entry) => entry.url === origin || entry.url.startsWith(`${origin}/`),
+  ),
   "sitemap locs use the site origin",
 );
 expect(
@@ -83,8 +85,8 @@ expect(
   "sitemap locs never include /puzzle",
 );
 expect(
-  entries.some((entry) => entry.url === `${origin}/`),
-  "homepage loc is the origin with trailing slash",
+  entries.some((entry) => entry.url === origin),
+  "homepage loc matches the canonical origin (no trailing slash)",
 );
 expect(
   entries.some((entry) => entry.url === `${origin}/how-to-play`),
@@ -99,7 +101,7 @@ const rule = Array.isArray(robots.rules) ? robots.rules[0] : robots.rules;
 expect(rule?.allow === "/", "robots allows /");
 console.log("ok — robots.txt payload");
 
-expect(absoluteUrl("/") === `${siteOriginFallback()}/`, "home absolute URL");
+expect(absoluteUrl("/") === siteOriginFallback(), "home absolute URL");
 expect(
   absoluteUrl("/archive", origin) === `${origin}/archive`,
   "archive absolute URL",
