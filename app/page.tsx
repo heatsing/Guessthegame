@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { DailyPlay } from "@/components/daily/DailyPlay";
+import { ThemeBadge } from "@/components/themes/ThemeBadge";
 import { site } from "@/lib/site";
 
 export default function Home() {
@@ -19,10 +20,13 @@ export default function Home() {
         {site.resetNote} {site.playNote}
       </p>
 
+      <ThemeBadge />
+
       <noscript>
         <p className="mt-6 rounded-xl border border-white/10 bg-[color:var(--surface)] px-4 py-5 text-sm leading-6 text-[color:var(--muted)]">
           JavaScript is required to play today&apos;s ThemeShot. This page does
-          not include the answer.
+          not include the answer. The current theme name, when a week is
+          active, is still visible above.
         </p>
       </noscript>
 

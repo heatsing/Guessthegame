@@ -31,6 +31,12 @@ export function Header() {
           >
             How to play
           </Link>
+          <Link
+            href="/themes"
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+          >
+            Themes
+          </Link>
           <StatsEntry today={today} />
         </nav>
       </div>

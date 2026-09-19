@@ -52,6 +52,7 @@ function rightsBlockPublishable(asset: MediaAsset): boolean {
  * - `unknown` rights cannot be `approved` (publishable)
  * - scheduled/published puzzles may only reference approved, known-rights assets
  * - Referential integrity + unique ids / puzzle dates
+ * - Theme descriptions are unique; UTC windows do not overlap
  */
 export function validateCatalog(input: unknown): CatalogValidationResult {
   const parsed = CatalogSchema.safeParse(input);
@@ -150,11 +151,41 @@ export function validateCatalog(input: unknown): CatalogValidationResult {
     }
   }
 
+  const descriptionKeys = new Map<string, string>();
   for (const theme of catalog.themes) {
     const path = `themes.${theme.id}`;
     assertNoSteamCdn(issues, `${path}.hero_image`, theme.hero_image);
     if (theme.end_date < theme.start_date) {
       issues.push(issue(`${path}.end_date`, "end_date must be on or after start_date"));
+    }
+    const descKey = theme.description.trim().toLowerCase();
+    const previousId = descriptionKeys.get(descKey);
+    if (previousId) {
+      issues.push(
+        issue(
+          `${path}.description`,
+          `duplicate theme description (same as "${previousId}"); empty-shell copies are forbidden`,
+        ),
+      );
+    } else {
+      descriptionKeys.set(descKey, theme.id);
+    }
+  }
+
+  for (let i = 0; i < catalog.themes.length; i += 1) {
+    const left = catalog.themes[i]!;
+    for (let j = i + 1; j < catalog.themes.length; j += 1) {
+      const right = catalog.themes[j]!;
+      const overlaps =
+        left.start_date <= right.end_date && right.start_date <= left.end_date;
+      if (overlaps) {
+        issues.push(
+          issue(
+            `themes.${left.id}`,
+            `UTC window overlaps "${right.id}" (${left.start_date}–${left.end_date} vs ${right.start_date}–${right.end_date})`,
+          ),
+        );
+      }
     }
   }
 

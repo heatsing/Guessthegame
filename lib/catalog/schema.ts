@@ -146,9 +146,18 @@ export const ThemeSchema = z
   .object({
     id: IdSchema,
     slug: SlugSchema,
+    /** Display name shown on the homepage badge and theme page H1. */
     title: z.string().min(1),
-    description: z.string().min(1),
+    /** Unique paragraph for `/themes/[slug]` — not an empty shell. */
+    description: z
+      .string()
+      .min(
+        80,
+        "theme description must be a unique paragraph, not an empty shell",
+      ),
+    /** Inclusive UTC calendar start (YYYY-MM-DD). */
     start_date: IsoDateSchema,
+    /** Inclusive UTC calendar end (YYYY-MM-DD). */
     end_date: IsoDateSchema,
     hero_image: z.string().min(1),
   })

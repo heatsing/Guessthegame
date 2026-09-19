@@ -26,6 +26,12 @@ export function Footer() {
           >
             Archive
           </Link>
+          <Link
+            href="/themes"
+            className="inline-flex min-h-11 items-center text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+          >
+            Themes
+          </Link>
         </nav>
         <p className="text-xs">Privacy · Terms · DMCA · About — coming soon</p>
       </div>

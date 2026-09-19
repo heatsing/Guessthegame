@@ -9,6 +9,7 @@ Checks:
 3. `unknown` rights marked `can_monetize` or `moderation_status: approved`
 4. Scheduled/published puzzles referencing missing, unapproved, or unknown-rights assets
 5. Duplicate ids / slugs / puzzle dates, and broken foreign keys
-6. Local `public/media/…` files exist and match `checksum`
+6. Theme weeks: unique descriptions (min 80 chars), inclusive UTC windows that do not overlap
+7. Local `public/media/…` files exist and match `checksum`
 
-Types live in `lib/catalog/` (`schema.ts`, `validate.ts`). The homepage loads a day through `@/lib/catalog` (`loadBundledCatalog`) and `@/lib/daily`.
+Types live in `lib/catalog/` (`schema.ts`, `validate.ts`). Theme windows and spoiler-free theme pages live in `lib/themes.ts`. The homepage loads a day through `@/lib/catalog` (`loadBundledCatalog`) and `@/lib/daily`.

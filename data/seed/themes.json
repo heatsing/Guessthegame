@@ -3,9 +3,18 @@
     "id": "t-indie-first-week",
     "slug": "indie-first-week",
     "title": "Indie First Week",
-    "description": "Sample theme week for the seed catalog: curated indie screenshot puzzles. Hero art is brand-safe and is not a puzzle answer.",
+    "description": "Indie First Week is the first curated ThemeShot series on GuessTheGame.net: independently published games, gameplay-first screenshots, and a spoiler-free landing page. Use this week to learn the daily rhythm — six shots, six guesses — without extra modes or answer dumps.",
     "start_date": "2026-01-12",
     "end_date": "2026-01-18",
     "hero_image": "/media/placeholders/theme-indie-week.svg"
+  },
+  {
+    "id": "t-autumn-showcase",
+    "slug": "autumn-showcase",
+    "title": "Autumn Showcase",
+    "description": "Autumn Showcase is a September ThemeShot week about reading a scene, not a logo. Each UTC day adds one curated screenshot puzzle; this page lists only dates that have already published. Titles, covers, and solutions stay off the theme page so you can still play fair.",
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-21",
+    "hero_image": "/media/placeholders/theme-autumn-showcase.svg"
   }
 ]
