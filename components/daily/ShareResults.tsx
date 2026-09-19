@@ -66,7 +66,7 @@ export function ShareResults({ play }: ShareResultsProps) {
       </p>
       <pre
         ref={previewRef}
-        className="mt-3 overflow-x-auto rounded-lg bg-black/30 px-3 py-3 font-mono text-sm leading-6 whitespace-pre-wrap text-[color:var(--foreground)]"
+        className="mt-3 overflow-x-auto rounded-lg bg-[#f4f1ea] px-3 py-3 font-mono text-sm leading-6 whitespace-pre-wrap text-[#0b1020]"
         aria-label="Spoiler-free share text"
         tabIndex={0}
       >
