@@ -27,9 +27,13 @@ Useful scripts:
 npm run lint
 npm run build
 npm start
+npm run validate
+npm test
 ```
 
 `npm run build` must succeed before opening a PR.
+
+`npm run validate` checks the Git-managed catalog in `data/seed/` (schema, rights fields, Steam CDN ban, local media checksums) and exits non-zero on failure. `npm test` asserts the legal seed passes and that a Steam CDN URL or `unknown` publishable/monetizable asset is rejected. See [docs/catalog-validation.md](docs/catalog-validation.md) and [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md).
 
 ## Environment variables
 
@@ -78,6 +82,16 @@ If production DNS is not ready yet, use the Vercel preview URL from the PR to ve
 
 This Issue #1 scaffold does **not** add gameplay, ads, login, or multi-mode navigation.
 
+## Catalog (Issue #2)
+
+Versioned puzzle data lives in `data/seed/` (`games`, `game_sources`, `media_assets`, `daily_puzzles`, `themes`). TypeScript + Zod types are in `lib/catalog/`. Seed screenshots are self-hosted placeholders under `public/media/placeholders/` with rights fields filled in — never Steam CDN URLs.
+
+To schedule a day, follow [docs/add-daily-puzzle.md](docs/add-daily-puzzle.md), then `npm run validate`.
+
 ## Docs
+
+- [How to add a daily puzzle](docs/add-daily-puzzle.md)
+- [Catalog validation](docs/catalog-validation.md)
+- [Media rights](docs/media-rights.md)
 
 Project discovery and strategy live with the ops agent. The first batch of GitHub Issues tracks the MVP build.

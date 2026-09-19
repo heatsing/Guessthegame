@@ -1,0 +1,112 @@
+[
+  {
+    "id": "gs-hades-wikidata",
+    "game_id": "g-hades",
+    "source_system": "wikidata",
+    "source_id": "Q65091671",
+    "source_url": "https://www.wikidata.org/wiki/Q65091671",
+    "raw_payload_ref": "seed/summaries/hades-wikidata.txt",
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-hades-rawg",
+    "game_id": "g-hades",
+    "source_system": "rawg",
+    "source_id": "257342",
+    "source_url": "https://rawg.io/games/hades",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "RAWG metadata within free-tier limits. Page-level attribution + backlink required. RAWG does not grant screenshot rights."
+  },
+  {
+    "id": "gs-hades-steam",
+    "game_id": "g-hades",
+    "source_system": "steam",
+    "source_id": "1145360",
+    "source_url": "https://store.steampowered.com/app/1145360/Hades/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-celeste-wikidata",
+    "game_id": "g-celeste",
+    "source_system": "wikidata",
+    "source_id": "Q47089246",
+    "source_url": "https://www.wikidata.org/wiki/Q47089246",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-celeste-steam",
+    "game_id": "g-celeste",
+    "source_system": "steam",
+    "source_id": "504230",
+    "source_url": "https://store.steampowered.com/app/504230/Celeste/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-stardew-wikidata",
+    "game_id": "g-stardew-valley",
+    "source_system": "wikidata",
+    "source_id": "Q24907531",
+    "source_url": "https://www.wikidata.org/wiki/Q24907531",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-stardew-steam",
+    "game_id": "g-stardew-valley",
+    "source_system": "steam",
+    "source_id": "413150",
+    "source_url": "https://store.steampowered.com/app/413150/Stardew_Valley/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-hollow-wikidata",
+    "game_id": "g-hollow-knight",
+    "source_system": "wikidata",
+    "source_id": "Q29399164",
+    "source_url": "https://www.wikidata.org/wiki/Q29399164",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-hollow-steam",
+    "game_id": "g-hollow-knight",
+    "source_system": "steam",
+    "source_id": "367520",
+    "source_url": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  },
+  {
+    "id": "gs-portal-2-wikidata",
+    "game_id": "g-portal-2",
+    "source_system": "wikidata",
+    "source_id": "Q259914",
+    "source_url": "https://www.wikidata.org/wiki/Q259914",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Wikidata metadata is CC0. Used as the game skeleton only; no media rights implied."
+  },
+  {
+    "id": "gs-portal-2-steam",
+    "game_id": "g-portal-2",
+    "source_system": "steam",
+    "source_id": "620",
+    "source_url": "https://store.steampowered.com/app/620/Portal_2/",
+    "raw_payload_ref": null,
+    "fetched_at": "2026-01-10T00:00:00.000Z",
+    "license_note": "Steam store deep link / AppID only. Do not hotlink or mirror Steam CDN artwork."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p-2026-01-15",
+    "puzzle_date": "2026-01-15",
+    "game_id": "g-hades",
+    "asset_ids": ["m-hades-01", "m-hades-02", "m-hades-03"],
+    "theme_id": "t-indie-first-week",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A roguelike about escaping the underworld."
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "p-2026-01-16",
+    "puzzle_date": "2026-01-16",
+    "game_id": "g-celeste",
+    "asset_ids": ["m-celeste-01", "m-celeste-02"],
+    "theme_id": "t-indie-first-week",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A precision platformer about climbing a mountain."
+      }
+    ],
+    "status": "published"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "t-indie-first-week",
+    "slug": "indie-first-week",
+    "title": "Indie First Week",
+    "description": "Sample theme week for the seed catalog: curated indie screenshot puzzles. Hero art is brand-safe and is not a puzzle answer.",
+    "start_date": "2026-01-12",
+    "end_date": "2026-01-18",
+    "hero_image": "/media/placeholders/theme-indie-week.svg"
+  }
+]
