@@ -83,7 +83,7 @@ If production DNS is not ready yet, use the Vercel preview URL from the PR to ve
 - No ads until rights coverage ≥ 90%
 - No multi-mode / App / UGC in MVP
 
-Daily play (Issue #3) lives on `/`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Ads, login, and extra modes stay out of scope.
+Daily play (Issue #3) lives on `/`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Local stats (Issue #5) live in the same `themeshot.daily.v1` key: played UTC dates, win/loss counts, guess distribution, and a win streak. A loss still counts as played and breaks the win streak. Same-day replay is not counted twice. There is no account, cloud sync, or leaderboard. Ads, login, and extra modes stay out of scope.
 
 ## Catalog (Issue #2)
 
