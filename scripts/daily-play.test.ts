@@ -15,6 +15,12 @@ import {
   createPlayState,
   revealedScreenshotCount,
 } from "../lib/daily/play";
+import {
+  SHARE_EMOJI,
+  SHARE_SITE_NAME,
+  SHARE_URL,
+  buildShareText,
+} from "../lib/daily/share";
 
 function fail(message: string): never {
   console.error(`FAIL: ${message}`);
@@ -108,6 +114,65 @@ expect(
 );
 console.log("ok — date helper");
 
+function expectShareText(text: string, acceptedTitles: readonly string[], label: string) {
+  expect(text.includes(SHARE_SITE_NAME), `${label} includes site name`);
+  expect(text.includes("2026-09-19"), `${label} includes puzzle date`);
+  expect(text.includes(SHARE_URL), `${label} includes guessthegame.net link`);
+  expect(!text.toLowerCase().includes("hades"), `${label} omits the answer title`);
+  for (const title of acceptedTitles) {
+    const needle = title.trim();
+    if (!needle) continue;
+    expect(
+      !text.includes(needle) && !text.toLowerCase().includes(needle.toLowerCase()),
+      `${label} must not include accepted title "${needle}"`,
+    );
+  }
+  expect(!text.includes("Celeste"), `${label} omits typed wrong guesses`);
+  expect(!text.includes("Skip"), `${label} omits skip labels`);
+}
+
+const winShare = buildShareText(play);
+expectShareText(winShare, accepted, "win share");
+expect(winShare.includes(`${SHARE_EMOJI.miss}${SHARE_EMOJI.skip}${SHARE_EMOJI.hit}`), "win grid is miss/skip/hit");
+expect(winShare.includes("3/6"), "win share reports 3/6");
+expect(!winShare.includes("X/6"), "win share does not use X/6");
+console.log("ok — win share text");
+
+const loseShare = buildShareText(lose);
+expectShareText(loseShare, accepted, "lose share");
+expect(
+  loseShare.includes(
+    `${SHARE_EMOJI.skip}${SHARE_EMOJI.skip}${SHARE_EMOJI.skip}${SHARE_EMOJI.skip}${SHARE_EMOJI.skip}${SHARE_EMOJI.skip}`,
+  ),
+  "lose grid is six skips",
+);
+expect(loseShare.includes("X/6"), "lose share reports X/6");
+expect(!/\n6\/6\n/.test(`\n${loseShare}\n`), "lose share does not look like a 6/6 win");
+console.log("ok — lose share text");
+
+let missLose = createPlayState("2026-09-19");
+for (const title of [
+  "Celeste",
+  "Stardew Valley",
+  "Hollow Knight",
+  "Portal 2",
+  "Undertale",
+  "Outer Wilds",
+]) {
+  missLose = applyGuess(missLose, title, accepted);
+}
+expect(missLose.status === "lost", "six misses lose");
+const missShare = buildShareText(missLose);
+expectShareText(missShare, accepted, "miss-lose share");
+expect(
+  missShare.includes(
+    `${SHARE_EMOJI.miss}${SHARE_EMOJI.miss}${SHARE_EMOJI.miss}${SHARE_EMOJI.miss}${SHARE_EMOJI.miss}${SHARE_EMOJI.miss}`,
+  ),
+  "six-miss grid is all misses",
+);
+expect(missShare.includes("X/6"), "six-miss share reports X/6");
+console.log("ok — miss-lose share text");
+
 const spoilerFiles = [
   "app/page.tsx",
   "app/layout.tsx",
@@ -118,6 +183,8 @@ const spoilerFiles = [
   "components/daily/GuessInput.tsx",
   "components/daily/PuzzleBoard.tsx",
   "components/daily/ScreenshotReveal.tsx",
+  "components/daily/ShareResults.tsx",
+  "lib/daily/share.ts",
 ];
 const spoilers = [
   "Hades",

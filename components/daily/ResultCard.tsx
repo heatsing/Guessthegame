@@ -1,14 +1,16 @@
 import type { DailyAnswer } from "@/lib/daily/load-puzzle";
-import type { PlayStatus } from "@/lib/daily/play";
+import type { PlayState } from "@/lib/daily/play";
+
+import { ShareResults } from "./ShareResults";
 
 type ResultCardProps = {
-  status: Exclude<PlayStatus, "playing">;
+  play: PlayState;
   answer: DailyAnswer;
-  guessCount: number;
 };
 
-export function ResultCard({ status, answer, guessCount }: ResultCardProps) {
-  const won = status === "won";
+export function ResultCard({ play, answer }: ResultCardProps) {
+  const won = play.status === "won";
+  const guessCount = play.guesses.length;
 
   return (
     <section
@@ -59,6 +61,7 @@ export function ResultCard({ status, answer, guessCount }: ResultCardProps) {
           </a>
         </p>
       ) : null}
+      <ShareResults play={play} />
     </section>
   );
 }

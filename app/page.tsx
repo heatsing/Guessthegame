@@ -39,6 +39,7 @@ export default function Home() {
           </li>
           <li>A wrong guess or Skip reveals the next shot — up to six.</li>
           <li>You have six guesses. A new puzzle arrives at 00:00 UTC.</li>
+          <li>Copy a spoiler-free result when you finish — no title in the share text.</li>
         </ol>
       </section>
     </main>
