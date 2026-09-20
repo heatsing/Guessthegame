@@ -1,0 +1,4 @@
+# Copy to `.dev.vars` for `npm run preview` (Wrangler local).
+# NEXTJS_ENV selects which Next.js `.env*` files OpenNext loads.
+# It defaults to "production" when unset.
+NEXTJS_ENV=development

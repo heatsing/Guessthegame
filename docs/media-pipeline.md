@@ -128,13 +128,14 @@ The catalog is bundled at build time. Removing a still from production means:
 
 1. Commit the JSON rewrite + quarantine move
 2. Push / merge to `main`
-3. Wait for the **production** Vercel deploy
+3. Wait for the **production** Cloudflare Workers deploy (`guessthegame`)
 
 Typical window: a few minutes after the production deploy succeeds. Preview
-URLs update on the PR deploy only. Until production is live, the previous
-bundle can still serve the old `/media/…` file. If a CDN edge still has the
-object after deploy, purge that path; Vercel production deploys normally
-replace the asset graph with the new build.
+URLs update on the non-production Workers version only. Until production is
+live, the previous bundle can still serve the old `/media/…` file. If a CDN
+edge still has the object after deploy, purge that path in Cloudflare
+(**Caching → Configuration → Purge Cache**); a new Workers deploy replaces
+the asset graph with the new build.
 
 Do not wait on a 24–72h ticket queue for an in-repo still — the script plus
 deploy is the 5-minute path.
