@@ -8,6 +8,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv --include-runtime false cloudflare-env.d.ts",
     "start": "next start",
     "lint": "eslint",
     "validate": "tsx scripts/validate-catalog.ts",
@@ -15,6 +19,7 @@
     "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts && tsx scripts/archive.test.ts && tsx scripts/themes.test.ts && tsx scripts/legal-pages.test.ts && tsx scripts/seo.test.ts && tsx scripts/takedown-media.test.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
     "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -29,6 +34,7 @@
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.135.0"
   }
 }

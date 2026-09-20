@@ -34,8 +34,14 @@ yarn-error.log*
 .env*
 !.env.example
 
-# vercel
+# vercel (legacy local CLI state; production is Cloudflare Workers)
 .vercel
+
+# cloudflare / opennext
+.open-next
+.wrangler
+.dev.vars
+
 
 # typescript
 *.tsbuildinfo

@@ -41,7 +41,7 @@ export default function PrivacyPage() {
       <h2>Cookies and similar storage</h2>
       <p>
         This MVP does not use advertising cookies or a marketing pixel. The
-        host (for example Vercel) may set strictly necessary cookies to operate
+        host (for example Cloudflare) may set strictly necessary cookies to operate
         the site. localStorage is used only for daily play state and stats on
         this device.
       </p>

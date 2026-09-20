@@ -19,11 +19,12 @@ Use a **URL-prefix** property for `https://guessthegame.net` (apex). After `www`
    <meta name="google-site-verification" content="AbCDeF..." />
    ```
 
-3. In Vercel (Production): **Settings → Environment Variables**.
+3. In Cloudflare: Worker **guessthegame** → **Settings → Build** → **Build variables and secrets** (and the same names under runtime **Variables and Secrets** if you set them there too).
    - Name: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
    - Value: that token (no quotes).
    - Also set `NEXT_PUBLIC_SITE_URL=https://guessthegame.net` if it is not already set.
-4. Redeploy Production so `app/layout.tsx` can emit the meta tag.
+   - `NEXT_PUBLIC_*` is inlined at `next build` time, so a rebuild is required after changing it.
+4. Redeploy production (push to `main` or retry the Workers Build) so `app/layout.tsx` can emit the meta tag.
 5. View-source the homepage and confirm `<meta name="google-site-verification" content="...">` is present.
 6. Back in Search Console, click **Verify**.
 
@@ -39,7 +40,7 @@ Locally you can put the same variable in `.env.local`. Do not commit the token.
 ### 3. DNS TXT
 
 1. Choose **Domain** property (`guessthegame.net`) or the DNS method on a URL-prefix property.
-2. Add the TXT record Google shows at the registrar (same place as the Vercel A / CNAME records).
+2. Add the TXT record Google shows in the Cloudflare zone **DNS → Records** (same zone as the Worker custom domain).
 3. Wait for DNS, then verify.
 
 ## Submit the sitemap
