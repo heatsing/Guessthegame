@@ -50,6 +50,10 @@ expect(paths.includes("/themes/indie-first-week"), "published indie theme");
 expect(paths.includes("/themes/hearth-harvest"), "published hearth theme");
 expect(paths.includes("/themes/labyrinth-logic"), "published labyrinth theme");
 expect(paths.includes("/themes/far-roads"), "published far-roads theme");
+expect(paths.includes("/themes/lantern-season"), "published lantern-season theme");
+expect(paths.includes("/themes/glass-routes"), "published glass-routes theme");
+expect(paths.includes("/themes/hearth-and-holly"), "published hearth-and-holly theme");
+expect(paths.includes("/themes/year-in-review"), "published year-in-review theme");
 expect(
   paths.every((path) => !isPuzzlePath(path)),
   "sitemap paths exclude /puzzle/*",
