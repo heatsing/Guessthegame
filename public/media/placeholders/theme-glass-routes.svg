@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Theme week placeholder">
+  <rect width="1280" height="720" fill="hsl(205, 38%, 12%)"/>
+  <rect x="240" y="180" width="220" height="220" fill="none" stroke="hsl(190, 62%, 62%)" stroke-width="8"/>
+  <rect x="300" y="240" width="220" height="220" fill="none" stroke="hsl(190, 62%, 62%)" stroke-width="8" stroke-opacity="0.7"/>
+  <rect x="760" y="200" width="280" height="160" fill="hsl(190, 62%, 62%)" fill-opacity="0.18"/>
+  <rect x="48" y="48" width="1184" height="624" fill="none" stroke="hsl(190, 24%, 90%)" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="640" y="500" text-anchor="middle" fill="hsl(190, 24%, 92%)" font-family="Georgia, serif" font-size="48">Theme week</text>
+  <text x="640" y="548" text-anchor="middle" fill="hsl(190, 14%, 72%)" font-family="ui-sans-serif, sans-serif" font-size="22">Glass Routes - brand art, not a puzzle answer</text>
+  <text x="640" y="640" text-anchor="middle" fill="hsl(190, 14%, 68%)" font-family="ui-sans-serif, sans-serif" font-size="16">GuessTheGame.net seed placeholder - self-hosted - not Steam CDN</text>
+</svg>

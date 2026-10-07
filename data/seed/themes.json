@@ -43,5 +43,41 @@
     "start_date": "2026-10-22",
     "end_date": "2026-11-16",
     "hero_image": "/media/placeholders/theme-far-roads.svg"
+  },
+  {
+    "id": "t-lantern-season",
+    "slug": "lantern-season",
+    "title": "Lantern Season",
+    "description": "Lantern Season is a late-autumn ThemeShot stretch about rooms you keep warm and towns you tend as the daylight shortens. Each UTC day adds one curated still; this page lists only dates that have already opened. Titles and solutions stay off the page so you can still play fair.",
+    "start_date": "2026-11-17",
+    "end_date": "2026-12-01",
+    "hero_image": "/media/placeholders/theme-lantern-season.svg"
+  },
+  {
+    "id": "t-glass-routes",
+    "slug": "glass-routes",
+    "title": "Glass Routes",
+    "description": "Glass Routes is a ThemeShot week about machines, rooms, and spatial jokes you have to read slowly. Each UTC day is one curated still from a clever world, not a cover and not a title card. This page lists only dates that have already opened. Solutions never appear here.",
+    "start_date": "2026-12-02",
+    "end_date": "2026-12-16",
+    "hero_image": "/media/placeholders/theme-glass-routes.svg"
+  },
+  {
+    "id": "t-hearth-and-holly",
+    "slug": "hearth-and-holly",
+    "title": "Hearth & Holly",
+    "description": "Hearth and Holly is the winter holiday ThemeShot week: bright gatherings, quiet mornings, and the long nights between them. Read the scene, not a logo. Dates show up only after they publish. Solutions stay off this page so the day is still fair to play.",
+    "start_date": "2026-12-17",
+    "end_date": "2026-12-31",
+    "hero_image": "/media/placeholders/theme-hearth-and-holly.svg"
+  },
+  {
+    "id": "t-year-in-review",
+    "slug": "year-in-review",
+    "title": "Year in Review",
+    "description": "Year in Review is a new-year ThemeShot window about landmark worlds across eras and platforms, played as stills rather than a ranking of winners. This page names the UTC range and the dates that have already opened. It never prints an answer, a cover, or a solution.",
+    "start_date": "2027-01-01",
+    "end_date": "2027-01-15",
+    "hero_image": "/media/placeholders/theme-year-in-review.svg"
   }
 ]

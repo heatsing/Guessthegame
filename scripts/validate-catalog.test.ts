@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { readSeedCatalog } from "../lib/catalog/load";
+import { getPlayableDaily } from "../lib/daily/load-puzzle";
 import {
   validateLicenseArchives,
   validateLocalMediaFiles,
@@ -231,6 +232,101 @@ if (
   fail("launch-window shots must have known rights");
 }
 console.log("ok — four launch themes cover the 60-day UTC window");
+
+const EXT_START = "2026-11-17";
+const EXT_END = "2027-01-15";
+const extensionDates = [];
+for (let cursor = EXT_START; cursor <= EXT_END; cursor = shiftUtc(cursor, 1)) {
+  extensionDates.push(cursor);
+}
+if (extensionDates.length < 60) fail(`extension shorter than 60 days (${extensionDates.length})`);
+if (extensionDates[0] !== EXT_START || extensionDates.at(-1) !== EXT_END) {
+  fail("extension bounds drifted");
+}
+
+const gamesById = new Map(catalog.games.map((game) => [game.id, game]));
+const extDiff = { easy: 0, med: 0, hard: 0 };
+const extYears = [];
+const extPlatforms = new Set();
+for (const date of extensionDates) {
+  const puzzle = byDate.get(date);
+  if (!puzzle) fail(`missing extension puzzle ${date}`);
+  if (puzzle.status !== "published" && puzzle.status !== "scheduled") {
+    fail(`${date} must be published or scheduled, got ${puzzle.status}`);
+  }
+  if (!getPlayableDaily(catalog, date)) {
+    fail(`${date} does not resolve through getPlayableDaily (/api/daily)`);
+  }
+  const game = gamesById.get(puzzle.game_id);
+  if (!game) fail(`${date} missing game ${puzzle.game_id}`);
+  if (game.aliases.en.length === 0 || game.aliases.zh.length === 0 || game.aliases.ja.length === 0) {
+    fail(`${game.id} needs EN, ZH, and JA aliases`);
+  }
+  extDiff[puzzle.difficulty] += 1;
+  extYears.push(game.release_year);
+  for (const platform of game.platforms) extPlatforms.add(platform);
+  const covering = catalog.themes.filter(
+    (theme) => theme.start_date <= date && date <= theme.end_date,
+  );
+  if (covering.length !== 1) {
+    fail(`${date} must sit in exactly one theme window, got ${covering.length}`);
+  }
+  if (puzzle.theme_id !== covering[0]?.id) {
+    fail(`${date} theme_id ${puzzle.theme_id} does not match ${covering[0]?.id}`);
+  }
+}
+
+if (extDiff.easy < 20 || extDiff.med < 18 || extDiff.hard < 6) {
+  fail(`extension difficulty is unbalanced: ${JSON.stringify(extDiff)}`);
+}
+if (Math.min(...extYears) > 2012 || Math.max(...extYears) < 2022) {
+  fail("extension answers should span early-2010s through 2022+");
+}
+for (const platform of ["PC", "Nintendo Switch", "PlayStation 4"]) {
+  if (!extPlatforms.has(platform)) fail(`extension missing platform ${platform}`);
+}
+
+const lastSeen = new Map();
+const ordered = [...catalog.daily_puzzles].sort((a, b) =>
+  a.puzzle_date < b.puzzle_date ? -1 : 1,
+);
+for (const puzzle of ordered) {
+  const prev = lastSeen.get(puzzle.game_id);
+  if (prev) {
+    const gap = (() => {
+      const [ay, am, ad] = prev.split("-").map(Number);
+      const [by, bm, bd] = puzzle.puzzle_date.split("-").map(Number);
+      return Math.round(
+        (Date.UTC(by, (bm ?? 1) - 1, bd ?? 1) - Date.UTC(ay, (am ?? 1) - 1, ad ?? 1)) /
+          86400000,
+      );
+    })();
+    if (gap < 30) {
+      fail(`${puzzle.game_id} repeats within 30 days (${prev} -> ${puzzle.puzzle_date}, gap ${gap})`);
+    }
+  }
+  lastSeen.set(puzzle.game_id, puzzle.puzzle_date);
+}
+console.log(
+  `ok — ${extensionDates.length} UTC days ${EXT_START} through ${EXT_END} resolve via getPlayableDaily`,
+);
+
+const extensionThemes = [
+  { id: "t-lantern-season", slug: "lantern-season", start: "2026-11-17", end: "2026-12-01" },
+  { id: "t-glass-routes", slug: "glass-routes", start: "2026-12-02", end: "2026-12-16" },
+  { id: "t-hearth-and-holly", slug: "hearth-and-holly", start: "2026-12-17", end: "2026-12-31" },
+  { id: "t-year-in-review", slug: "year-in-review", start: "2027-01-01", end: "2027-01-15" },
+];
+for (const expected of extensionThemes) {
+  const theme = catalog.themes.find((row) => row.id === expected.id);
+  if (!theme) fail(`missing extension theme ${expected.id}`);
+  if (theme.slug !== expected.slug) fail(`${expected.id} slug mismatch`);
+  if (theme.start_date !== expected.start || theme.end_date !== expected.end) {
+    fail(`${expected.id} window mismatch`);
+  }
+  if (theme.description.length < 80) fail(`${expected.id} description too short`);
+}
+console.log("ok — four extension themes cover 2026-11-17 through 2027-01-15");
 
 function listSvgFiles(dir: string): string[] {
   const out: string[] = [];

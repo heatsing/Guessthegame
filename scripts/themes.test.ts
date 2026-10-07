@@ -85,6 +85,11 @@ expect(
 );
 expect(getActiveTheme(catalog.themes, "2026-01-15")?.slug === "indie-first-week", "January window");
 expect(getActiveTheme(catalog.themes, "2026-06-01") === null, "gap month has no theme");
+expect(getActiveTheme(catalog.themes, "2026-11-16")?.slug === "far-roads", "Far Roads still ends the launch block");
+expect(getActiveTheme(catalog.themes, "2026-11-17")?.slug === "lantern-season", "Lantern Season starts the extension");
+expect(getActiveTheme(catalog.themes, "2026-12-02")?.slug === "glass-routes", "Glass Routes window");
+expect(getActiveTheme(catalog.themes, "2026-12-25")?.slug === "hearth-and-holly", "Hearth and Holly covers the holiday");
+expect(getActiveTheme(catalog.themes, "2027-01-15")?.slug === "year-in-review", "Year in Review closes the extension");
 console.log("ok — UTC instant boundaries + hide badge when none");
 
 const autumnOn19 = getThemePageCopy(catalog, "autumn-showcase", "2026-09-19");
@@ -145,7 +150,7 @@ expect(
   "English UTC range label",
 );
 expect(
-  listThemesNewestFirst(catalog.themes)[0]?.slug === "far-roads",
+  listThemesNewestFirst(catalog.themes)[0]?.slug === "year-in-review",
   "list newest start_date first",
 );
 console.log("ok — English labels + list order");

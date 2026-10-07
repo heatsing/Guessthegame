@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Theme week placeholder">
+  <rect width="1280" height="720" fill="hsl(252, 28%, 12%)"/>
+  <rect x="220" y="170" width="70" height="70" fill="none" stroke="hsl(44, 70%, 62%)" stroke-width="6"/>
+  <rect x="310" y="170" width="70" height="70" fill="hsl(44, 70%, 62%)" fill-opacity="0.28"/>
+  <rect x="400" y="170" width="70" height="70" fill="none" stroke="hsl(44, 70%, 62%)" stroke-width="6"/>
+  <rect x="220" y="260" width="70" height="70" fill="hsl(44, 70%, 62%)" fill-opacity="0.18"/>
+  <rect x="310" y="260" width="70" height="70" fill="none" stroke="hsl(44, 70%, 62%)" stroke-width="6"/>
+  <rect x="400" y="260" width="70" height="70" fill="hsl(44, 70%, 62%)" fill-opacity="0.4"/>
+  <circle cx="960" cy="280" r="90" fill="none" stroke="hsl(44, 70%, 62%)" stroke-width="8"/>
+  <rect x="48" y="48" width="1184" height="624" fill="none" stroke="hsl(44, 24%, 90%)" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="640" y="500" text-anchor="middle" fill="hsl(44, 24%, 92%)" font-family="Georgia, serif" font-size="48">Theme week</text>
+  <text x="640" y="548" text-anchor="middle" fill="hsl(40, 14%, 74%)" font-family="ui-sans-serif, sans-serif" font-size="22">Year in Review - brand art, not a puzzle answer</text>
+  <text x="640" y="640" text-anchor="middle" fill="hsl(40, 12%, 68%)" font-family="ui-sans-serif, sans-serif" font-size="16">GuessTheGame.net seed placeholder - self-hosted - not Steam CDN</text>
+</svg>

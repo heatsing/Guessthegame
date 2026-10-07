@@ -1098,5 +1098,1087 @@
       }
     ],
     "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-17",
+    "puzzle_date": "2026-11-17",
+    "game_id": "g-stardew-valley",
+    "asset_ids": [
+      "m-stardew-01"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A farming calendar about seasons, townsfolk, and the crops you water by hand."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-18",
+    "puzzle_date": "2026-11-18",
+    "game_id": "g-spiritfarer",
+    "asset_ids": [
+      "m-spiritfarer-01",
+      "m-spiritfarer-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A management journey about caring for spirits on a boat you keep improving."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-19",
+    "puzzle_date": "2026-11-19",
+    "game_id": "g-animal-crossing-new-horizons",
+    "asset_ids": [
+      "m-animal-crossing-new-horizons-01",
+      "m-animal-crossing-new-horizons-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An island life sim about decorating, paying off a tent, and visiting neighbors."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-20",
+    "puzzle_date": "2026-11-20",
+    "game_id": "g-coffee-talk",
+    "asset_ids": [
+      "m-coffee-talk-01",
+      "m-coffee-talk-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A visual novel about serving drinks and listening to late-night regulars."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-21",
+    "puzzle_date": "2026-11-21",
+    "game_id": "g-unpacking",
+    "asset_ids": [
+      "m-unpacking-01",
+      "m-unpacking-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A quiet puzzle about placing belongings into the rooms of a life."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-22",
+    "puzzle_date": "2026-11-22",
+    "game_id": "g-valheim",
+    "asset_ids": [
+      "m-valheim-01",
+      "m-valheim-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A Norse survival sandbox about raising a hall and sailing a longship."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-23",
+    "puzzle_date": "2026-11-23",
+    "game_id": "g-slime-rancher",
+    "asset_ids": [
+      "m-slime-rancher-01",
+      "m-slime-rancher-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A ranching adventure about corralling colorful blobs on a far-off range."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-24",
+    "puzzle_date": "2026-11-24",
+    "game_id": "g-dont-starve",
+    "asset_ids": [
+      "m-dont-starve-01",
+      "m-dont-starve-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A gothic survival game about hunger, darkness, and lasting through the cold."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-25",
+    "puzzle_date": "2026-11-25",
+    "game_id": "g-minecraft",
+    "asset_ids": [
+      "m-minecraft-01",
+      "m-minecraft-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A block sandbox about mining, crafting, and surviving your first night."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-26",
+    "puzzle_date": "2026-11-26",
+    "game_id": "g-factorio",
+    "asset_ids": [
+      "m-factorio-01",
+      "m-factorio-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A factory builder about belts, automation, and defending what you assemble."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-27",
+    "puzzle_date": "2026-11-27",
+    "game_id": "g-terraria",
+    "asset_ids": [
+      "m-terraria-01",
+      "m-terraria-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A 2D sandbox about digging down, building shelter, and crossing biomes."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-28",
+    "puzzle_date": "2026-11-28",
+    "game_id": "g-the-sims-4",
+    "asset_ids": [
+      "m-the-sims-4-01",
+      "m-the-sims-4-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A life simulator about households, careers, and the rooms you furnish."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-29",
+    "puzzle_date": "2026-11-29",
+    "game_id": "g-cities-skylines",
+    "asset_ids": [
+      "m-cities-skylines-01",
+      "m-cities-skylines-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A city builder about traffic, zoning, and keeping services ahead of growth."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-11-30",
+    "puzzle_date": "2026-11-30",
+    "game_id": "g-a-short-hike",
+    "asset_ids": [
+      "m-a-short-hike-01",
+      "m-a-short-hike-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A brief exploration game about climbing a park trail and helping people along it."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-01",
+    "puzzle_date": "2026-12-01",
+    "game_id": "g-powerwash-simulator",
+    "asset_ids": [
+      "m-powerwash-simulator-01",
+      "m-powerwash-simulator-02"
+    ],
+    "theme_id": "t-lantern-season",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A cleaning simulator about spraying grime off vehicles, yards, and facades."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-02",
+    "puzzle_date": "2026-12-02",
+    "game_id": "g-portal-2",
+    "asset_ids": [
+      "m-portal-2-ph-01",
+      "m-portal-2-ph-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A first-person puzzle about linked doorways, gels, and a sarcastic facility."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-03",
+    "puzzle_date": "2026-12-03",
+    "game_id": "g-the-witness",
+    "asset_ids": [
+      "m-the-witness-01",
+      "m-the-witness-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-island puzzle about line drawings on panels set into the landscape."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-04",
+    "puzzle_date": "2026-12-04",
+    "game_id": "g-monument-valley",
+    "asset_ids": [
+      "m-monument-valley-01",
+      "m-monument-valley-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A perspective puzzle about impossible architecture and a silent walk."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-05",
+    "puzzle_date": "2026-12-05",
+    "game_id": "g-superliminal",
+    "asset_ids": [
+      "m-superliminal-01",
+      "m-superliminal-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A first-person puzzle about picking objects up to change how large they are."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-06",
+    "puzzle_date": "2026-12-06",
+    "game_id": "g-tetris-effect",
+    "asset_ids": [
+      "m-tetris-effect-01",
+      "m-tetris-effect-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A falling-block puzzle wrapped in music, color, and a trance-like stage."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-07",
+    "puzzle_date": "2026-12-07",
+    "game_id": "g-the-talos-principle",
+    "asset_ids": [
+      "m-the-talos-principle-01",
+      "m-the-talos-principle-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A philosophical puzzle about lasers, tools, and recordings left in ruined gardens."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-08",
+    "puzzle_date": "2026-12-08",
+    "game_id": "g-baba-is-you",
+    "asset_ids": [
+      "m-baba-is-you-01",
+      "m-baba-is-you-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A puzzle where the rules written on the floor are blocks you can push."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-09",
+    "puzzle_date": "2026-12-09",
+    "game_id": "g-return-of-the-obra-dinn",
+    "asset_ids": [
+      "m-return-of-the-obra-dinn-01",
+      "m-return-of-the-obra-dinn-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A deduction mystery about a doomed ship's crew, told through frozen moments."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-10",
+    "puzzle_date": "2026-12-10",
+    "game_id": "g-mini-motorways",
+    "asset_ids": [
+      "m-mini-motorways-01",
+      "m-mini-motorways-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A minimal strategy game about drawing roads so tiny cars reach the right color."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-11",
+    "puzzle_date": "2026-12-11",
+    "game_id": "g-pikmin-4",
+    "asset_ids": [
+      "m-pikmin-4-01",
+      "m-pikmin-4-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A strategy adventure about directing tiny plant-like helpers to carry treasure home."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-12",
+    "puzzle_date": "2026-12-12",
+    "game_id": "g-hollow-knight",
+    "asset_ids": [
+      "m-hollow-knight-01"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A subterranean action-adventure about a silent knight in a ruined insect kingdom."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-13",
+    "puzzle_date": "2026-12-13",
+    "game_id": "g-hades",
+    "asset_ids": [
+      "m-hades-01",
+      "m-hades-02",
+      "m-hades-03",
+      "m-hades-04",
+      "m-hades-05",
+      "m-hades-06"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A roguelike about fighting upward out of the underworld, one run at a time."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-14",
+    "puzzle_date": "2026-12-14",
+    "game_id": "g-disco-elysium",
+    "asset_ids": [
+      "m-disco-elysium-01",
+      "m-disco-elysium-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A dialogue RPG about a wrecked detective rebuilding a case in a divided city."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-15",
+    "puzzle_date": "2026-12-15",
+    "game_id": "g-crosscode",
+    "asset_ids": [
+      "m-crosscode-01",
+      "m-crosscode-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An action RPG styled like a 16-bit online world, with elemental puzzles in the dungeons."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-16",
+    "puzzle_date": "2026-12-16",
+    "game_id": "g-patricks-parabox",
+    "asset_ids": [
+      "m-patricks-parabox-01",
+      "m-patricks-parabox-02"
+    ],
+    "theme_id": "t-glass-routes",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A recursive puzzle about boxes that contain copies of the room you are already in."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-17",
+    "puzzle_date": "2026-12-17",
+    "game_id": "g-overcooked-2",
+    "asset_ids": [
+      "m-overcooked-2-01",
+      "m-overcooked-2-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A co-op kitchen game about chopping, cooking, and not missing the serving window."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-18",
+    "puzzle_date": "2026-12-18",
+    "game_id": "g-katamari-damacy-reroll",
+    "asset_ids": [
+      "m-katamari-damacy-reroll-01",
+      "m-katamari-damacy-reroll-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A joyful rolling game about gathering clutter into an ever-larger ball."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-19",
+    "puzzle_date": "2026-12-19",
+    "game_id": "g-untitled-goose-game",
+    "asset_ids": [
+      "m-untitled-goose-game-01",
+      "m-untitled-goose-game-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A stealth comedy about a troublesome bird completing a to-do list in a village."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-20",
+    "puzzle_date": "2026-12-20",
+    "game_id": "g-super-mario-odyssey",
+    "asset_ids": [
+      "m-super-mario-odyssey-01",
+      "m-super-mario-odyssey-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A 3D platformer about tossing a living hat across a string of kingdoms."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-21",
+    "puzzle_date": "2026-12-21",
+    "game_id": "g-kirby-and-the-forgotten-land",
+    "asset_ids": [
+      "m-kirby-and-the-forgotten-land-01",
+      "m-kirby-and-the-forgotten-land-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A 3D platformer about inhaling foes in a ruined world beyond a quiet city."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-22",
+    "puzzle_date": "2026-12-22",
+    "game_id": "g-super-mario-bros-wonder",
+    "asset_ids": [
+      "m-super-mario-bros-wonder-01",
+      "m-super-mario-bros-wonder-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A side-scrolling platformer about pipes, power-ups, and stages that transform."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-23",
+    "puzzle_date": "2026-12-23",
+    "game_id": "g-marvels-spider-man",
+    "asset_ids": [
+      "m-marvels-spider-man-01",
+      "m-marvels-spider-man-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-city action game about swinging between towers and stopping street crime."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-24",
+    "puzzle_date": "2026-12-24",
+    "game_id": "g-persona-5-royal",
+    "asset_ids": [
+      "m-persona-5-royal-01",
+      "m-persona-5-royal-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A stylish RPG about a crew of thieves who steal hearts, on a calendar that runs through winter."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-25",
+    "puzzle_date": "2026-12-25",
+    "game_id": "g-celeste",
+    "asset_ids": [
+      "m-celeste-01",
+      "m-celeste-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A precision platformer about climbing a mountain and the voice that says you cannot."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-26",
+    "puzzle_date": "2026-12-26",
+    "game_id": "g-gorogoa",
+    "asset_ids": [
+      "m-gorogoa-01",
+      "m-gorogoa-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A hand-illustrated puzzle about arranging panels so separate scenes connect."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-27",
+    "puzzle_date": "2026-12-27",
+    "game_id": "g-ori-and-the-blind-forest",
+    "asset_ids": [
+      "m-ori-and-the-blind-forest-01",
+      "m-ori-and-the-blind-forest-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A cinematic platformer about a small spirit of light moving through a wounded forest."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-28",
+    "puzzle_date": "2026-12-28",
+    "game_id": "g-ori-and-the-will-of-the-wisps",
+    "asset_ids": [
+      "m-ori-and-the-will-of-the-wisps-01",
+      "m-ori-and-the-will-of-the-wisps-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A cinematic platformer sequel about a glowing guardian crossing a marsh of light."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-29",
+    "puzzle_date": "2026-12-29",
+    "game_id": "g-god-of-war-2018",
+    "asset_ids": [
+      "m-god-of-war-2018-01",
+      "m-god-of-war-2018-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A Norse action adventure about a father and child crossing realms by boat and axe."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-30",
+    "puzzle_date": "2026-12-30",
+    "game_id": "g-horizon-zero-dawn",
+    "asset_ids": [
+      "m-horizon-zero-dawn-01",
+      "m-horizon-zero-dawn-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-world hunt through a future wilderness populated by machine creatures."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2026-12-31",
+    "puzzle_date": "2026-12-31",
+    "game_id": "g-skyrim",
+    "asset_ids": [
+      "m-skyrim-01",
+      "m-skyrim-02"
+    ],
+    "theme_id": "t-hearth-and-holly",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-world fantasy about dragons, shouts, and a cold province you can wander for hours."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-01",
+    "puzzle_date": "2027-01-01",
+    "game_id": "g-zelda-breath-of-the-wild",
+    "asset_ids": [
+      "m-zelda-breath-of-the-wild-01",
+      "m-zelda-breath-of-the-wild-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-world adventure about climbing every cliff and cooking what you forage."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-02",
+    "puzzle_date": "2027-01-02",
+    "game_id": "g-zelda-tears-of-the-kingdom",
+    "asset_ids": [
+      "m-zelda-tears-of-the-kingdom-01",
+      "m-zelda-tears-of-the-kingdom-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A sky-and-depths sequel about building devices and dropping back to the ground."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-03",
+    "puzzle_date": "2027-01-03",
+    "game_id": "g-firewatch",
+    "asset_ids": [
+      "m-firewatch-01",
+      "m-firewatch-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A first-person walk through a western wilderness with a radio as your only company."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-04",
+    "puzzle_date": "2027-01-04",
+    "game_id": "g-uncharted-4",
+    "asset_ids": [
+      "m-uncharted-4-01",
+      "m-uncharted-4-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A cinematic adventure about cliffside set pieces and a long partnership of thieves."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-05",
+    "puzzle_date": "2027-01-05",
+    "game_id": "g-ghost-of-tsushima",
+    "asset_ids": [
+      "m-ghost-of-tsushima-01",
+      "m-ghost-of-tsushima-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-world samurai story about storms, duels, and following the wind."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-06",
+    "puzzle_date": "2027-01-06",
+    "game_id": "g-red-dead-redemption-2",
+    "asset_ids": [
+      "m-red-dead-redemption-2-01",
+      "m-red-dead-redemption-2-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "easy",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An open-world western about a gang on the run and a slow, detailed camp life."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-07",
+    "puzzle_date": "2027-01-07",
+    "game_id": "g-outer-wilds",
+    "asset_ids": [
+      "m-outer-wilds-01",
+      "m-outer-wilds-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "hard",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A time-loop exploration of a tiny solar system you learn by reading and flying."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-08",
+    "puzzle_date": "2027-01-08",
+    "game_id": "g-subnautica",
+    "asset_ids": [
+      "m-subnautica-01",
+      "m-subnautica-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "An underwater survival game about diving deeper and building a base beneath the waves."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-09",
+    "puzzle_date": "2027-01-09",
+    "game_id": "g-no-mans-sky",
+    "asset_ids": [
+      "m-no-mans-sky-01",
+      "m-no-mans-sky-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A procedural space game about hopping planets and cataloging what you find."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-10",
+    "puzzle_date": "2027-01-10",
+    "game_id": "g-death-stranding",
+    "asset_ids": [
+      "m-death-stranding-01",
+      "m-death-stranding-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A delivery adventure about walking cargo across a fractured, rain-soaked landscape."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-11",
+    "puzzle_date": "2027-01-11",
+    "game_id": "g-elden-ring",
+    "asset_ids": [
+      "m-elden-ring-01",
+      "m-elden-ring-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A vast action RPG about a tarnished wanderer crossing a continent of demigods."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-12",
+    "puzzle_date": "2027-01-12",
+    "game_id": "g-sea-of-stars",
+    "asset_ids": [
+      "m-sea-of-stars-01",
+      "m-sea-of-stars-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A turn-based RPG about two solstice heroes and timed hits in pixel-art battles."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-13",
+    "puzzle_date": "2027-01-13",
+    "game_id": "g-eastward",
+    "asset_ids": [
+      "m-eastward-01",
+      "m-eastward-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A story RPG about a digger and a girl traveling through strange towns."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-14",
+    "puzzle_date": "2027-01-14",
+    "game_id": "g-xenoblade-chronicles-3",
+    "asset_ids": [
+      "m-xenoblade-chronicles-3-01",
+      "m-xenoblade-chronicles-3-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A large JRPG about soldiers from opposing nations and a world that runs on a timer."
+      }
+    ],
+    "status": "scheduled"
+  },
+  {
+    "id": "p-2027-01-15",
+    "puzzle_date": "2027-01-15",
+    "game_id": "g-final-fantasy-xiv",
+    "asset_ids": [
+      "m-final-fantasy-xiv-01",
+      "m-final-fantasy-xiv-02"
+    ],
+    "theme_id": "t-year-in-review",
+    "difficulty": "med",
+    "hints": [
+      {
+        "after_wrong_guesses": 3,
+        "text": "A long-running online RPG about a warrior of light and an ever-growing set of realms."
+      }
+    ],
+    "status": "scheduled"
   }
 ]

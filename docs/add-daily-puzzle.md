@@ -116,3 +116,16 @@ Four Theme Weeks cover that window (inclusive UTC, no overlaps). Indie First Wee
 - [ ] **Before AdSense:** swap every launch-window still for a real press-kit / written-permission file. Do not claim placeholders are licensed press kits.
 
 January `m-hades-pk-01` is a pipeline-demo press-kit path, not a publisher grant.
+
+## 7. Extension window (Issue #28)
+
+UTC **2026-11-17** through **2027-01-15** (60 days) continues the same seed schema. Each answer from the launch rotation returns once, never inside 30 days of its previous date. Stills reuse the existing self-hosted placeholders (`can_monetize: false`).
+
+| Theme | Slug | UTC range |
+| --- | --- | --- |
+| Lantern Season | `lantern-season` | 2026-11-17 – 2026-12-01 |
+| Glass Routes | `glass-routes` | 2026-12-02 – 2026-12-16 |
+| Hearth & Holly | `hearth-and-holly` | 2026-12-17 – 2026-12-31 |
+| Year in Review | `year-in-review` | 2027-01-01 – 2027-01-15 |
+
+`/puzzle/*` stays `noindex`. Confirm the range with `npm test` (every date resolves through `getPlayableDaily`, the same loader `/api/daily` uses).
