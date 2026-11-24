@@ -53,9 +53,8 @@ export default function HowToPlayPage() {
         <h2>Tips</h2>
         <ul>
           <li>
-            Play on{" "}
-            <Link href="/">today&apos;s puzzle</Link> first. Archive dates use
-            the same six-shot, six-guess loop.
+            Pick a date from the <Link href="/archive">Archive</Link>. Each
+            puzzle uses the same six-shot, six-guess loop.
           </li>
           <li>
             Skip spends a guess. Use it when another screenshot will help more

@@ -59,7 +59,7 @@ export default async function PuzzlePage({ params }: PuzzlePageProps) {
           href="/"
           className="inline-flex min-h-11 items-center font-medium text-[color:var(--accent)] underline-offset-4 hover:underline"
         >
-          Today&apos;s puzzle
+          All guessing games
         </Link>
         <Link
           href="/archive"

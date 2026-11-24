@@ -36,11 +36,8 @@ export default function AboutPage() {
         by the people behind guessthe.game.
       </p>
       <p>
-        The domain, product name, and loop are different. We use{" "}
-        <strong>GuessTheGame.net</strong> as the site name and{" "}
-        <strong>ThemeShot Daily</strong> as the product: one press-kit-style
-        screenshot puzzle per UTC day, with self-hosted images and recorded
-        rights fields.
+        {site.name} publishes <strong>{site.product}</strong>, a press-kit-style
+        screenshot puzzle with self-hosted images and recorded rights fields.
       </p>
       <p>{site.disclaimer}</p>
 
@@ -61,8 +58,8 @@ export default function AboutPage() {
 
       <h2>How to play</h2>
       <p>
-        Full rules and FAQ: <Link href="/how-to-play">How to play</Link>. Play{" "}
-        <Link href="/">today&apos;s ThemeShot</Link>.
+        Read the <Link href="/how-to-play">rules and FAQ</Link> or find a
+        ThemeShot in the <Link href="/archive">Archive</Link>.
       </p>
     </StaticPage>
   );

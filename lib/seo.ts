@@ -12,8 +12,9 @@ export const SITEMAP_STATIC_PATHS = [
   "/themes",
 ] as const;
 
-export const homeTitle = `${site.name} — ${site.product} | Daily Screenshot Puzzle`;
-export const homeDescription = `${site.name} is ${site.product}, a daily screenshot puzzle. Guess the game from curated screenshots. Not affiliated with guessthe.game.`;
+export const homeTitle = `Online Guessing Games | ${site.name}`;
+export const homeDescription =
+  "Play online guessing games with written clues. Guess a movie or book title, estimate a real-world measurement, or solve a yes-or-no logic puzzle.";
 
 export function siteOrigin(url: string = site.url): string {
   return url.replace(/\/+$/, "");

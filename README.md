@@ -1,8 +1,10 @@
-# GuessTheGame.net (ThemeShot Daily)
+# Guess the Game
 
-Daily curated video-game screenshot guessing puzzle.
+Online guessing games based on written clues and reasoning.
 
-This repository ships [https://guessthegame.net](https://guessthegame.net): brand chrome plus the daily ThemeShot play loop on `/` (up to 6 screenshots, 6 guesses, Skip). `/archive` lists the last ~30 published days; `/puzzle/[YYYY-MM-DD]` replays a day with the same play components. `/themes` and `/themes/[slug]` cover Theme Week. Rules, About, Privacy, Terms, DMCA, and Copyright are static SSR pages (`/how-to-play`, `/about`, `/privacy`, `/terms`, `/dmca`, `/copyright`) linked from the footer. `/sitemap.xml` is an allowlist of those discovery URLs only — it never includes `/puzzle/*`. `/robots.txt` points crawlers at that sitemap.
+The home page at [guessthegame.net](https://guessthegame.net) renders the four game entries on each request. Edit [lib/guessing-games.ts](lib/guessing-games.ts) to add or reorder cards. The four game pages are planned for the next phase.
+
+ThemeShot Daily puzzles are available through `/archive`, which lists the last 30 published days, and `/puzzle/[YYYY-MM-DD]`, which opens a playable day. The ThemeShot footer links to the rules, about, and legal pages. `/themes` and `/themes/[slug]` list the themed weeks.
 
 - Domain: https://guessthegame.net
 - Product: ThemeShot Daily
@@ -19,7 +21,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). You should see **GuessTheGame.net**, **ThemeShot Daily**, and today's puzzle (or **Puzzle not ready** if that UTC date has no seed).
+Open [http://localhost:3000](http://localhost:3000) to see the **Guess the Game** home page and its four game cards.
 
 Useful scripts:
 
@@ -48,7 +50,7 @@ Copy `.env.example` to `.env.local`. There are **no secrets** in this scaffold.
 | `NEXT_PUBLIC_SITE_URL` | Canonical / Open Graph origin | `https://guessthegame.net` |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Optional Search Console HTML-tag token. See [docs/google-search-console.md](docs/google-search-console.md). | *(empty until you verify)* |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Public legal/contact inbox on Privacy, Terms, DMCA, and Copyright. | `legal@guessthegame.net` |
-| `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/`, `/archive`, `/puzzle/[date]`, and `/api/daily`. Leave unset in production. | `2026-01-15` |
+| `DAILY_PUZZLE_DATE` | Optional UTC `YYYY-MM-DD` override for `/archive`, `/puzzle/[date]`, and `/api/daily`. Leave unset in production. | `2026-01-15` |
 
 `.env.local` is gitignored. Do not commit API keys.
 
@@ -149,9 +151,9 @@ If you would rather not use Redirect Rules, attach a **separate** tiny Worker (o
 - No ads until rights coverage ≥ 90%
 - No multi-mode / App / UGC in MVP
 
-Daily play (Issue #3) lives on `/`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Local stats (Issue #5) live in the same `themeshot.daily.v1` key: played UTC dates, win/loss counts, guess distribution, and a win streak. A loss still counts as played and breaks the win streak. Same-day replay is not counted twice. The archive hub (Issue #8) is `/archive` (indexable) and lists the last 30 already-open published days. `/puzzle/[YYYY-MM-DD]` reuses Daily play to replay a day and is `noindex,follow`. Future, unpublished, and invalid dates 404. Played dates are marked from localStorage.
+ThemeShot daily play (Issue #3) is available from `/archive`. Issue #4 adds catalog autocomplete on the guess field (titles plus EN/ZH/JA aliases, no external search). The answer is loaded in the browser after JavaScript runs so no-JS HTML does not contain the title. After a finished run, the result card offers a spoiler-free Wordle-style share (Issue #6): site name, puzzle date, emoji grid, score, and `https://guessthegame.net` — never the game title. Local stats (Issue #5) live in the same `themeshot.daily.v1` key: played UTC dates, win/loss counts, guess distribution, and a win streak. A loss still counts as played and breaks the win streak. Same-day replay is not counted twice. The archive hub (Issue #8) is `/archive` (indexable) and lists the last 30 already-open published days. `/puzzle/[YYYY-MM-DD]` reuses Daily play to replay a day and is `noindex,follow`. Future, unpublished, and invalid dates 404. Played dates are marked from localStorage.
 
-Theme weeks (Issue #7) are the MVP differentiator. `data/seed/themes.json` stores `slug`, display name, unique description, and inclusive UTC `start_date` / `end_date`. The homepage shows a compact **This week's theme** badge (hidden when no window covers the current UTC day). `/themes` is a minimal list; `/themes/[slug]` is a server-rendered, indexable page with unique copy and published puzzle dates — never the answers. The first launch block is Autumn Showcase, Hearth & Harvest, Labyrinth Logic, and Far Roads (Issue #12). The next block is Lantern Season, Glass Routes, Hearth & Holly, and Year in Review (Issue #28), covering UTC 2026-11-17 through 2027-01-15. There is no account, cloud sync, or leaderboard. Ads, login, and extra modes stay out of scope.
+Theme weeks (Issue #7) are the MVP differentiator. `data/seed/themes.json` stores `slug`, display name, unique description, and inclusive UTC `start_date` / `end_date`. `/themes` is a minimal list; `/themes/[slug]` is a server-rendered, indexable page with unique copy and published puzzle dates — never the answers. The first launch block is Autumn Showcase, Hearth & Harvest, Labyrinth Logic, and Far Roads (Issue #12). The next block is Lantern Season, Glass Routes, Hearth & Holly, and Year in Review (Issue #28), covering UTC 2026-11-17 through 2027-01-15. There is no account, cloud sync, or leaderboard. Ads, login, and extra modes stay out of scope.
 
 SSR info and legal pages (Issue #9) are English, indexable, and readable without JavaScript: `/how-to-play` (rules + FAQ, with FAQ JSON-LD), `/about` (ThemeShot Daily positioning; not affiliated with guessthe.game), `/privacy`, `/terms`, `/dmca`, and `/copyright`. The DMCA page explains how to submit a notice and shows the public contact email (`NEXT_PUBLIC_CONTACT_EMAIL`). The footer links every page and includes a RAWG attribution backlink because the catalog stores RAWG ids. There is no CMS.
 

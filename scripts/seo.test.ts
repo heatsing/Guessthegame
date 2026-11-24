@@ -10,6 +10,8 @@ import {
   buildRobots,
   buildSitemapEntries,
   googleVerification,
+  homeDescription,
+  homeTitle,
   isPuzzlePath,
   listSitemapPaths,
   pageMetadata,
@@ -124,18 +126,18 @@ function siteOriginFallback(): string {
 
 const homeMeta = pageMetadata(
   "/",
-  "GuessTheGame.net — ThemeShot Daily | Daily Screenshot Puzzle",
-  "A daily screenshot puzzle.",
+  homeTitle,
+  homeDescription,
   { absoluteTitle: true },
 );
 expect(
   typeof homeMeta.title === "object" &&
     homeMeta.title !== null &&
     "absolute" in homeMeta.title &&
-    homeMeta.title.absolute.includes("GuessTheGame.net"),
+    homeMeta.title.absolute === "Online Guessing Games | Guess the Game",
   "home title is absolute and includes the brand",
 );
-expect(homeMeta.description?.includes("screenshot"), "home description");
+expect(homeMeta.description?.includes("written clues"), "home description");
 expect(homeMeta.alternates?.canonical === "/", "home canonical");
 expect(homeMeta.robots !== undefined, "home robots");
 if (homeMeta.robots && typeof homeMeta.robots === "object") {

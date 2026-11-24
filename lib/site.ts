@@ -1,5 +1,5 @@
 export const site = {
-  name: "GuessTheGame.net",
+  name: "Guess the Game",
   product: "ThemeShot Daily",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://guessthegame.net",
   tagline:

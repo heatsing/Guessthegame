@@ -44,8 +44,8 @@ for (const href of requiredHrefs) {
   expect(existsSync(file), `${file} exists`);
 }
 expect(
-  footerNav.some((item) => item.href === "/" && item.label === "Today"),
-  "footer still links Today",
+  footerNav.some((item) => item.href === "/" && item.label === "Home"),
+  "footer links to the home page",
 );
 expect(
   footerNav.some((item) => item.href === "/archive"),

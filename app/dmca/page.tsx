@@ -46,9 +46,8 @@ export default function DmcaPage() {
       </ol>
       <p>
         Include the exact URL of the screenshot or page (for example a{" "}
-        <Link href="/">daily</Link> or <Link href="/archive">archive</Link>{" "}
-        path). Describe the work you own. We cannot act on a vague complaint
-        with no locator.
+        <Link href="/archive">ThemeShot archive</Link> path). Describe the work
+        you own. We cannot act on a vague complaint with no locator.
       </p>
       <p>
         Knowingly misrepresenting that material is infringing may expose you to

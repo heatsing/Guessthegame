@@ -100,7 +100,7 @@ export default async function ThemePage({
           href="/"
           className="inline-flex min-h-11 items-center font-medium text-[color:var(--accent)] no-underline hover:underline"
         >
-          Play today&apos;s puzzle
+          All guessing games
         </Link>
         <Link
           href="/archive"
