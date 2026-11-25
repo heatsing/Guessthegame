@@ -34,9 +34,15 @@
 }
 
 .main {
-  width: min(calc(100% - 40px), 680px);
+  width: min(calc(100% - 40px), 880px);
   margin-inline: auto;
-  padding-block: clamp(1.65rem, 5vw, 3.35rem) 3rem;
+  padding-block: clamp(1.65rem, 5vw, 3.2rem) clamp(3rem, 7vw, 5rem);
+}
+
+.play {
+  max-width: 640px;
+  margin-inline: auto;
+  scroll-margin-top: 1rem;
 }
 
 .title {
@@ -48,10 +54,8 @@
   letter-spacing: -0.035em;
 }
 
-.section {
-  margin-top: 2rem;
-  padding-top: 1.45rem;
-  border-top: 1px solid var(--rule);
+.questionFilters {
+  margin-top: 0.55rem;
 }
 
 .filters {
@@ -59,7 +63,7 @@
   flex-wrap: wrap;
   align-items: end;
   gap: 0.7rem;
-  margin-top: 1rem;
+  padding-bottom: 0.25rem;
 }
 
 .filters label {
@@ -83,48 +87,194 @@
   cursor: pointer;
 }
 
-.section h2 {
-  margin-bottom: 0.65rem;
-  font-size: 1.25rem;
+.guide {
+  margin-top: clamp(2.8rem, 8vw, 6rem);
+  padding-top: clamp(1.65rem, 4vw, 2.4rem);
+  border-top: 1px solid var(--rule);
+}
+
+.guideIntro h2,
+.guide h3 {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.guideIntro h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+}
+
+.guide h3 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  scroll-margin-top: 1.25rem;
+}
+
+.guide p,
+.rules ol,
+.faq dd {
+  max-width: 69ch;
+  color: var(--muted-ink);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.guideNav {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: clamp(1rem, 3vw, 2rem);
+  margin-block: 1.3rem 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.guideNav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 44px;
+  color: var(--navy);
+  font-size: 0.925rem;
+  font-weight: 620;
+  text-underline-offset: 0.2em;
+}
+
+.guideNav a:hover {
+  text-decoration: underline;
+}
+
+.returnLink span {
+  font-size: 1.05em;
+}
+
+.rules {
+  padding: clamp(1rem, 3vw, 1.55rem);
+  border: 1px solid #dce3e9;
+  border-radius: 0.8rem;
+  background: #f0f4f7;
+}
+
+.rules ol {
+  padding-left: 1.4rem;
+  list-style: decimal;
+}
+
+.rules li {
+  padding-left: 0.28rem;
+}
+
+.rules li::marker {
+  color: var(--navy);
   font-weight: 650;
 }
 
-.section p {
-  color: var(--muted-ink);
-  font-size: 1rem;
-  line-height: 1.65;
+.rules li + li,
+.guideSection p + p {
+  margin-top: 0.65rem;
+}
+
+.guideSection,
+.related {
+  margin-top: clamp(1.85rem, 5vw, 3.25rem);
 }
 
 .example {
-  margin-top: 0.8rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 0.6rem;
-  background: #edf1f5;
+  padding: clamp(1rem, 3vw, 1.4rem);
+  border: 1px solid var(--rule);
+  border-left: 3px solid #607893;
+  border-radius: 0.55rem;
+  background: #fff;
 }
 
-.example summary {
-  min-height: 32px;
+.example .examplePrompt {
+  color: var(--ink);
+  font-size: 1.075rem;
+  font-weight: 550;
+}
+
+.exampleAnswer summary,
+.questionFilters summary {
+  min-height: 44px;
+  padding-block: 0.65rem;
   color: var(--navy);
+  font-size: 0.925rem;
   font-weight: 600;
   cursor: pointer;
 }
 
+.exampleAnswer {
+  margin-top: 0.25rem;
+}
+
+.exampleAnswer strong {
+  color: var(--navy);
+}
+
+.faq > div {
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq > div:first-child {
+  padding-top: 0.2rem;
+}
+
+.faq dt {
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+  font-weight: 650;
+}
+
 .related {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.2rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid var(--rule);
+}
+
+.related ul {
+  display: grid;
+  gap: 0.7rem;
 }
 
 .related a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.55rem;
   color: var(--navy);
+}
+
+.related a:hover {
+  border-color: #9baabb;
+  background: #f0f4f7;
+}
+
+.related strong {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.related span {
+  color: var(--muted-ink);
+  font-size: 0.925rem;
+  line-height: 1.5;
 }
 
 .page :is(a, summary, select, button):focus-visible {
   outline: 2px solid var(--outline);
   outline-offset: 3px;
+}
+
+@media (min-width: 42rem) {
+  .returnLink {
+    margin-left: auto;
+  }
+
+  .related ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

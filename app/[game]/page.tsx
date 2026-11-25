@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { connection } from "next/server";
 
 import { GamePlayer } from "@/components/play/GamePlayer";
+import { gameGuides } from "@/lib/play/game-guides";
 import { findPlayGame, playGames } from "@/lib/play/games";
 import { loadGame } from "@/lib/play/service";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
+import { GameGuide } from "./GameGuide";
 import styles from "./game-page.module.css";
 
 export const viewport: Viewport = {
@@ -53,51 +55,40 @@ export default async function GamePage({ params, searchParams }: PageProps<"/[ga
       </header>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>{config.name}</h1>
-        <GamePlayer
-          key={JSON.stringify([config.slug, selection.topic, selection.difficulty])}
-          game={config}
-          initialRound={round}
-          selection={selection}
-        />
+        <section className={styles.play} id="play" aria-labelledby="game-title" tabIndex={-1}>
+          <h1 className={styles.title} id="game-title">{config.name}</h1>
+          <GamePlayer
+            key={JSON.stringify([config.slug, selection.topic, selection.difficulty])}
+            gameSlug={config.slug}
+            initialRound={round}
+            selection={selection}
+          />
 
-        <form className={styles.filters} action={`/${config.slug}`} aria-label="Choose questions">
-          {topics.length > 1 && (
-            <label>
-              Topic
-              <select name="topic" defaultValue={selection.topic ?? ""}>
-                <option value="">All topics</option>
-                {topics.map((entry) => <option key={entry.slug} value={entry.slug}>{entry.name}</option>)}
-              </select>
-            </label>
-          )}
-          <label>
-            Difficulty
-            <select name="difficulty" defaultValue={selection.difficulty ?? ""}>
-              <option value="">Any difficulty</option>
-              {difficulties.map((level) => <option key={level} value={level}>{level[0].toUpperCase() + level.slice(1)}</option>)}
-            </select>
-          </label>
-          <button type="submit">Apply</button>
-        </form>
-
-        <section className={styles.section} aria-labelledby="rules">
-          <h2 id="rules">How to play</h2>
-          <p>{config.rule}</p>
-          <details className={styles.example}>
-            <summary>Example</summary>
-            <p>{config.example}</p>
+          <details className={styles.questionFilters} open={Boolean(selection.topic || selection.difficulty)}>
+            <summary>Question filters</summary>
+            <form className={styles.filters} action={`/${config.slug}`} aria-label="Choose questions">
+              {topics.length > 1 && (
+                <label>
+                  Topic
+                  <select name="topic" defaultValue={selection.topic ?? ""}>
+                    <option value="">All topics</option>
+                    {topics.map((entry) => <option key={entry.slug} value={entry.slug}>{entry.name}</option>)}
+                  </select>
+                </label>
+              )}
+              <label>
+                Difficulty
+                <select name="difficulty" defaultValue={selection.difficulty ?? ""}>
+                  <option value="">Any difficulty</option>
+                  {difficulties.map((level) => <option key={level} value={level}>{level[0].toUpperCase() + level.slice(1)}</option>)}
+                </select>
+              </label>
+              <button type="submit">Apply</button>
+            </form>
           </details>
         </section>
 
-        <nav className={styles.section} aria-labelledby="related">
-          <h2 id="related">Related games</h2>
-          <ul className={styles.related} role="list">
-            {related.map((entry) => (
-              <li key={entry.slug}><Link href={`/${entry.slug}`}>{entry.name}</Link></li>
-            ))}
-          </ul>
-        </nav>
+        <GameGuide guide={gameGuides[config.slug]} related={related} />
       </main>
     </div>
   );

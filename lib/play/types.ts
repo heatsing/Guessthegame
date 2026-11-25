@@ -7,7 +7,6 @@ export type PlayGame = {
   title: string;
   description: string;
   rule: string;
-  example: string;
 };
 
 export type Source = { label: string; url: string };

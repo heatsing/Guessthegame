@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
-import type { PlayGame, PlayResult, PublicRound } from "@/lib/play/types";
+import type { PlayResult, PublicRound } from "@/lib/play/types";
 
 import styles from "./GamePlayer.module.css";
 import { newRoundState, readRoundSession, saveRoundSession, type RoundState } from "./session";
@@ -57,16 +57,16 @@ function displayAnswer(value: PlayResult["answer"], unit?: string) {
 }
 
 export function GamePlayer({
-  game,
+  gameSlug,
   initialRound,
   selection,
 }: {
-  game: PlayGame;
+  gameSlug: string;
   initialRound: PublicRound | null;
   selection?: { topic?: string; difficulty?: string };
 }) {
   const { topic, difficulty } = selection ?? {};
-  const gameKey = `guess-the-game:play:v1:${game.slug}`;
+  const gameKey = `guess-the-game:play:v1:${gameSlug}`;
   const storageKey = topic || difficulty
     ? `${gameKey}:${JSON.stringify([topic ?? "", difficulty ?? ""])}`
     : gameKey;
@@ -101,7 +101,7 @@ export function GamePlayer({
       current.current.round?.id === round.id && epoch.current === startedAt;
 
     try {
-      const resumed = await request<ResumeResponse>(game.slug, "resume", {
+      const resumed = await request<ResumeResponse>(gameSlug, "resume", {
         roundId: round.id,
         sessionId: sessionId.current,
       });
@@ -122,7 +122,7 @@ export function GamePlayer({
         save({ ...current.current, expired: true });
       }
     }
-  }, [game.slug, save]);
+  }, [gameSlug, save]);
 
   useEffect(() => {
     let mounted = true;
@@ -152,13 +152,13 @@ export function GamePlayer({
   }, [state, notice, pending]);
 
   const requestNext = useCallback((snapshot: RoundState, prefetch: boolean) =>
-    request<{ round: PublicRound }>(game.slug, "next", {
+    request<{ round: PublicRound }>(gameSlug, "next", {
       recentQuestionIds: snapshot.recentQuestionIds,
       sessionId: sessionId.current,
       prefetch,
       ...(topic ? { topic } : {}),
       ...(difficulty ? { difficulty } : {}),
-    }).then(({ round }) => round), [difficulty, game.slug, topic]);
+    }).then(({ round }) => round), [difficulty, gameSlug, topic]);
 
   useEffect(() => {
     if (!state.round || !state.result || state.expired || preload.current?.source === state.round.id) return;
@@ -202,7 +202,7 @@ export function GamePlayer({
 
       const identity = { roundId: round.id, revision: round.revision, sessionId: sessionId.current };
       if (action === "hint") {
-        const response = await request<HintResponse>(game.slug, "hint", {
+        const response = await request<HintResponse>(gameSlug, "hint", {
           ...identity,
           hintCount: snapshot.hints.length,
         });
@@ -225,7 +225,7 @@ export function GamePlayer({
         return;
       }
 
-      const response = await request<CheckResponse>(game.slug, action,
+      const response = await request<CheckResponse>(gameSlug, action,
         action === "check" ? { ...identity, guess } : identity,
       );
       if (!latest()) return;
