@@ -40,7 +40,7 @@
 .main {
   width: min(calc(100% - 40px), 880px);
   margin-inline: auto;
-  padding-block: clamp(1.65rem, 5vw, 3.2rem) clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.65rem, 5vw, 3.2rem);
 }
 
 .play {

@@ -37,8 +37,7 @@
   font-size: 0.9375rem;
 }
 
-.header a,
-.footer a {
+.header a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -331,8 +330,7 @@
 .topicLink:hover strong,
 .article summary:hover .articleTitle,
 .header a:hover,
-.jumpBar a:hover,
-.footer a:hover {
+.jumpBar a:hover {
   text-decoration: underline;
   text-underline-offset: 0.17em;
 }
@@ -340,27 +338,6 @@
 .page :is(a, button, summary):focus-visible {
   outline: 2px solid var(--outline);
   outline-offset: 3px;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
-  padding-block: 0.2rem 0.75rem;
-  border-top: 1px solid #b6c0cd;
-  color: var(--navy);
-  text-align: center;
-}
-
-.footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0 1rem;
-  color: var(--muted-ink);
-  font-size: 0.875rem;
 }
 
 @media (min-width: 37rem) {

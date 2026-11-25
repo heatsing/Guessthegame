@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { connection } from "next/server";
 
 import { Brand } from "@/components/Brand";
+import { SiteFooter } from "@/components/SiteFooter";
 import { GamePlayer } from "@/components/play/GamePlayer";
 import { gameGuides } from "@/lib/play/game-guides";
 import { findPlayGame, playGames } from "@/lib/play/games";
@@ -91,6 +92,7 @@ export default async function GamePage({ params, searchParams }: PageProps<"/[ga
 
         <GameGuide guide={gameGuides[config.slug]} related={related} />
       </main>
+      <SiteFooter />
     </div>
   );
 }

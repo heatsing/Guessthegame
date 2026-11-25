@@ -1,9 +1,9 @@
 import type { Viewport } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { connection } from "next/server";
 
 import { Brand } from "@/components/Brand";
+import { SiteFooter } from "@/components/SiteFooter";
 import { QuickGuess } from "@/components/home/QuickGuess";
 import { quickGuessExampleCount } from "@/components/home/quick-guess-examples";
 import { guessingGames } from "@/lib/guessing-games";
@@ -14,7 +14,6 @@ import {
   topicPicks,
   type HomeGuide,
 } from "@/lib/home-guides";
-import { legalNav } from "@/lib/legal/nav";
 import { isPlayablePath } from "@/lib/play/games";
 import { homeDescription, homeTitle, pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -295,14 +294,7 @@ export default async function Home({ searchParams }: PageProps<"/">) {
         </section>
       </main>
 
-      <footer className={`${styles.container} ${styles.footer}`}>
-        <Brand className={styles.brand} />
-        <nav aria-label="Footer">
-          {legalNav.map(({ href, label }) => (
-            <Link href={href} key={href}>{label}</Link>
-          ))}
-        </nav>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
