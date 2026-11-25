@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
-import { canAdvanceAfter, currentResult, sizeRule } from "@/lib/play/result";
+import { canAdvanceAfter, canRevealAndContinue, currentResult, sizeRule } from "@/lib/play/result";
 import { PASS_ACCURACY, type PlayResult, type PlayRetry, type PublicRound } from "@/lib/play/types";
 
 import styles from "./GamePlayer.module.css";
@@ -43,7 +43,7 @@ const resultTitles: Record<PlayResult["outcome"], string> = {
   correct: "Correct!",
   assisted: "Correct with a hint!",
   revealed: "Answer revealed",
-  skipped: "Book skipped",
+  skipped: "Question skipped",
   within: "Level passed",
   low: "Below range",
   high: "Above range",
@@ -403,7 +403,7 @@ export function GamePlayer({
             )}
             {round.answerType === "title" && (
               <button className={styles.textButton} type="button" disabled={waiting} onClick={() => void act("reveal")}>
-                {pending?.action === "reveal" ? "Revealing…" : isBook ? "Reveal answer" : "Show answer and end run"}
+                {pending?.action === "reveal" ? "Revealing…" : canRevealAndContinue(gameSlug) ? "Reveal answer" : "Show answer and end run"}
               </button>
             )}
           </div>

@@ -40,6 +40,8 @@ for (const guess of ["Finding Nemo 2", "Finding Nemo2", "Finding Nemo-2", "Findi
   assert.equal(rejected.status === "retry" && rejected.message, "Check the sequel number.");
 }
 assert.equal(gradeAnswer(movie, "Findng Nemo", 0).status, "settled");
+const movieSkip = revealTitle(movie);
+assert.ok(movieSkip.status === "settled" && movieSkip.result.outcome === "skipped" && canAdvanceAfter(movieSkip.result));
 assert.equal(withResultAccuracy(movie, {
   outcome: "correct", accuracy: 85.71, answer: "Finding Nemo", guess: "Finding Nemo 2", explanation: "", sources: [],
 }).accuracy, 85.71);

@@ -24,7 +24,7 @@ export const gameGuides = {
     steps: [
       "Read the clue and pick out a detail that narrows the possible titles.",
       "Enter the film title and select Submit guess to see how closely it matches.",
-      "Select Next Question once your accuracy is above 80%. You can edit your title or use an available hint and try again.",
+      "Edit your title or use an available hint. Choose Reveal answer to skip the clue and continue, or score above 80% to solve it.",
     ],
     example: {
       prompt: "A television weather reporter travels to a small town for a winter celebration. The morning of the event keeps repeating. What’s the film?",
@@ -120,6 +120,41 @@ export const gameGuides = {
       {
         question: "What happens if I use a hint or reveal the answer?",
         answer: "A hint adds another clue and leaves the question open. Show answer and end run displays the word and explanation. You can then start a new run at Question 1.",
+      },
+    ],
+  },
+  "guess-the-plant": {
+    heading: "Identify a plant from written clues",
+    introduction: "Read a short description and use details such as leaf shape, growth habit, and habitat to narrow your guess. The clue tells you whether to enter a common name, a genus, or a scientific species name. Submit your answer to see how closely the spelling matches.",
+    steps: [
+      "Read the whole clue and check the requested name format.",
+      "Type the plant name and select Submit guess to see its accuracy from 0% to 100%.",
+      "Score above 80% to unlock Next Question. At 80% or below, edit your guess or use an available hint.",
+    ],
+    example: {
+      prompt: "Give the English common name. This tree loses its leaves each year. Its broad leaves open like fans and often have a notch in the outer edge. The veins fork as they spread from the stalk, and the leaves turn gold before they fall. What tree is it?",
+      answer: "Ginkgo",
+      explanation: "The fan-shaped leaves and branching veins point to ginkgo, also called the maidenhair tree. The notch in the leaf and the gold autumn color support the identification.",
+    },
+    strategy: {
+      heading: "Start with the most distinctive trait",
+      paragraphs: [
+        "Notice how the plant grows. It may climb, spread in a low patch, or grow upright. Then look for a more specific feature, such as the shape of the leaves or whether they grow opposite one another.",
+        "Use the habitat to narrow your choices, then check each candidate against the other clues. An unusual leaf shape or the way flowers are grouped can be more useful than a color shared by many plants.",
+      ],
+    },
+    questions: [
+      {
+        question: "Should I use the common name or scientific name?",
+        answer: "Follow the format in the clue. Enter one word when asked for the genus. Enter both words when asked for a scientific species name, such as Ginkgo biloba.",
+      },
+      {
+        question: "Will another spelling or common name count?",
+        answer: "The exact answer and listed alternatives score 100%. Other guesses are scored by spelling similarity. A score above 80% advances the run.",
+      },
+      {
+        question: "Can I use a hint or reveal the plant?",
+        answer: "You can use up to two hints and keep guessing. Show answer and end run reveals the plant name and explanation. You can then start another run from Question 1.",
       },
     ],
   },

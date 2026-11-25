@@ -1,14 +1,18 @@
 import Link from "next/link";
 
+import { blogPath, posts } from "@/lib/blog";
 import type { GameGuideContent } from "@/lib/play/game-guides";
 import type { PlayGame } from "@/lib/play/types";
 
 import styles from "./game-page.module.css";
 
-export function GameGuide({ guide, related }: {
+export function GameGuide({ guide, related, slug }: {
+  slug: string;
   guide: GameGuideContent;
   related: readonly PlayGame[];
 }) {
+  const post = posts.find((entry) => entry.game === slug);
+
   return (
     <article className={styles.guide} aria-labelledby="game-guide">
       <header className={styles.guideIntro}>
@@ -19,7 +23,7 @@ export function GameGuide({ guide, related }: {
       <nav className={styles.guideNav} aria-label="On this page">
         <a href="#rules">How to play</a>
         <a href="#example">Example</a>
-        <a href="#tips">Tips</a>
+        {post ? <Link href={blogPath(post)}>Strategy guide</Link> : <a href="#tips">Tips</a>}
         <a href="#faq">FAQ</a>
         <a className={styles.returnLink} href="#play">Back to game <span aria-hidden="true">↑</span></a>
       </nav>
@@ -43,10 +47,12 @@ export function GameGuide({ guide, related }: {
         </div>
       </section>
 
-      <section className={styles.guideSection} aria-labelledby="tips">
-        <h3 id="tips">{guide.strategy.heading}</h3>
-        {guide.strategy.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-      </section>
+      {!post && (
+        <section className={styles.guideSection} aria-labelledby="tips">
+          <h3 id="tips">{guide.strategy.heading}</h3>
+          {guide.strategy.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </section>
+      )}
 
       <section className={styles.guideSection} aria-labelledby="faq">
         <h3 id="faq">Frequently asked questions</h3>

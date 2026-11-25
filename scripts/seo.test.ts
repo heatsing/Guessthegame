@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
+import { blogPath, posts } from "../lib/blog";
 import {
   absoluteUrl,
   buildRobots,
@@ -16,6 +17,7 @@ const gamePaths = [
   "/guess-the-movie",
   "/guess-the-book",
   "/guess-the-word",
+  "/guess-the-plant",
   "/guess-the-size",
   "/yes-or-no",
 ];
@@ -23,7 +25,7 @@ const gamePaths = [
 const urls = buildSitemapEntries(origin).map(({ url }) => url);
 assert.deepEqual(
   urls,
-  ["/", "/how-to-play", "/about", ...gamePaths].map((path) => absoluteUrl(path, origin)),
+  ["/", "/how-to-play", "/about", "/blog", ...gamePaths, ...posts.map(blogPath)].map((path) => absoluteUrl(path, origin)),
 );
 assert.equal(new Set(urls).size, urls.length);
 assert.equal(absoluteUrl("/", origin + "/"), origin);

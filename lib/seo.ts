@@ -1,5 +1,6 @@
 import type { Metadata, MetadataRoute } from "next";
 
+import { blogPath, posts } from "@/lib/blog";
 import { playGames } from "@/lib/play/games";
 import { site } from "@/lib/site";
 
@@ -7,11 +8,12 @@ export const SITEMAP_STATIC_PATHS = [
   "/",
   "/how-to-play",
   "/about",
+  "/blog",
 ] as const;
 
 export const homeTitle = `Online Guessing Games | ${site.name}`;
 export const homeDescription =
-  "Play free online guessing games with written clues. Guess movies, books, and English words, estimate measurements, or solve yes-or-no logic puzzles.";
+  "Play free online guessing games with written clues. Guess movies, books, words, and plants, estimate measurements, or solve yes-or-no puzzles.";
 
 export function siteOrigin(url: string = site.url): string {
   return url.replace(/\/+$/, "");
@@ -29,6 +31,7 @@ export function buildSitemapEntries(origin: string = site.url): MetadataRoute.Si
   return [
     ...SITEMAP_STATIC_PATHS,
     ...playGames.map(({ slug }) => `/${slug}`),
+    ...posts.map(blogPath),
   ].map((path) => ({ url: absoluteUrl(path, origin) }));
 }
 

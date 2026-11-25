@@ -8,7 +8,7 @@ export const playGames = [
     answerType: "title",
     title: "Guess the Movie From Clues",
     description: "Use a scene, event or character goal to guess the film. Try again, request a hint or reveal the answer.",
-    rule: "Read the clue and enter a film title. Score more than 80% to advance, or try another title and use available hints. If the clue asks for a particular release, follow its year format.",
+    rule: "Read the clue and enter a film title. Use a hint or try another title if needed. Score more than 80% to advance, or select Reveal answer to skip the clue. Follow the requested year format for a particular release.",
   },
   {
     slug: "guess-the-book",
@@ -25,6 +25,14 @@ export const playGames = [
     title: "Guess the Word From Its Definition",
     description: "Play an English vocabulary game. Guess the word from a written definition, its part of speech, and a sentence clue.",
     rule: "Read the definition and part of speech. Enter a single English word that fits the sentence and score more than 80% to unlock the next clue. You can try again or ask for a hint.",
+  },
+  {
+    slug: "guess-the-plant",
+    name: "Guess the Plant",
+    answerType: "title",
+    title: "Guess the Plant From Clues",
+    description: "Identify garden plants, trees, and houseplants from written clues about their appearance, growth, and habitat.",
+    rule: "Compare the written clues about the plant’s form and where it grows. Enter the English common name, genus, or full scientific name requested. Score more than 80% to advance.",
   },
   {
     slug: "guess-the-size",

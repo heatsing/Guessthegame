@@ -9,8 +9,12 @@ export function canAdvanceAfter(result: PlayResult | null): boolean {
     (result?.accuracy ?? 0) > PASS_ACCURACY;
 }
 
+export function canRevealAndContinue(gameSlug: string): boolean {
+  return gameSlug === "guess-the-movie" || gameSlug === "guess-the-book";
+}
+
 export function currentResult(result: PlayResult, gameSlug: string): PlayResult {
-  if (gameSlug === "guess-the-book" && result.outcome === "revealed") {
+  if (canRevealAndContinue(gameSlug) && result.outcome === "revealed") {
     return { ...result, outcome: "skipped" };
   }
   if (typeof result.answer !== "number") return result;
