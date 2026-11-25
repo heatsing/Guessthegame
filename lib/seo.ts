@@ -1,21 +1,17 @@
 import type { Metadata, MetadataRoute } from "next";
 
-import type { Theme } from "@/lib/catalog/schema";
 import { playGames } from "@/lib/play/games";
 import { site } from "@/lib/site";
 
-/** High-priority URLs we submit to crawlers. Never add `/puzzle/*`. */
 export const SITEMAP_STATIC_PATHS = [
   "/",
   "/how-to-play",
   "/about",
-  "/archive",
-  "/themes",
 ] as const;
 
 export const homeTitle = `Online Guessing Games | ${site.name}`;
 export const homeDescription =
-  "Explore online guessing games with written clues. Guess movies, books, words and plants, estimate sizes, or try a quick yes-or-no puzzle.";
+  "Play free online guessing games with written clues. Guess movie and book titles, estimate measurements, or solve yes-or-no logic puzzles.";
 
 export function siteOrigin(url: string = site.url): string {
   return url.replace(/\/+$/, "");
@@ -29,57 +25,11 @@ export function absoluteUrl(path: string, origin: string = site.url): string {
   return `${base}${normalized}`;
 }
 
-export function isPuzzlePath(path: string): boolean {
-  return path === "/puzzle" || path.startsWith("/puzzle/");
-}
-
-export function listPublishedThemePaths(themes: readonly Theme[]): string[] {
-  return [...themes]
-    .map((theme) => `/themes/${theme.slug}`)
-    .sort((a, b) => a.localeCompare(b));
-}
-
-/**
- * Strict sitemap allowlist: static hubs + published theme landings.
- * Puzzle replay URLs are rejected even if a caller tries to pass them.
- */
-export function listSitemapPaths(themes: readonly Theme[]): string[] {
-  const paths = [
+export function buildSitemapEntries(origin: string = site.url): MetadataRoute.Sitemap {
+  return [
     ...SITEMAP_STATIC_PATHS,
     ...playGames.map(({ slug }) => `/${slug}`),
-    ...listPublishedThemePaths(themes),
-  ];
-  return paths.filter((path) => !isPuzzlePath(path));
-}
-
-type SitemapChangeFrequency = NonNullable<
-  MetadataRoute.Sitemap[number]["changeFrequency"]
->;
-
-function sitemapChangeFrequency(path: string): SitemapChangeFrequency {
-  if (path === "/" || path === "/archive") return "daily";
-  if (path === "/themes" || path.startsWith("/themes/")) return "weekly";
-  return "monthly";
-}
-
-function sitemapPriority(path: string): number {
-  if (path === "/") return 1;
-  if (path === "/how-to-play") return 0.8;
-  if (path === "/archive") return 0.7;
-  return 0.6;
-}
-
-export function buildSitemapEntries(
-  themes: readonly Theme[],
-  origin: string = site.url,
-  lastModified: string | Date = new Date(),
-): MetadataRoute.Sitemap {
-  return listSitemapPaths(themes).map((path) => ({
-    url: absoluteUrl(path, origin),
-    lastModified,
-    changeFrequency: sitemapChangeFrequency(path),
-    priority: sitemapPriority(path),
-  }));
+  ].map((path) => ({ url: absoluteUrl(path, origin) }));
 }
 
 export function buildRobots(origin: string = site.url): MetadataRoute.Robots {

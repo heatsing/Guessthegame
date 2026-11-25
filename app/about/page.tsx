@@ -2,65 +2,39 @@ import Link from "next/link";
 
 import { StaticPage } from "@/components/StaticPage";
 import { pageMetadata } from "@/lib/legal/metadata";
+import { playGames } from "@/lib/play/games";
 import { site } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "/about",
   "About",
-  `${site.name} is ${site.product}, an independent daily screenshot puzzle. Not affiliated with guessthe.game.`,
+  `About ${site.name}, an independent site for written guessing games and logic puzzles.`,
 );
 
 export default function AboutPage() {
   return (
     <StaticPage
       path="/about"
-      title="About ThemeShot Daily"
-      lead={`${site.name} is ${site.product}: one curated screenshot puzzle each day. Not affiliated with guessthe.game.`}
+      title={`About ${site.name}`}
+      lead="Use written clues to identify a movie or book, estimate a measurement, or work through a logic puzzle."
+      updated={false}
     >
-      <h2>What this site is</h2>
-      <p>
-        {site.name} publishes {site.product}, a daily guessing puzzle. You see
-        a curated screenshot (a ThemeShot), type a game title, and work through
-        up to six shots and six guesses. A new puzzle opens at 00:00 UTC.
-      </p>
-      <p>
-        The product is intentionally small: no ads in this MVP, no extra modes,
-        no account, and no app. Stats and streak stay in this browser. Missed
-        days live on the <Link href="/archive">Archive</Link>.
-      </p>
-
-      <h2>Not affiliated with guessthe.game</h2>
-      <p>
-        {site.name} is an independent site. It is not guessthe.game, not a
-        mirror of that site, and not affiliated with, endorsed by, or operated
-        by the people behind guessthe.game.
-      </p>
-      <p>
-        {site.name} publishes <strong>{site.product}</strong>, a press-kit-style
-        screenshot puzzle with self-hosted images and recorded rights fields.
-      </p>
-      <p>{site.disclaimer}</p>
-
-      <h2>How we source puzzles</h2>
-      <p>
-        Game titles and related metadata may include data from{" "}
-        <a href={site.rawg.url} rel="noopener noreferrer">
-          {site.rawg.name}
-        </a>
-        . {site.rawg.name} does not grant screenshot or artwork rights.
-        ThemeShot images are self-hosted. We prefer official press kits with
-        permission to use stills on a daily puzzle site.
-      </p>
-      <p>
-        See <Link href="/copyright">Copyright</Link> and{" "}
-        <Link href="/dmca">DMCA</Link> if you own rights in an image we used.
-      </p>
+      <h2>Choose a game</h2>
+      <ul>
+        {playGames.map((game) => (
+          <li key={game.slug}>
+            <Link href={`/${game.slug}`}>{game.name}</Link>
+            <p>{game.description}</p>
+          </li>
+        ))}
+      </ul>
 
       <h2>How to play</h2>
       <p>
-        Read the <Link href="/how-to-play">rules and FAQ</Link> or find a
-        ThemeShot in the <Link href="/archive">Archive</Link>.
+        Each game explains the answer after you finish a round. Start playing
+        without an account or read the <Link href="/how-to-play">rules and FAQ</Link>.
       </p>
+      <p>{site.name} is operated independently of guessthe.game.</p>
     </StaticPage>
   );
 }

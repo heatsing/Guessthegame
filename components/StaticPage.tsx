@@ -1,9 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { ThemeShotLayout } from "@/components/ThemeShotLayout";
 import { formatLegalUpdated } from "@/lib/legal/dates";
-import { legalNav, type LegalHref } from "@/lib/legal/nav";
+import { footerNav, type LegalHref } from "@/lib/legal/nav";
 import { site } from "@/lib/site";
 
 type StaticPageProps = {
@@ -21,48 +20,50 @@ export function StaticPage({
   children,
   updated = true,
 }: StaticPageProps) {
-  const content = (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-4 py-8 sm:px-6 sm:py-12">
-      <p className="font-mono text-xs uppercase tracking-[0.22em] text-[color:var(--accent)]">
-        {site.product}
-      </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--foreground)] sm:text-5xl">
-        {title}
-      </h1>
-      <p className="mt-4 max-w-xl text-base leading-7 text-[color:var(--muted)] sm:text-lg sm:leading-8">
-        {lead}
-      </p>
-      <article className="static-copy mt-8">{children}</article>
-      {updated ? (
-        <p className="mt-10 text-xs leading-5 text-[color:var(--muted)]">
-          Last updated {formatLegalUpdated()}. These pages are standard
-          templates and have not been reviewed by counsel.
-        </p>
-      ) : null}
-      <nav
-        aria-label="Related pages"
-        className="mt-8 border-t border-white/10 pt-6"
-      >
-        <p className="text-sm font-medium text-[color:var(--foreground)]">
-          Also on this site
-        </p>
-        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
-          {legalNav
-            .filter((item) => item.href !== path)
-            .map((item) => (
+  return (
+    <div className="flex flex-1 flex-col bg-[#fcfcfb] text-[color:var(--foreground)]">
+      <header className="border-b border-[#dce1e8]">
+        <nav
+          aria-label="Site"
+          className="mx-auto flex min-h-16 w-full max-w-5xl flex-wrap items-center justify-between gap-x-5 px-5 sm:px-8"
+        >
+          <Link href="/" className="inline-flex min-h-11 items-center text-lg font-bold tracking-tight">
+            {site.name}
+          </Link>
+          <Link href="/#games" className="inline-flex min-h-11 items-center hover:underline">
+            All games
+          </Link>
+        </nav>
+      </header>
+
+      <main className="mx-auto w-full max-w-3xl flex-1 px-5 py-10 sm:px-8 sm:py-14">
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{title}</h1>
+        <p className="mt-4 text-lg leading-relaxed text-[color:var(--muted)]">{lead}</p>
+        <article className="static-copy mt-8">{children}</article>
+        {updated && (
+          <p className="mt-10 text-sm leading-6 text-[color:var(--muted)]">
+            Last updated {formatLegalUpdated()}.
+          </p>
+        )}
+      </main>
+
+      <footer className="border-t border-[#dce1e8]">
+        <nav aria-label="Site information" className="mx-auto w-full max-w-5xl px-5 py-3 sm:px-8">
+          <ul className="flex flex-wrap gap-x-5">
+            {footerNav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-11 items-center text-sm text-[color:var(--muted)] no-underline hover:text-[color:var(--foreground)]"
+                  aria-current={item.href === path ? "page" : undefined}
+                  className="inline-flex min-h-11 items-center text-sm text-[color:var(--muted)] underline-offset-4 hover:underline aria-[current=page]:font-semibold"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
-        </ul>
-      </nav>
-    </main>
+          </ul>
+        </nav>
+      </footer>
+    </div>
   );
-
-  return <ThemeShotLayout>{content}</ThemeShotLayout>;
 }

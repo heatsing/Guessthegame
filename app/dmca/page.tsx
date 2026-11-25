@@ -11,7 +11,7 @@ import { contactMailto, site } from "@/lib/site";
 export const metadata = pageMetadata(
   "/dmca",
   "DMCA",
-  `How to send a DMCA takedown notice to ${site.name}. Public contact: ${site.contactEmail}.`,
+  `How to submit a copyright notice or counter-notice to ${site.name}. Contact ${site.contactEmail}.`,
 );
 
 export default function DmcaPage() {
@@ -19,14 +19,12 @@ export default function DmcaPage() {
     <StaticPage
       path="/dmca"
       title="DMCA"
-      lead={`If you believe material on ${site.name} infringes your copyright, send a notice to the public contact below. This page explains how.`}
+      lead={`If you believe material on ${site.name} infringes your copyright, you can send a notice to our public contact.`}
     >
-      <h2>Designated contact</h2>
+      <h2>Copyright contact</h2>
       <p>
         Send DMCA notices and counter-notices by email to{" "}
-        <a href={contactMailto("DMCA takedown notice")}>{site.contactEmail}</a>
-        . This is the public contact for this site and can be changed via
-        configuration before a registered agent is published.
+        <a href={contactMailto("DMCA takedown notice")}>{site.contactEmail}</a>.
       </p>
       <p>
         Put <strong>DMCA takedown notice</strong> or{" "}
@@ -45,9 +43,8 @@ export default function DmcaPage() {
         ))}
       </ol>
       <p>
-        Include the exact URL of the screenshot or page (for example a{" "}
-        <Link href="/archive">ThemeShot archive</Link> path). Describe the work
-        you own. We cannot act on a vague complaint with no locator.
+        Include the exact page URL and describe the material so we can locate
+        it. For a puzzle, include the text of the clue you are reporting.
       </p>
       <p>
         Knowingly misrepresenting that material is infringing may expose you to
@@ -58,16 +55,15 @@ export default function DmcaPage() {
       <p>
         If the notice is complete, we will promptly remove or disable access to
         the specified material when we can identify it, and we may record the
-        request. Game pages without a replacement still may be unpublished for
-        that UTC date.
+        request.
       </p>
 
       <h2>Counter-notice</h2>
       <p>
         If your material was removed and you believe that was a mistake or
         misidentification, you may send a counter-notification to{" "}
-        <a href={contactMailto("DMCA counter-notice")}>{site.contactEmail}</a>{" "}
-        that includes:
+        <a href={contactMailto("DMCA counter-notice")}>{site.contactEmail}</a>.
+        Include the following information.
       </p>
       <ol>
         {DMCA_COUNTER_NOTICE_REQUIREMENTS.map((item) => (
@@ -82,10 +78,9 @@ export default function DmcaPage() {
 
       <h2>Trademarks and other complaints</h2>
       <p>
-        For trademark or other rights issues that are not copyright, email the
-        same address with enough detail to identify the page. Copyright
-        ownership of screenshots is also summarized on{" "}
-        <Link href="/copyright">Copyright</Link>.
+        For trademark or other rights issues, email the same address and
+        include the page URL. See <Link href="/copyright">Copyright</Link> for
+        information about the site&apos;s materials and referenced works.
       </p>
     </StaticPage>
   );

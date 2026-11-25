@@ -13,6 +13,7 @@ import {
   topicPicks,
   type HomeGuide,
 } from "@/lib/home-guides";
+import { legalNav } from "@/lib/legal/nav";
 import { isPlayablePath } from "@/lib/play/games";
 import { homeDescription, homeTitle, pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -309,6 +310,11 @@ export default async function Home({ searchParams }: PageProps<"/">) {
 
       <footer className={`${styles.container} ${styles.footer}`}>
         <Brand />
+        <nav aria-label="Footer">
+          {legalNav.map(({ href, label }) => (
+            <Link href={href} key={href}>{label}</Link>
+          ))}
+        </nav>
       </footer>
     </div>
   );

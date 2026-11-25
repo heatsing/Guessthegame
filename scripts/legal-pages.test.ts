@@ -47,14 +47,7 @@ expect(
   footerNav.some((item) => item.href === "/" && item.label === "Home"),
   "footer links to the home page",
 );
-expect(
-  footerNav.some((item) => item.href === "/archive"),
-  "footer still links Archive",
-);
-expect(
-  footerNav.some((item) => item.href === "/themes" && item.label === "Themes"),
-  "footer still links Themes",
-);
+expect(footerNav.length === legalNav.length + 1, "footer links home and the public information pages");
 console.log("ok — routes and footer nav");
 
 expect(site.contactEmail.includes("@"), "contact email is a mailbox");
@@ -63,16 +56,11 @@ expect(
     Boolean(process.env.NEXT_PUBLIC_CONTACT_EMAIL),
   "default placeholder email unless NEXT_PUBLIC_CONTACT_EMAIL is set",
 );
-expect(site.rawg.url === "https://rawg.io", "RAWG backlink target");
-expect(
-  site.attributionPlaceholder.toLowerCase().includes("rawg"),
-  "RAWG attribution placeholder names RAWG",
-);
 expect(
   formatLegalUpdated("2026-09-19") === "September 19, 2026",
   "legal updated date formats in English",
 );
-console.log("ok — site contact and RAWG attribution");
+console.log("ok — site contact and revision date");
 
 const jsonLd = howToPlayFaqJsonLd();
 expect(jsonLd["@context"] === "https://schema.org", "FAQ JSON-LD context");
@@ -91,9 +79,9 @@ for (const faq of HOW_TO_PLAY_FAQS) {
 }
 expect(
   HOW_TO_PLAY_FAQS.some((faq) =>
-    faq.answer.toLowerCase().includes("not affiliated"),
+    faq.answer.includes("same tab") && faq.answer.includes("browser storage"),
   ),
-  "FAQ distinguishes guessthe.game",
+  "FAQ explains same-tab restore",
 );
 console.log("ok — FAQ JSON-LD");
 
@@ -120,22 +108,27 @@ expect(dmcaSource.includes("site.contactEmail"), "DMCA page shows contact email"
 
 const aboutSource = readFileSync(join("app", "about", "page.tsx"), "utf8");
 expect(
-  aboutSource.includes("Not affiliated with guessthe.game"),
-  "About page states the brand split",
+  aboutSource.includes("playGames.map"),
+  "About page lists the playable games",
 );
-expect(aboutSource.includes("ThemeShot"), "About page names ThemeShot Daily");
 
-const footerSource = readFileSync(join("components", "Footer.tsx"), "utf8");
-expect(footerSource.includes("footerNav"), "Footer renders the shared nav");
-expect(footerSource.includes("site.rawg.url"), "Footer links RAWG");
+const howToPlaySource = readFileSync(join("app", "how-to-play", "page.tsx"), "utf8");
+expect(howToPlaySource.includes("game.rule"), "How to play uses the actual game rules");
 
-const headerSource = readFileSync(join("components", "Header.tsx"), "utf8");
+const privacySource = readFileSync(join("app", "privacy", "page.tsx"), "utf8");
 expect(
-  headerSource.includes('href="/how-to-play"'),
-  "Header How to play points at the SSR page",
+  privacySource.includes("Cloudflare D1") && privacySource.includes("session storage"),
+  "Privacy policy explains server and browser round storage",
 );
-expect(headerSource.includes('href="/archive"'), "Header still links Archive");
-expect(headerSource.includes('href="/themes"'), "Header still links Themes");
-console.log("ok — DMCA notice copy and brand pages");
+
+const staticPageSource = readFileSync(join("components", "StaticPage.tsx"), "utf8");
+expect(staticPageSource.includes("footerNav"), "Information pages render the shared footer navigation");
+expect(staticPageSource.includes('href="/#games"'), "Information page header links to the games directory");
+
+for (const href of requiredHrefs) {
+  const source = readFileSync(join("app", href.slice(1), "page.tsx"), "utf8");
+  expect(!/ThemeShot|RAWG|screenshot|\/archive\b|\/themes\b/i.test(source), `${href} describes the current site`);
+}
+console.log("ok — DMCA notice and current game information");
 
 console.log("legal-pages tests passed");

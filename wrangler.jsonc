@@ -2,6 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "guessthegame",
   "main": ".open-next/worker.js",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "guessthegame.net", "custom_domain": true },
+    { "pattern": "www.guessthegame.net", "custom_domain": true },
+  ],
   // Set this to today's date; nodejs_compat requires >= 2024-09-23.
   "compatibility_date": "2026-09-20",
   "compatibility_flags": [

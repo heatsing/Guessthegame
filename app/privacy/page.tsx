@@ -1,14 +1,13 @@
 import Link from "next/link";
 
 import { StaticPage } from "@/components/StaticPage";
-import { DAILY_STORAGE_KEY } from "@/lib/daily/constants";
 import { pageMetadata } from "@/lib/legal/metadata";
 import { contactMailto, site } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "/privacy",
   "Privacy",
-  `Privacy policy for ${site.name}. Read how we store local play state and anonymous game statistics. Contact ${site.contactEmail}.`,
+  `How ${site.name} saves play in your browser tab and uses pseudonymous round records.`,
 );
 
 export default function PrivacyPage() {
@@ -16,98 +15,63 @@ export default function PrivacyPage() {
     <StaticPage
       path="/privacy"
       title="Privacy policy"
-      lead={`${site.name} does not run user accounts. We use browser storage to resume play and store anonymous round statistics for the clue games.`}
+      lead={`This policy covers how ${site.name} saves your place in a game and uses pseudonymous round records.`}
     >
-      <h2>Who we are</h2>
+      <h2>Playing and restoring a round</h2>
       <p>
-        This policy covers {site.name} ({site.product}) at {site.url}. For
-        brand questions see <Link href="/about">About</Link>. Contact:{" "}
-        <a href={contactMailto()}>{site.contactEmail}</a>.
+        You can play without an account. The game creates a random session ID
+        and uses your browser’s session storage to save your current round,
+        draft input, hints, and any result so you can continue in the same tab.
+        If browser storage is unavailable, a reload may start a fresh round.
       </p>
 
-      <h2>What we collect</h2>
+      <h2>Server-side round data</h2>
       <p>
-        We do not ask you to create an account, and we do not run a cloud
-        leaderboard. ThemeShot play, win/loss counts, guess distribution, and
-        win streak are stored locally in this browser under the{" "}
-        <code>{DAILY_STORAGE_KEY}</code> key.
+        Our Cloudflare D1 database stores round and question identifiers, the
+        question version, timestamps, hint progress, and any completed result.
+        A completed result can include the guess you submitted. A randomly
+        generated session ID associates rounds with your game session without
+        requiring your name or email address.
       </p>
       <p>
-        The clue games use a randomly generated session identifier. We store
-        the question version, hint progress and any completed result so repeat
-        submissions return the same outcome. We count starts, completed rounds
-        and second-round starts without requiring a name or email address.
-      </p>
-      <p>
-        If you email us (for example a DMCA notice), we receive whatever you
-        include in that message — typically your name, address, and the URLs
-        you cite — so we can respond.
+        We use these records to restore a round, return the same result for a
+        repeat submission, and count activity such as round starts, completions,
+        and second-round starts. Please enter game answers only.
       </p>
 
-      <h2>Cookies and similar storage</h2>
+      <h2>Hosting and browser storage</h2>
       <p>
-        This MVP does not use advertising cookies or a marketing pixel. The
-        host (for example Cloudflare) may set strictly necessary cookies to operate
-        the site. ThemeShot uses localStorage for play state and stats. The
-        clue games use sessionStorage to restore your current round in the
-        same tab.
+        Cloudflare hosts the site and processes incoming requests. It may use
+        cookies or record request information for operation and security.
+        The games use session storage for tab restore.
       </p>
       <p>
-        Clearing site data, using a private window, or switching browsers
-        resets local stats. That data is not synced.
+        Closing the tab normally ends its saved session. Clearing site data in
+        your browser removes your local play state. The server stores its round
+        records separately.
       </p>
 
-      <h2>Analytics and ads</h2>
+      <h2>Email and rights requests</h2>
       <p>
-        Ads are out of scope until screenshot rights coverage is high enough.
-        We do not currently attach a third-party analytics or ads SDK. If that
-        changes, this policy will be updated before any such script ships.
+        If you contact us, we receive the information you include in your
+        message. A rights notice may contain contact details and URLs.
+        We use the information to respond and handle the request.
+      </p>
+      <p>
+        Email <a href={contactMailto()}>{site.contactEmail}</a> with privacy
+        questions or to ask us to delete correspondence we hold, subject to law.
       </p>
 
       <h2>Children</h2>
       <p>
-        The site is a general-audience puzzle. We do not knowingly collect
-        personal information from children. Do not send us information about a
-        child in an email unless you are the parent or guardian and it is
-        needed for a rights request.
+        The site is a general-audience puzzle site. We do not knowingly
+        collect personal information from children.
       </p>
-
-      <h2>Third parties</h2>
-      <p>
-        Game metadata may include data from{" "}
-        <a href={site.rawg.url} rel="noopener noreferrer">
-          {site.rawg.name}
-        </a>
-        . Screenshots are self-hosted. Visiting those third-party sites is
-        governed by their own policies.
-      </p>
-
-      <h2>How long we keep information</h2>
-      <p>
-        ThemeShot browser storage lasts until you clear it. Clue game tab
-        storage normally ends when you close the tab. Email we receive is kept only
-        as long as needed to handle the request and any legal obligation that
-        follows (for example a DMCA record).
-      </p>
-
-      <h2>Your choices</h2>
-      <ul>
-        <li>Clear this site&apos;s data in your browser to delete local stats.</li>
-        <li>
-          Email <a href={contactMailto()}>{site.contactEmail}</a> to ask us to
-          delete correspondence we hold, subject to law.
-        </li>
-      </ul>
 
       <h2>Changes</h2>
       <p>
-        We may update this policy. The date at the bottom of the page is the
-        latest revision. Continued use after a change means you accept the
-        updated policy.
-      </p>
-
-      <p>
-        Also see <Link href="/terms">Terms of use</Link>.
+        We may update this policy. The date below identifies the latest
+        revision. See also the <Link href="/terms">Terms of use</Link>.
       </p>
     </StaticPage>
   );

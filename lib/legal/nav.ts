@@ -1,9 +1,3 @@
-export const primaryNav = [
-  { href: "/", label: "Home" },
-  { href: "/archive", label: "Archive" },
-  { href: "/themes", label: "Themes" },
-] as const;
-
 export const legalNav = [
   { href: "/how-to-play", label: "How to play" },
   { href: "/about", label: "About" },
@@ -13,6 +7,6 @@ export const legalNav = [
   { href: "/copyright", label: "Copyright" },
 ] as const;
 
-export const footerNav = [...primaryNav, ...legalNav] as const;
+export const footerNav = [{ href: "/", label: "Home" }, ...legalNav] as const;
 
 export type LegalHref = (typeof legalNav)[number]["href"];
