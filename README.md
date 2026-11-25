@@ -38,6 +38,6 @@ npx wrangler d1 migrations apply guessthegame-questions --remote
 npm run deploy
 ```
 
-Use the same Git revision for the production build and `main`. Confirm that the apex serves the homepage, the four playable routes with a first question, and `/sitemap.xml`.
+Use the same Git revision for the production build and `main`. Confirm that the apex serves the homepage, every published game with a first question, and `/sitemap.xml`.
 
 Set `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, and optionally `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` at build time. Example values are in [the environment template](.env.example). See [Google Search Console](docs/google-search-console.md) for property verification and sitemap submission.

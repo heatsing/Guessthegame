@@ -23,7 +23,7 @@ export function FeaturedMovie() {
     event.preventDefault();
     const grade = gradeAnswer(puzzle, guess, 0);
     setDone(grade.status === "settled");
-    setFeedback(grade.status === "settled" ? "Correct!" : grade.message);
+    setFeedback(grade.status === "settled" ? "Correct!" : grade.message ?? "Not quite. Try another title.");
   }
   return (
     <div>

@@ -5,9 +5,9 @@ export type HowToPlayFaq = {
 
 export const HOW_TO_PLAY_FAQS: readonly HowToPlayFaq[] = [
   {
-    question: "How are movie and book titles checked?",
+    question: "How are title and word guesses checked?",
     answer:
-      "The game compares your spelling to the title and recognized alternatives. Capitalization and extra spaces are ignored. When a clue specifies a release year, follow the format in that clue.",
+      "The game compares your spelling to the answer and recognized alternatives. Capitalization and extra spaces are ignored. Follow the clue when it specifies a release year or a word form.",
   },
   {
     question: "What can I enter for a size estimate?",
@@ -17,7 +17,7 @@ export const HOW_TO_PLAY_FAQS: readonly HowToPlayFaq[] = [
   {
     question: "How do I unlock the next question?",
     answer:
-      "Solve or reveal a title, land inside the specified measurement range, or choose Yes or No. Then select the next question.",
+      "Score more than 80% to advance on an estimate or a text guess. You can reveal a book title to skip straight to the next book after reading the explanation. In Yes or No?, your first choice reveals the reasoning and opens the next puzzle.",
   },
   {
     question: "Do I need an account?",

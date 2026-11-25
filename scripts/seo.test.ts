@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
+import { blogPath, posts } from "../lib/blog";
 import {
   absoluteUrl,
   buildRobots,
@@ -11,12 +12,12 @@ import {
   pageMetadata,
 } from "../lib/seo";
 
-import { posts, blogPath } from "../lib/blog";
-
 const origin = "https://guessthegame.net";
 const gamePaths = [
   "/guess-the-movie",
   "/guess-the-book",
+  "/guess-the-word",
+  "/guess-the-plant",
   "/guess-the-size",
   "/yes-or-no",
 ];

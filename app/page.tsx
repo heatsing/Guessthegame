@@ -17,6 +17,8 @@ export const metadata = pageMetadata("/", homeTitle, homeDescription, { absolute
 const cards = {
   "guess-the-movie": { photo: "movie", caption: "Name the film from a plot clue." },
   "guess-the-book": { photo: "book", caption: "Find the title hidden in a story." },
+  "guess-the-word": { photo: "word", caption: "Find the word that fits the definition." },
+  "guess-the-plant": { photo: "plant", caption: "Identify the plant from its features." },
   "guess-the-size": { photo: "size", caption: "Estimate an everyday measurement." },
   "yes-or-no": { photo: "logic", caption: "Decide what follows from the clues." },
 } satisfies Record<(typeof playGames)[number]["slug"], { photo: string; caption: string }>;
@@ -42,7 +44,7 @@ export default async function Home({ searchParams }: PageProps<"/">) {
         <div className={styles.hero}>
           <div>
             <h1>{site.name}</h1>
-            <p>Guess movies and books, estimate sizes, and solve logic puzzles from written clues.</p>
+            <p>Guess movies, books, words, and plants from written clues. Estimate sizes or solve logic puzzles.</p>
           </div>
           <QuickGuess initialIndex={index} key={index} />
         </div>

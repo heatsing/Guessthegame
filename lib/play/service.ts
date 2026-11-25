@@ -1,6 +1,7 @@
 import { gradeAnswer, revealTitle, withResultAccuracy } from "./grading";
+import { canAdvanceAfter } from "./result";
 import { getQuestionStore, type QuestionStore } from "./store";
-import { type PlayGame, type PrivateRound, type PublicRound } from "./types";
+import { PASS_ACCURACY, type PlayGame, type PrivateRound, type PublicRound } from "./types";
 
 export function toPublicRound(round: PrivateRound): PublicRound {
   const { question } = round;
@@ -50,8 +51,9 @@ export async function loadNextRound(
   const previous = await store.getRound(gameSlug, roundId);
   if (!previous || previous.sessionId !== sessionId) return { status: 410, body: expired };
 
-  if (!previous.result) {
-    return { status: 409, body: { message: "Finish this question before starting another." } };
+  const result = previous.result && withResultAccuracy(previous.question, previous.result);
+  if (!canAdvanceAfter(result)) {
+    return { status: 409, body: { message: `Score more than ${PASS_ACCURACY}% to unlock the next question.` } };
   }
 
   const recentQuestionIds = [previous.question.questionId, ...(selection.recentQuestionIds ?? [])];

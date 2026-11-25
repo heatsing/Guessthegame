@@ -76,7 +76,7 @@ export const posts: GuidePost[] = [
     exercise: { prompt: "Everyone in the choir has a key. Morgan has a key. Must Morgan belong to the choir?", answer: "No. Morgan could be the caretaker. That leaves the rule about every choir member intact." }
   },
   {
-    slug: "how-to-find-a-word-from-its-definition",
+    slug: "how-to-find-a-word-from-its-definition", game: "guess-the-word",
     title: "How to Find a Word from Its Definition",
     summary: "Test two possible words in the same sentence and listen for the detail that changes the meaning.",
     sections: [
