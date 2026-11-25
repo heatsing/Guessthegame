@@ -11,7 +11,7 @@ export const SITEMAP_STATIC_PATHS = [
 
 export const homeTitle = `Online Guessing Games | ${site.name}`;
 export const homeDescription =
-  "Play free online guessing games with written clues. Guess movie and book titles, estimate measurements, or solve yes-or-no logic puzzles.";
+  "Play free online guessing games with written clues. Guess movies, books, and English words, estimate measurements, or solve yes-or-no logic puzzles.";
 
 export function siteOrigin(url: string = site.url): string {
   return url.replace(/\/+$/, "");

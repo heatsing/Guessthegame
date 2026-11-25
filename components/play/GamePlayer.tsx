@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
-import { PASS_ACCURACY, type PlayResult, type PublicRound } from "@/lib/play/types";
+import { canAdvanceAfter, currentResult, sizeRule } from "@/lib/play/result";
+import { PASS_ACCURACY, type PlayResult, type PlayRetry, type PublicRound } from "@/lib/play/types";
 
 import styles from "./GamePlayer.module.css";
 import { newRoundState, readRoundSession, saveRoundSession, type RoundState } from "./session";
@@ -13,7 +14,7 @@ type Guess = string | boolean;
 type Pending = { action: Action; guess?: Guess };
 type ResumeResponse = { round: PublicRound; hints: string[]; hasMore?: boolean; result?: PlayResult };
 type CheckResponse =
-  | { status: "retry"; accuracy: number }
+  | PlayRetry
   | { status: "settled"; result: PlayResult };
 type HintResponse = { hint?: string; hintCount: number; hasMore?: boolean; result?: PlayResult };
 type Focus = "question" | "input" | "result" | "hint";
@@ -42,6 +43,7 @@ const resultTitles: Record<PlayResult["outcome"], string> = {
   correct: "Correct!",
   assisted: "Correct with a hint!",
   revealed: "Answer revealed",
+  skipped: "Book skipped",
   within: "Level passed",
   low: "Below range",
   high: "Above range",
@@ -50,10 +52,15 @@ const resultTitles: Record<PlayResult["outcome"], string> = {
 
 const measurement = new Intl.NumberFormat("en-US", { maximumSignificantDigits: 8 });
 
-function Accuracy({ value, retry = false }: { value: number; retry?: boolean }) {
+function Accuracy({ value, retry = false, feedback }: { value: number; retry?: boolean; feedback?: string }) {
+  const rounded = Math.round(value * 100) / 100;
+  const label = rounded === PASS_ACCURACY && rounded !== value
+    ? `${value > rounded ? ">" : "<"}${rounded}`
+    : String(rounded);
   return (
     <div className={styles.accuracy} data-passed={value > PASS_ACCURACY}>
-      <p><strong>{value}%</strong> accuracy</p>
+      {feedback && <p><strong>{feedback}</strong></p>}
+      <p><strong>{label}%</strong> accuracy</p>
       <meter min={0} max={100} value={value} aria-label="Answer accuracy" />
       {retry && <p>Score more than {PASS_ACCURACY}% to unlock the next question. Try again.</p>}
     </div>
@@ -141,12 +148,15 @@ export function GamePlayer({
       const saved = readRoundSession(storageKey);
       sessionId.current = saved?.id ?? crypto.randomUUID();
       const initial = saved?.state ?? current.current;
+      const restored = initial.result
+        ? { ...initial, result: currentResult(initial.result, gameSlug) }
+        : initial;
       const draft = inputElement.current?.value ?? initial.input;
-      save(!saved && draft !== initial.input ? { ...initial, input: draft } : initial);
+      save(!saved && draft !== initial.input ? { ...restored, input: draft } : restored);
       if (initial.round) void resume(initial.round, () => mounted);
     });
     return () => { mounted = false; };
-  }, [initialRound, resume, save, storageKey]);
+  }, [gameSlug, initialRound, resume, save, storageKey]);
 
   useLayoutEffect(() => {
     const target = focus.current;
@@ -172,7 +182,7 @@ export function GamePlayer({
     }).then(({ round }) => round), [difficulty, gameSlug, topic]);
 
   useEffect(() => {
-    if (!state.round || (state.result?.accuracy ?? 0) <= PASS_ACCURACY ||
+    if (!state.round || !canAdvanceAfter(state.result) ||
       state.expired || preload.current?.source === state.round.id) return;
     const source = state.round.id;
     const promise = requestNext(state, true).then(
@@ -190,7 +200,7 @@ export function GamePlayer({
     const round = snapshot.round;
     if (busy.current || !sessionId.current) return;
     if (action !== "next" && (!round || snapshot.result || snapshot.expired)) return;
-    if (action === "next" && (!round || snapshot.expired || (snapshot.result?.accuracy ?? 0) <= PASS_ACCURACY)) return;
+    if (action === "next" && (!round || snapshot.expired || !canAdvanceAfter(snapshot.result))) return;
     if (action === "hint" && snapshot.hintsExhausted) return;
 
     busy.current = true;
@@ -243,7 +253,7 @@ export function GamePlayer({
       if (!latest()) return;
       if (response.status === "retry") {
         focus.current = "input";
-        save({ ...current.current, lastAccuracy: response.accuracy });
+        save({ ...current.current, lastAccuracy: response.accuracy, lastAccuracyMessage: response.message });
         return;
       }
       focus.current = "result";
@@ -271,7 +281,9 @@ export function GamePlayer({
 
   const { round, result, expired } = state;
   const waiting = pending !== null;
-  const canAdvance = !expired && (result?.accuracy ?? 0) > PASS_ACCURACY;
+  const canAdvance = !expired && canAdvanceAfter(result);
+  const isBook = gameSlug === "guess-the-book";
+  const nextLabel = isBook ? "Next book" : round?.answerType === "boolean" ? "Next puzzle" : "Next Question";
 
   function startOver() {
     try {
@@ -319,11 +331,9 @@ export function GamePlayer({
               <dt>{result.unit ? "Reference" : "Answer"}</dt>
               <dd>{displayAnswer(result.answer, result.unit)}</dd>
             </div>
-            {result.min !== undefined && result.max !== undefined && (
-              <div><dt>Accepted range</dt><dd>{displayAnswer(result.min)}–{displayAnswer(result.max, result.unit)}</dd></div>
-            )}
           </dl>
           <p className={styles.explanation}>{result.explanation}</p>
+          {round?.answerType === "number" && <p className={styles.explanation}>{sizeRule}</p>}
           {result.sources.length > 0 && (
             <ul className={styles.sources} aria-label="Sources">
               {result.sources.filter(({ url }) => /^https?:\/\//i.test(url)).map(({ label, url }) => (
@@ -335,7 +345,9 @@ export function GamePlayer({
       ) : round && (
         <>
           <div className={styles.attempt} role="status">
-            {state.lastAccuracy !== null && <Accuracy value={state.lastAccuracy} retry />}
+            {state.lastAccuracy !== null && (
+              <Accuracy value={state.lastAccuracy} retry feedback={state.lastAccuracyMessage} />
+            )}
           </div>
           {round.answerType === "boolean" ? (
             <div className={styles.choices} aria-label="Your answer" role="group">
@@ -391,7 +403,7 @@ export function GamePlayer({
             )}
             {round.answerType === "title" && (
               <button className={styles.textButton} type="button" disabled={waiting} onClick={() => void act("reveal")}>
-                {pending?.action === "reveal" ? "Revealing…" : "Show answer and end run"}
+                {pending?.action === "reveal" ? "Revealing…" : isBook ? "Reveal answer" : "Show answer and end run"}
               </button>
             )}
           </div>
@@ -400,7 +412,7 @@ export function GamePlayer({
 
       {canAdvance && (
         <button className={styles.primary} type="button" onClick={() => void act("next")} disabled={waiting}>
-          {pending?.action === "next" ? "Loading question…" : "Next Question"}
+          {pending?.action === "next" ? "Loading question…" : nextLabel}
         </button>
       )}
       {(!round || expired || (result && !canAdvance && (result.accuracy !== undefined || result.outcome === "revealed"))) && (

@@ -39,7 +39,7 @@ export type PublicRound = {
 };
 
 export type PlayResult = {
-  outcome: "correct" | "assisted" | "revealed" | "within" | "low" | "high" | "incorrect";
+  outcome: "correct" | "assisted" | "revealed" | "skipped" | "within" | "low" | "high" | "incorrect";
   accuracy?: number;
   answer: string | number | boolean;
   guess?: string | number | boolean;
@@ -49,6 +49,8 @@ export type PlayResult = {
   explanation: string;
   sources: Source[];
 };
+
+export type PlayRetry = { status: "retry"; accuracy: number; message?: string };
 
 export type PrivateRound = {
   id: string;

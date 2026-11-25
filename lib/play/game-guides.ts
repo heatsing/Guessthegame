@@ -1,4 +1,5 @@
 import type { playGames } from "./games";
+import { sizeRule } from "./result";
 
 export type GameGuideContent = {
   heading: string;
@@ -58,7 +59,7 @@ export const gameGuides = {
     steps: [
       "Read the clue and note who does what and why.",
       "Type the book title and select Submit guess to see its accuracy.",
-      "Edit your guess or use an available hint if you need it. Score above 80% to move to the next question.",
+      "Score above 80% to finish the clue, or select Reveal answer to skip it. Choose Next book to continue.",
     ],
     example: {
       prompt: "To save a young pig, a barn spider writes words in her web that change how people see him. What’s the book?",
@@ -83,7 +84,42 @@ export const gameGuides = {
       },
       {
         question: "Do I get an explanation if I reveal the title?",
-        answer: "Yes. Show answer and end run displays the book title and explanation. You can then start a new run from Question 1.",
+        answer: "Yes. Reveal answer marks the question as skipped and shows the title and explanation. Select Next book to continue.",
+      },
+    ],
+  },
+  "guess-the-word": {
+    heading: "Guess an English word from its definition",
+    introduction: "Read a short definition and use the part of speech and sentence to find the word that fits. Submit your guess to see its spelling accuracy. A score above 80% unlocks the explanation and the next clue. You can edit your guess or use an available hint along the way.",
+    steps: [
+      "Read the definition and sentence. Check the part of speech and any requested spelling or word form.",
+      "Enter one English word and select Submit guess to see its accuracy from 0% to 100%.",
+      "Score above 80% to unlock Next Question. At 80% or below, edit your guess or use an available hint.",
+    ],
+    example: {
+      prompt: "Noun. An old writing surface reused after its first text was rubbed away. The scholar noticed fragments of earlier writing beneath the newer text on the ____. What is the word?",
+      answer: "Palimpsest",
+      explanation: "The surface was used for more than one text, and traces of the earlier writing remain. The guess “palimsest” leaves one letter out of the ten-letter answer and scores 90%.",
+    },
+    strategy: {
+      heading: "Check the meaning and the word form",
+      paragraphs: [
+        "Read the sentence with your candidate in the blank. Use the part-of-speech label to check how the word works, then see whether the surrounding words call for a specific tense or a singular or plural form.",
+        "If several words fit the sentence, return to the most specific detail in the definition. When a guess scores near the threshold, check for a missing letter or a different ending before trying another word.",
+      ],
+    },
+    questions: [
+      {
+        question: "How is my word guess scored?",
+        answer: "The exact spelling and listed alternatives score 100%. Other guesses are scored by the spelling changes needed to reach the answer. You need a score above 80% to advance.",
+      },
+      {
+        question: "Which spelling or word form should I use?",
+        answer: "Follow the clue if it asks for a singular, a plural, or a regional spelling. A listed alternative spelling also scores 100%.",
+      },
+      {
+        question: "What happens if I use a hint or reveal the answer?",
+        answer: "A hint adds another clue and leaves the question open. Show answer and end run displays the word and explanation. You can then start a new run at Question 1.",
       },
     ],
   },
@@ -114,21 +150,21 @@ export const gameGuides = {
       },
       {
         question: "How close does my estimate need to be?",
-        answer: "The score starts at 100% and drops by the percentage error from the reference value, down to a minimum of 0%. A score of exactly 80% keeps the next question locked.",
+        answer: sizeRule,
       },
       {
         question: "What happens if my accuracy is too low?",
-        answer: "You see the score and can adjust your estimate. A score above 80% shows the reference value and explanation.",
+        answer: "You see your score and whether the estimate was too low or too high. Adjust your estimate and try again. A passing score shows the reference value and explanation.",
       },
     ],
   },
   "yes-or-no": {
     heading: "Decide what follows from the clues",
-    introduction: "Each logic puzzle gives you a set of conditions and a conclusion to test. Decide whether the conclusion holds in every situation that fits the clues. A single valid counterexample is enough for No. A correct choice scores 100% and opens the explanation.",
+    introduction: "Each logic puzzle gives you a set of conditions and a conclusion to test. Decide whether the conclusion holds in every situation that fits the clues. A single valid counterexample is enough for No. After your first choice, you can read the reasoning and move on.",
     steps: [
       "Read the whole setup, paying attention to words such as every, only, and exactly.",
       "Test whether a different outcome could still fit all the conditions. Take a hint first if one is available.",
-      "Choose Yes or No. A score of 100% unlocks Next Question. You can try again after a score of 0%.",
+      "Choose Yes or No once. Read the reasoning or counterexample, then select Next puzzle.",
     ],
     example: {
       prompt: "Three lamps sit in a row. Exactly one is lit. The middle lamp is dark. If the left lamp is lit, the middle lamp is lit. Must the right lamp be lit?",
@@ -149,7 +185,7 @@ export const gameGuides = {
       },
       {
         question: "Can I change my choice?",
-        answer: "You can try again after an incorrect choice. A correct choice shows the explanation and opens the next puzzle.",
+        answer: "Your first choice is final. You get the explanation and can move to the next puzzle after either answer.",
       },
       {
         question: "Can I see a hint first?",

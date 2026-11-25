@@ -16,7 +16,7 @@ export default function AboutPage() {
     <StaticPage
       path="/about"
       title={`About ${site.name}`}
-      lead="Use written clues to identify a movie or book, estimate a measurement, or work through a logic puzzle."
+      lead="Use written clues to identify a movie, book, or English word, estimate a measurement, or work through a logic puzzle."
       updated={false}
     >
       <h2>Choose a game</h2>

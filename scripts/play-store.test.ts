@@ -126,6 +126,44 @@ async function testStore() {
     assert.deepEqual(repeated, success);
     assert.equal((await loadNextRound(store, game, { ...identity, sessionId: "another-session" })).status, 410);
     assert.equal((await loadNextRound(store, game, { ...identity, prefetch: true })).status, 200);
+
+    const bookGame = "guess-the-book";
+    const logicGame = "yes-or-no";
+    for (const [slug, answerConfig] of [
+      [bookGame, { type: "title", answer: "Treasure Island", aliases: [] }],
+      [logicGame, { type: "boolean", answer: false }],
+    ] as const) {
+      await db.batch([
+        db.prepare(`
+          INSERT INTO questions (id, game_slug, question_key, status, published_revision, updated_at)
+          VALUES (?, ?, 'feedback', 'published', 1, 1)
+        `).bind(slug, slug),
+        db.prepare(`
+          INSERT INTO question_revisions (question_id, revision, prompt, hints_json, answer_config_json, explanation, sources_json, created_at)
+          VALUES (?, 1, 'Feedback clue', '[]', ?, 'Answer explained', '[]', 1)
+        `).bind(slug, JSON.stringify(answerConfig)),
+      ]);
+    }
+
+    const bookRound = await store.startRound(bookGame);
+    assert.ok(bookRound);
+    const bookIdentity = { roundId: bookRound.id, revision: 1, sessionId: "book-feedback" };
+    const skippedBook = await handleRoundAction(store, bookGame, { ...bookIdentity, action: "reveal" });
+    assert.equal("result" in skippedBook.body && skippedBook.body.result?.outcome, "skipped");
+    assert.equal((await loadNextRound(store, bookGame, bookIdentity)).status, 200);
+    const [bookStats] = await store.getStatistics(bookGame);
+    assert.equal(bookStats.skipped, 1);
+    assert.equal(bookStats.independentCorrect, 0);
+
+    const logicRound = await store.startRound(logicGame);
+    assert.ok(logicRound);
+    const logicIdentity = { roundId: logicRound.id, revision: 1, sessionId: "logic-feedback" };
+    const firstChoice = await handleRoundAction(store, logicGame, { ...logicIdentity, action: "check", guess: true });
+    assert.equal("result" in firstChoice.body && firstChoice.body.result?.outcome, "incorrect");
+    assert.equal("result" in firstChoice.body && firstChoice.body.result?.explanation, "Answer explained");
+    const secondChoice = await handleRoundAction(store, logicGame, { ...logicIdentity, action: "check", guess: false });
+    assert.deepEqual(secondChoice, firstChoice);
+    assert.equal((await loadNextRound(store, logicGame, logicIdentity)).status, 200);
     console.log("D1 pool selection, concurrent settlements, activity statistics, and pinned revisions passed.");
   } finally {
     await platform.dispose();

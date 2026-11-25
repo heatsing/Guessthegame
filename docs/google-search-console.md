@@ -13,7 +13,7 @@ To verify a Domain property by DNS, add the provided TXT record to the active `g
 ## Submit and inspect the sitemap
 
 1. In the verified property, open **Sitemaps** and submit `sitemap.xml`.
-2. Check that the sitemap lists the homepage, How to Play, About, and the four playable game pages.
+2. Check that the sitemap lists the homepage, How to Play, About, and all playable game pages.
 3. Inspect the homepage and a playable game URL. Each should report its own canonical HTTPS apex URL. The game's first question and controls appear in the server-rendered page.
 
 [robots.txt](https://guessthegame.net/robots.txt) points to the [sitemap](https://guessthegame.net/sitemap.xml). The sitemap lists public game pages and informational pages used for discovery. Round APIs and preview cards stay outside the sitemap.

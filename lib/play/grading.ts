@@ -1,8 +1,10 @@
-import { PASS_ACCURACY, type PlayResult, type QuestionVersion } from "./types";
+import { currentResult, SIZE_ERROR_LIMIT } from "./result";
+import { requiredReleaseYear, titleIdentifierIssue, type TitleIdentifierIssue } from "./title-identifiers";
+import { PASS_ACCURACY, type PlayResult, type PlayRetry, type QuestionVersion } from "./types";
 
 export type Grade =
   | { status: "invalid"; message: string }
-  | { status: "retry"; accuracy: number }
+  | PlayRetry
   | { status: "settled"; result: PlayResult };
 
 export function normalizeTitle(value: string): string {
@@ -45,28 +47,44 @@ function titleSimilarity(guess: string, answer: string): number {
   return (length - row[right.length]) / length * 100;
 }
 
-function titleAccuracy(guess: string, title: string, aliases: string[]): number {
+function titleAccuracy(
+  guess: string,
+  title: string,
+  aliases: string[],
+  gameSlug: string,
+): { accuracy: number; message?: TitleIdentifierIssue } {
   const submitted = normalizeTitle(guess);
   const accepted = [title, ...aliases].map(normalizeTitle).filter(Boolean);
-  if (accepted.includes(submitted)) return 100;
-
-  const best = Math.max(0, ...accepted.map((answer) => titleSimilarity(submitted, answer)));
-  const requiredYear = /\((\d{4})\)$/.exec(title)?.[1];
-  const submittedYear = /\((\d{4})\)$/.exec(submitted)?.[1];
-  return percentage(requiredYear && requiredYear !== submittedYear ? Math.min(best, PASS_ACCURACY) : best);
+  const year = requiredReleaseYear(title);
+  const yearIssue = year && year !== requiredReleaseYear(submitted)
+    ? titleIdentifierIssue(submitted, normalizeTitle(title), gameSlug)
+    : undefined;
+  if (!yearIssue && accepted.includes(submitted)) return { accuracy: 100 };
+  const candidates = accepted.map((answer) => {
+    const score = percentage(titleSimilarity(submitted, answer));
+    const message = yearIssue ?? titleIdentifierIssue(submitted, answer, gameSlug);
+    return { score, message, accuracy: message ? Math.min(score, PASS_ACCURACY) : score };
+  });
+  return candidates.sort((a, b) => b.accuracy - a.accuracy || b.score - a.score)[0] ?? { accuracy: 0 };
 }
 
 function numberAccuracy(guess: number, target: number): number {
   if (target === 0) return guess === 0 ? 100 : 0;
-  return percentage(100 - Math.abs(guess - target) / target * 100);
+  const error = Math.abs(guess - target) / target * 100;
+  if (Math.abs(error - SIZE_ERROR_LIMIT) <= Number.EPSILON * 100) return PASS_ACCURACY;
+  const raw = 100 - error;
+  const rounded = percentage(raw);
+  return rounded === PASS_ACCURACY ? raw : rounded;
 }
 
 export function withResultAccuracy(question: QuestionVersion, result: PlayResult): PlayResult {
-  if (result.accuracy !== undefined || result.outcome === "revealed") return result;
+  result = currentResult(result, question.gameSlug);
+  if (result.accuracy !== undefined || result.outcome === "revealed" || result.outcome === "skipped") return result;
   const { answerConfig } = question;
   const { guess } = result;
   if (answerConfig.type === "title" && typeof guess === "string") {
-    return { ...result, accuracy: titleAccuracy(guess, answerConfig.answer, answerConfig.aliases) };
+    const { accuracy } = titleAccuracy(guess, answerConfig.answer, answerConfig.aliases, question.gameSlug);
+    return { ...result, accuracy };
   }
   if (answerConfig.type === "number" && typeof guess === "number") {
     return { ...result, accuracy: numberAccuracy(guess, answerConfig.target) };
@@ -88,10 +106,10 @@ export function gradeAnswer(
   switch (answerConfig.type) {
     case "title": {
       if (typeof guess !== "string" || !normalizeTitle(guess)) {
-        return { status: "invalid", message: "Enter a title before checking." };
+        return { status: "invalid", message: "Enter an answer before checking." };
       }
-      const accuracy = titleAccuracy(guess, answerConfig.answer, answerConfig.aliases);
-      if (accuracy <= PASS_ACCURACY) return { status: "retry", accuracy };
+      const { accuracy, message } = titleAccuracy(guess, answerConfig.answer, answerConfig.aliases, question.gameSlug);
+      if (accuracy <= PASS_ACCURACY) return { status: "retry", accuracy, ...(message && { message }) };
       return {
         status: "settled",
         result: { ...details, outcome: hintCount ? "assisted" : "correct", accuracy, answer: answerConfig.answer, guess },
@@ -104,20 +122,22 @@ export function gradeAnswer(
         return { status: "invalid", message: `Enter a non-negative number in ${unit}.` };
       }
       const accuracy = numberAccuracy(submitted, target);
-      if (accuracy <= PASS_ACCURACY) return { status: "retry", accuracy };
+      if (accuracy <= PASS_ACCURACY) {
+        return { status: "retry", accuracy, message: submitted < target ? "Too low" : "Too high" };
+      }
       return {
         status: "settled",
-        result: { ...details, outcome: "within", accuracy, answer: target, guess: submitted, unit },
+        result: currentResult({ ...details, outcome: "within", accuracy, answer: target, guess: submitted, unit }, question.gameSlug),
       };
     }
     case "boolean":
       if (typeof guess !== "boolean") {
         return { status: "invalid", message: "Choose Yes or No." };
       }
-      if (guess !== answerConfig.answer) return { status: "retry", accuracy: 0 };
+      const correct = guess === answerConfig.answer;
       return {
         status: "settled",
-        result: { ...details, outcome: "correct", accuracy: 100, answer: answerConfig.answer, guess },
+        result: { ...details, outcome: correct ? "correct" : "incorrect", accuracy: correct ? 100 : 0, answer: answerConfig.answer, guess },
       };
   }
 }
@@ -129,6 +149,6 @@ export function revealTitle(question: QuestionVersion): Grade {
   }
   return {
     status: "settled",
-    result: { outcome: "revealed", answer: answerConfig.answer, explanation, sources },
+    result: currentResult({ outcome: "revealed", answer: answerConfig.answer, explanation, sources }, question.gameSlug),
   };
 }

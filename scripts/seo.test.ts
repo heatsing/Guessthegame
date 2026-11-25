@@ -15,6 +15,7 @@ const origin = "https://guessthegame.net";
 const gamePaths = [
   "/guess-the-movie",
   "/guess-the-book",
+  "/guess-the-word",
   "/guess-the-size",
   "/yes-or-no",
 ];
