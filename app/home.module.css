@@ -1,16 +1,7 @@
 .page {
-  --paper: #fcfcfb;
-  --ink: #161d26;
-  --navy: #152e53;
-  --muted-ink: #525c68;
-  --rule: #d8dde2;
-  --outline: #254a92;
-  --tile-radius: 0.4rem;
-  --section-gap: clamp(2.4rem, 5vw, 3.5rem);
-
   flex: 1;
-  background: var(--paper);
-  color: var(--ink);
+  background: #fcfcfb;
+  color: #161d26;
 }
 
 .container {
@@ -18,364 +9,48 @@
   margin-inline: auto;
 }
 
-.header,
-.headerLinks,
-.brand {
+.header, .headerLinks, .brand, .sectionHead {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-.header {
-  justify-content: space-between;
-  gap: 0.75rem;
-  min-height: 64px;
-  color: var(--navy);
-}
-
-.headerLinks {
-  gap: clamp(0.9rem, 4vw, 2.75rem);
-  font-size: 0.9375rem;
-}
-
-.header a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-}
-
-.brand {
-  gap: 0.85rem;
-  font-weight: 650;
-  letter-spacing: -0.035em;
-}
-
-.header .brand {
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
-}
+.header, .sectionHead { justify-content: space-between; }
+.header { min-height: 64px; color: #152e53; }
+.headerLinks { gap: clamp(1rem, 4vw, 2.75rem); }
+.header a, .sectionHead a { display: inline-flex; align-items: center; min-height: 44px; }
+.brand { gap: .65rem; font-size: clamp(1rem, 2.4vw, 1.4rem); font-weight: 650; letter-spacing: -.035em; }
 
 .hero {
   display: grid;
-  gap: 1.45rem;
-  align-items: start;
-  padding-block: clamp(1.55rem, 3.7vw, 3.1rem) 1.75rem;
-}
-
-.hero h1,
-.hero time {
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.hero h1 {
-  color: #101b2a;
-  font-size: clamp(2.25rem, 5vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-}
-
-.hero time {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
-}
-
-.jumpBar,
-.jumpBar nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-
-.jumpBar {
-  justify-content: space-between;
-  gap: 0.55rem 1rem;
-  padding-top: 0.65rem;
-  border-top: 2px solid var(--ink);
-  font-size: 0.875rem;
-}
-
-.jumpBar nav {
-  gap: 0.48rem;
-  color: var(--navy);
-}
-
-.jumpBar strong {
-  margin-right: 0.48rem;
-  color: var(--ink);
-  font-size: 0.806rem;
-  font-weight: 730;
-  text-transform: uppercase;
-}
-
-.games {
-  display: grid;
-  gap: var(--section-gap);
-  margin-top: clamp(1.8rem, 4vw, 2.75rem);
-}
-
-.games,
-.topics,
-.guides {
-  scroll-margin-top: 1.25rem;
-}
-
-.games h2,
-.editorial h2,
-.topics h2,
-.guides h2 {
-  margin-bottom: clamp(0.725rem, 2vw, 1rem);
-  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
-  line-height: 1.25;
-  font-weight: 560;
-  letter-spacing: -0.033em;
-}
-
-.gameGrid,
-.topicPicks,
-.editorial,
-.topicGrid,
-.guideGrid {
-  display: grid;
-  gap: clamp(0.7rem, 1.4vw, 1rem);
-}
-
-.gameGrid,
-.topicPicks {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.gameCard,
-.article summary,
-.articleTitle,
-.caption {
-  display: block;
-}
-
-.photo,
-.placeholder,
-.random {
-  display: block;
-  width: 100%;
-  border-radius: var(--tile-radius);
-  background: #efefed;
-}
-
-.photo {
-  height: auto;
-  object-fit: cover;
-}
-
-.placeholder,
-.random {
-  aspect-ratio: 4 / 3;
-}
-
-.placeholder,
-.random,
-.badge {
-  display: grid;
-  place-content: center;
-}
-
-.placeholder {
-  color: var(--muted-ink);
-  font-size: 2rem;
-}
-
-.random {
-  justify-items: center;
-  gap: 0.85rem;
-  padding: 0.75rem;
-  color: var(--ink);
-  font-size: clamp(0.83rem, 2vw, 1rem);
-  font-weight: 550;
-  text-align: center;
-  cursor: pointer;
-}
-
-.random svg {
-  width: 1.55rem;
-  height: 1.55rem;
-  color: var(--navy);
-}
-
-.random:is(:hover, :focus-visible) {
-  background: #e5eaf0;
-}
-
-.gameCaption {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  margin-top: 0.65rem;
-}
-
-.gameCaption strong,
-.topicLink strong,
-.articleTitle {
-  font-size: 1rem;
-  line-height: 1.25;
-  font-weight: 650;
-  letter-spacing: -0.025em;
-}
-
-.caption {
-  margin-top: 0.18rem;
-  color: var(--muted-ink);
-  font-size: 0.875rem;
-  line-height: 1.45;
-  text-wrap: pretty;
-}
-
-.badge {
-  flex: none;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.42rem;
-  background: var(--badge);
-  color: white;
-  font-weight: 700;
-}
-
-.badge.soft {
-  background: var(--tint);
-  color: var(--badge);
-}
-
-.movie { --badge: #694379; --tint: #ede3f0; }
-.book { --badge: #306996; --tint: #e3edf3; }
-.word { --badge: #936007; --tint: #f7edd9; }
-.plant { --badge: #387538; --tint: #e6efdf; }
-.size { --badge: #356d9a; --tint: #e4eef5; }
-.logic { --badge: #aa453e; --tint: #f6e4e4; }
-
-.editorial,
-.topics,
-.guides {
-  margin-top: var(--section-gap);
-}
-
-.editorial,
-.guideGrid {
-  gap: clamp(1.6rem, 3vw, 2.2rem);
-}
-
-.editorial .photo {
-  height: auto;
-  aspect-ratio: 4 / 3;
-}
-
-.editorial > section:first-child .photo {
-  aspect-ratio: 8 / 3;
-}
-
-.article summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-.article summary::-webkit-details-marker {
-  display: none;
-}
-
-.article summary .photo {
-  margin-bottom: 0.55rem;
-}
-
-.articleBody {
-  margin-top: 0.75rem;
-  padding: 0.85rem 1rem;
-  border-radius: var(--tile-radius);
-  background: #f2f4f6;
-  color: var(--muted-ink);
-  font-size: 1rem;
-  line-height: 1.62;
-}
-
-.articleBody p + p {
-  margin-top: 0.65rem;
-}
-
-.dot {
-  padding-inline: 0.24em;
-}
-
-.readTime {
-  white-space: nowrap;
-}
-
-.topicGrid {
-  gap: 0.55rem 1.2rem;
-}
-
-.topicLink {
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 3.625rem;
+  gap: 1.5rem;
+  border-bottom: 2px solid #152e53;
+  padding: clamp(1.5rem, 4vw, 3.25rem) 0 2rem;
 }
+.hero h1 { font: 500 clamp(2.4rem, 5vw, 3.3rem)/1.06 Georgia, serif; letter-spacing: -.04em; }
+.hero h1 + p { margin-top: .8rem; max-width: 38ch; line-height: 1.55; color: #525c68; }
 
-.chevron {
-  margin-left: auto;
-  color: var(--navy);
-  font-size: 1.375rem;
-}
+.section { margin-block: clamp(2rem, 4.5vw, 3.4rem); scroll-margin-top: 1rem; }
+.section h2 { margin-bottom: .8rem; font-size: clamp(1.35rem, 3vw, 1.65rem); font-weight: 650; letter-spacing: -.032em; }
+.sectionHead { flex-wrap: wrap; margin-bottom: .7rem; }
+.sectionHead h2 { margin: 0; }
+.sectionHead a { color: #254a92; text-decoration: underline; text-underline-offset: .2em; }
 
-.guideList .article + .article {
-  margin-top: 0.8rem;
-  padding-top: 0.8rem;
-  border-top: 1px solid var(--rule);
-}
-
-.gameCard:hover strong,
-.topicLink:hover strong,
-.article summary:hover .articleTitle,
-.header a:hover,
-.jumpBar a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.17em;
-}
-
-.page :is(a, button, summary):focus-visible {
-  outline: 2px solid var(--outline);
-  outline-offset: 3px;
-}
-
-@media (min-width: 37rem) {
-  .topicGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
+.gameGrid, .guides { display: grid; gap: 1rem; }
+.gameGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gameCard, .gameCard span, .gameCard strong { display: block; }
+.gameCard img { width: 100%; height: auto; border-radius: .4rem; margin-bottom: .65rem; }
+.gameCard strong, .guides a { font-weight: 650; }
+.gameCard span, .guides p { color: #525c68; line-height: 1.5; margin-top: .25rem; }
+.guides li { padding-block: .8rem; border-top: 1px solid #d8dde2; }
+.page :is(a, button, input):focus-visible { outline: 2px solid #254a92; outline-offset: 3px; }
+.gameCard:hover strong, .header a:hover, .guides a:hover { text-decoration: underline; }
 @media (min-width: 46rem) {
-  .hero {
-    grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
-    align-items: center;
-  }
-
-  .gameGrid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .editorial,
-  .guideGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .editorial {
-    gap: 1.1rem;
-  }
-
-  .topicGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  .hero, .guides { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gameGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-
 @media (max-width: 21.25rem) {
-  .gameGrid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .brand {
-    gap: 0.42rem;
-  }
+  .gameGrid { gap: .65rem; }
+  .brand { gap: .4rem; }
 }

@@ -17,7 +17,7 @@ export const HOW_TO_PLAY_FAQS: readonly HowToPlayFaq[] = [
   {
     question: "How do I unlock the next question?",
     answer:
-      "Score more than 80% on your current question. A score of 80% or below lets you try the same question again.",
+      "Solve or reveal a title, land inside the specified measurement range, or choose Yes or No. Then select the next question.",
   },
   {
     question: "Do I need an account?",

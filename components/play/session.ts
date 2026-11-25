@@ -6,6 +6,7 @@ export type RoundState = {
   hints: string[];
   hintsExhausted: boolean;
   result: PlayResult | null;
+  retryMessage?: string;
   lastAccuracy: number | null;
   recentQuestionIds: string[];
   questionNumber: number;

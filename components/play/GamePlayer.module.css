@@ -176,12 +176,7 @@
   width: 100%;
   padding: 0.75rem 0.95rem;
   border-radius: 0.55rem;
-  background: #f5eee7;
-  color: #643e25;
   font-size: 0.9rem;
-}
-
-.accuracy[data-passed="true"] {
   margin-bottom: 0.9rem;
   background: #e9f3ee;
   color: #20533f;

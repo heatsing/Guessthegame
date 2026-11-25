@@ -20,7 +20,7 @@ export default function HowToPlayPage() {
       <StaticPage
         path="/how-to-play"
         title="How to play"
-        lead="Read the clue and submit your answer to see your accuracy. Score above 80% to read the explanation and unlock the next question."
+        lead="Guess a title, estimate a measurement or make a logic choice. Each game explains the answer as you play."
         updated={false}
       >
         <h2>Game rules</h2>

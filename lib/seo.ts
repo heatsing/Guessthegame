@@ -1,5 +1,6 @@
 import type { Metadata, MetadataRoute } from "next";
 
+import { posts, blogPath } from "@/lib/blog";
 import { playGames } from "@/lib/play/games";
 import { site } from "@/lib/site";
 
@@ -7,6 +8,7 @@ export const SITEMAP_STATIC_PATHS = [
   "/",
   "/how-to-play",
   "/about",
+  "/blog",
 ] as const;
 
 export const homeTitle = `Online Guessing Games | ${site.name}`;
@@ -29,6 +31,7 @@ export function buildSitemapEntries(origin: string = site.url): MetadataRoute.Si
   return [
     ...SITEMAP_STATIC_PATHS,
     ...playGames.map(({ slug }) => `/${slug}`),
+    ...posts.map(blogPath),
   ].map((path) => ({ url: absoluteUrl(path, origin) }));
 }
 

@@ -11,6 +11,8 @@ import {
   pageMetadata,
 } from "../lib/seo";
 
+import { posts, blogPath } from "../lib/blog";
+
 const origin = "https://guessthegame.net";
 const gamePaths = [
   "/guess-the-movie",
@@ -22,7 +24,7 @@ const gamePaths = [
 const urls = buildSitemapEntries(origin).map(({ url }) => url);
 assert.deepEqual(
   urls,
-  ["/", "/how-to-play", "/about", ...gamePaths].map((path) => absoluteUrl(path, origin)),
+  ["/", "/how-to-play", "/about", "/blog", ...gamePaths, ...posts.map(blogPath)].map((path) => absoluteUrl(path, origin)),
 );
 assert.equal(new Set(urls).size, urls.length);
 assert.equal(absoluteUrl("/", origin + "/"), origin);

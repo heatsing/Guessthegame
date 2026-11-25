@@ -90,7 +90,7 @@ export default async function GamePage({ params, searchParams }: PageProps<"/[ga
           </details>
         </section>
 
-        <GameGuide guide={gameGuides[config.slug]} related={related} />
+        <GameGuide slug={config.slug} guide={gameGuides[config.slug]} related={related} />
       </main>
       <SiteFooter />
     </div>
