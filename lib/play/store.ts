@@ -114,6 +114,7 @@ export class QuestionStore {
           ON v.question_id = q.id AND v.revision = q.published_revision
         WHERE q.game_slug = ? AND q.status = 'published'
           AND q.published_revision IS NOT NULL AND v.invalidated_at IS NULL
+          AND (q.available_at IS NULL OR q.available_at <= ?)
           AND (? IS NULL OR q.topic_slug = ?) AND (? IS NULL OR q.difficulty = ?)
         ORDER BY CASE
           WHEN q.id = ? THEN 2
@@ -128,6 +129,7 @@ export class QuestionStore {
         now,
         sessionId && !prefetch ? now : null,
         gameSlug,
+        now,
         topic ?? null,
         topic ?? null,
         difficulty ?? null,
@@ -191,10 +193,11 @@ export class QuestionStore {
           WHERE q.game_slug = t.game_slug AND q.topic_slug = t.slug
             AND q.status = 'published' AND q.published_revision IS NOT NULL
             AND v.invalidated_at IS NULL
+            AND (q.available_at IS NULL OR q.available_at <= ?)
         )
         ORDER BY t.name COLLATE NOCASE, t.slug
       `)
-      .bind(gameSlug)
+      .bind(gameSlug, Date.now())
       .all<{ slug: string; name: string }>();
 
     return result.results;

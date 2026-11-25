@@ -4,10 +4,7 @@ import { posts, blogPath } from "@/lib/blog";
 import { findPlayGame } from "@/lib/play/games";
 import { pageMetadata } from "@/lib/seo";
 
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return posts.map(({ slug }) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 function findPost(slug: string) {
   return posts.find((post) => post.slug === slug) ?? notFound();

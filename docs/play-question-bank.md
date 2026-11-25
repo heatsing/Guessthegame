@@ -51,6 +51,8 @@ During review, check the prompt independently before looking at the answer. Veri
 
 For a reviewed batch, use `publish-file <csv>` to publish rows whose current draft fields match the file. The check keeps a later draft with different content from going live with the batch.
 
+To schedule when a question enters the draw pool, add `--available-at 2027-01-01T09:00:00+08:00` to `publish` or `publish-file`. Give an ISO 8601 date and time with `Z` or an explicit UTC offset. The CLI reports the time in UTC, and `preview` shows the saved timestamp. Scheduling a previously published key holds it out of new draws until that time. Omit the flag to make the selected questions available immediately.
+
 ## Revisions and statistics
 
 - Use `revise <csv>` with a single existing key to save a new draft revision. The current published text remains live until you publish the new revision.

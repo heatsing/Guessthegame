@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { mock } from "node:test";
 
 import { getPlatformProxy } from "wrangler";
 
@@ -17,10 +18,15 @@ async function testStore() {
   const game = "guess-the-movie";
   const session = "store-test-session";
 
-  try {
-    const migration = await readFile("migrations/play/0001_question_bank.sql", "utf8");
+  async function applyMigration(filename: string) {
+    const migration = await readFile(`migrations/play/${filename}`, "utf8");
     const statements = migration.split(/;\s*(?:\r?\n|$)/).map((sql) => sql.trim()).filter(Boolean);
     await db.batch(statements.map((sql) => db.prepare(sql)));
+  }
+
+  try {
+    await applyMigration("0001_question_bank.sql");
+    await applyMigration("0002_activated_rounds.sql");
     await db.prepare("INSERT INTO topics VALUES (?, 'test', 'Test')").bind(game).run();
     await db.prepare("INSERT INTO topics VALUES (?, 'empty', 'Empty')").bind(game).run();
     const fixtures = [
@@ -42,6 +48,10 @@ async function testStore() {
         `).bind(id, "Clue for " + id, JSON.stringify({ type: "title", answer: id, aliases: [] })),
       ]);
     }
+    await applyMigration("0003_question_availability.sql");
+    assert.deepEqual(await db.prepare("SELECT available_at FROM questions WHERE id = 'alpha'").first(), {
+      available_at: null,
+    });
 
     assert.deepEqual(await store.listTopics(game), [{ slug: "test", name: "Test" }]);
     assert.equal(await store.startRound(game, { topic: "empty" }), null);
@@ -164,7 +174,40 @@ async function testStore() {
     const secondChoice = await handleRoundAction(store, logicGame, { ...logicIdentity, action: "check", guess: false });
     assert.deepEqual(secondChoice, firstChoice);
     assert.equal((await loadNextRound(store, logicGame, logicIdentity)).status, 200);
-    console.log("D1 pool selection, concurrent settlements, activity statistics, and pinned revisions passed.");
+
+    const scheduledGame = "guess-the-size";
+    const availableAt = Date.UTC(2030, 0, 1);
+    await db.batch([
+      db.prepare("INSERT INTO topics VALUES (?, 'scheduled', 'Scheduled')").bind(scheduledGame),
+      db.prepare(`
+        INSERT INTO questions (id, game_slug, question_key, topic_slug, status, published_revision, updated_at, available_at)
+        VALUES ('scheduled', ?, 'scheduled', 'scheduled', 'published', 1, 1, ?)
+      `).bind(scheduledGame, availableAt),
+      db.prepare(`
+        INSERT INTO question_revisions (question_id, revision, prompt, hints_json, answer_config_json, explanation, sources_json, created_at)
+        VALUES ('scheduled', 1, 'Scheduled clue', '[]', ?, 'Answer explained', '[]', 1)
+      `).bind(JSON.stringify({ type: "number", target: 5, unit: "cm", min: 4, max: 6 })),
+    ]);
+    let now = availableAt - 1;
+    const clock = mock.method(Date, "now", () => now);
+    try {
+      assert.equal(await store.startRound(scheduledGame), null);
+      assert.deepEqual(await store.listTopics(scheduledGame), []);
+
+      now = availableAt;
+      const opened = await store.startRound(scheduledGame, { topic: "scheduled" });
+      assert.ok(opened);
+      assert.equal(opened.question.questionId, "scheduled");
+      assert.deepEqual(await store.listTopics(scheduledGame), [{ slug: "scheduled", name: "Scheduled" }]);
+
+      await db.prepare("UPDATE questions SET available_at = ? WHERE id = 'scheduled'").bind(availableAt + 1).run();
+      assert.equal(await store.startRound(scheduledGame), null);
+      assert.deepEqual(await store.getRound(scheduledGame, opened.id), opened);
+    } finally {
+      clock.mock.restore();
+    }
+
+    console.log("D1 scheduled pool selection, concurrent settlements, activity statistics, and pinned revisions passed.");
   } finally {
     await platform.dispose();
   }
