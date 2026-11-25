@@ -29,7 +29,7 @@ npm run build
 
 ## Production
 
-The production Worker is named `guessthegame`. The deployment configuration binds the apex and `www` custom domains. The application redirects public page requests from `www` or HTTP to the HTTPS apex.
+The production Worker is named `guessthegame`. The deployment configuration binds the apex and `www` custom domains. `worker.mjs` redirects public page requests from `www` or HTTP to the HTTPS apex and forwards requests for the site to OpenNext.
 
 Apply any new database migration before deploying the release.
 

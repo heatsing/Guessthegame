@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "guessthegame",
-  "main": ".open-next/worker.js",
+  "main": "worker.mjs",
   "workers_dev": true,
   "routes": [
     { "pattern": "guessthegame.net", "custom_domain": true },
