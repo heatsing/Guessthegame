@@ -2,7 +2,7 @@
 
 Online guessing games based on written clues and reasoning.
 
-The home page at [guessthegame.net](https://guessthegame.net) renders the four game entries on each request. Edit [lib/guessing-games.ts](lib/guessing-games.ts) to add or reorder cards. The four game pages are planned for the next phase.
+The home page at [guessthegame.net](https://guessthegame.net) renders the game directory, Quick Guess, and guessing guides on each request. Guess the Movie, Guess the Book, Guess the Size, and Yes or No are continuous-play games backed by a separate D1 question bank. The Word and Plant cards are previews. See [question bank operations](docs/play-question-bank.md) for local setup, imports, and publishing.
 
 ThemeShot Daily puzzles are available through `/archive`, which lists the last 30 published days, and `/puzzle/[YYYY-MM-DD]`, which opens a playable day. The ThemeShot footer links to the rules, about, and legal pages. `/themes` and `/themes/[slug]` list the themed weeks.
 
@@ -21,7 +21,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the **Guess the Game** home page and its four game cards.
+Open [http://localhost:3000](http://localhost:3000) to see the **Guess the Game** home page.
 
 Useful scripts:
 

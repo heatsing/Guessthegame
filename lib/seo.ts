@@ -1,6 +1,7 @@
 import type { Metadata, MetadataRoute } from "next";
 
 import type { Theme } from "@/lib/catalog/schema";
+import { playGames } from "@/lib/play/games";
 import { site } from "@/lib/site";
 
 /** High-priority URLs we submit to crawlers. Never add `/puzzle/*`. */
@@ -14,7 +15,7 @@ export const SITEMAP_STATIC_PATHS = [
 
 export const homeTitle = `Online Guessing Games | ${site.name}`;
 export const homeDescription =
-  "Play online guessing games with written clues. Guess a movie or book title, estimate a real-world measurement, or solve a yes-or-no logic puzzle.";
+  "Explore online guessing games with written clues. Guess movies, books, words and plants, estimate sizes, or try a quick yes-or-no puzzle.";
 
 export function siteOrigin(url: string = site.url): string {
   return url.replace(/\/+$/, "");
@@ -45,6 +46,7 @@ export function listPublishedThemePaths(themes: readonly Theme[]): string[] {
 export function listSitemapPaths(themes: readonly Theme[]): string[] {
   const paths = [
     ...SITEMAP_STATIC_PATHS,
+    ...playGames.map(({ slug }) => `/${slug}`),
     ...listPublishedThemePaths(themes),
   ];
   return paths.filter((path) => !isPuzzlePath(path));

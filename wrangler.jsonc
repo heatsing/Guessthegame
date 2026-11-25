@@ -17,6 +17,14 @@
   "observability": {
     "enabled": true,
   },
+  "d1_databases": [
+    {
+      "binding": "PLAY_DB",
+      "database_name": "guessthegame-questions",
+      "database_id": "a54da7c8-85a8-4ae4-a679-6dd149e2ff69",
+      "migrations_dir": "migrations/play",
+    },
+  ],
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",

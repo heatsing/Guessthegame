@@ -1,0 +1,130 @@
+.page {
+  --paper: #fcfcfb;
+  --ink: #161d26;
+  --navy: #152e53;
+  --muted-ink: #525c68;
+  --rule: #d8dde2;
+  --outline: #254a92;
+
+  flex: 1;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(calc(100% - 40px), 960px);
+  min-height: 62px;
+  margin-inline: auto;
+  color: var(--navy);
+}
+
+.header a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.main {
+  width: min(calc(100% - 40px), 680px);
+  margin-inline: auto;
+  padding-block: clamp(1.65rem, 5vw, 3.35rem) 3rem;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.15rem, 5vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.section {
+  margin-top: 2rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid var(--rule);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.filters label {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--muted-ink);
+  font-size: 0.875rem;
+}
+
+.filters select,
+.filters button {
+  min-height: 44px;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #a9b2c3;
+  border-radius: 0.45rem;
+  background: white;
+  color: var(--navy);
+}
+
+.filters button {
+  cursor: pointer;
+}
+
+.section h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.section p {
+  color: var(--muted-ink);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.example {
+  margin-top: 0.8rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  background: #edf1f5;
+}
+
+.example summary {
+  min-height: 32px;
+  color: var(--navy);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.2rem;
+}
+
+.related a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.page :is(a, summary, select, button):focus-visible {
+  outline: 2px solid var(--outline);
+  outline-offset: 3px;
+}

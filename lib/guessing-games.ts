@@ -5,29 +5,41 @@ type GuessingGame = {
   order: number;
 };
 
-export const guessingGames: readonly GuessingGame[] = [
+export const guessingGames = [
   {
     name: "Guess the Movie",
-    description: "Read a short plot clue and type the movie title.",
+    description: "Name the film from a clue.",
     path: "/guess-the-movie/",
     order: 1,
   },
   {
     name: "Guess the Book",
-    description: "Read the clues and type the book title.",
+    description: "Name the book from its story.",
     path: "/guess-the-book/",
     order: 2,
   },
   {
-    name: "Guess the Size",
-    description: "Use the clues to estimate a real-world measurement.",
-    path: "/guess-the-size/",
+    name: "Guess the Word",
+    description: "Find the word that fits.",
+    path: "/guess-the-word/",
     order: 3,
   },
   {
-    name: "Yes or No?",
-    description: "Read a short setup and decide whether the conclusion follows.",
-    path: "/yes-or-no/",
+    name: "Guess the Plant",
+    description: "Identify it from written clues.",
+    path: "/guess-the-plant/",
     order: 4,
   },
-];
+  {
+    name: "Guess the Size",
+    description: "Estimate the measurement.",
+    path: "/guess-the-size/",
+    order: 5,
+  },
+  {
+    name: "Yes or No?",
+    description: "Decide what follows.",
+    path: "/yes-or-no/",
+    order: 6,
+  },
+] as const satisfies readonly GuessingGame[];

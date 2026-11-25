@@ -47,6 +47,10 @@ console.log("ok — static allowlist");
 
 const paths = listSitemapPaths(catalog.themes);
 expect(paths.includes("/"), "sitemap paths include home");
+for (const path of ["/guess-the-movie", "/guess-the-book", "/guess-the-size", "/yes-or-no"]) {
+  expect(paths.includes(path), `sitemap includes ${path}`);
+}
+expect(!paths.includes("/guess-the-word") && !paths.includes("/guess-the-plant"), "preview games stay out of the sitemap");
 expect(paths.includes("/themes/autumn-showcase"), "published autumn theme");
 expect(paths.includes("/themes/indie-first-week"), "published indie theme");
 expect(paths.includes("/themes/hearth-harvest"), "published hearth theme");

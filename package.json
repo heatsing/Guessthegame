@@ -16,7 +16,8 @@
     "lint": "eslint",
     "validate": "tsx scripts/validate-catalog.ts",
     "takedown": "tsx scripts/takedown-media.ts",
-    "test": "tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts && tsx scripts/archive.test.ts && tsx scripts/themes.test.ts && tsx scripts/legal-pages.test.ts && tsx scripts/seo.test.ts && tsx scripts/takedown-media.test.ts"
+    "test:play": "tsx scripts/play-grading.test.ts && tsx scripts/play-store.test.ts && tsx scripts/play-editorial.test.ts",
+    "test": "npm run test:play && tsx scripts/validate-catalog.test.ts && tsx scripts/daily-play.test.ts && tsx scripts/autocomplete.test.ts && tsx scripts/stats.test.ts && tsx scripts/archive.test.ts && tsx scripts/themes.test.ts && tsx scripts/legal-pages.test.ts && tsx scripts/seo.test.ts && tsx scripts/takedown-media.test.ts"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.6",
