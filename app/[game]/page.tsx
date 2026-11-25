@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { connection } from "next/server";
 
+import { Brand } from "@/components/Brand";
 import { GamePlayer } from "@/components/play/GamePlayer";
 import { gameGuides } from "@/lib/play/game-guides";
 import { findPlayGame, playGames } from "@/lib/play/games";
@@ -49,7 +50,7 @@ export default async function GamePage({ params, searchParams }: PageProps<"/[ga
     <div className={styles.page}>
       <header className={styles.header}>
         <nav aria-label="Site">
-          <Link href="/">{site.name}</Link>
+          <Brand className={styles.brand} />
           <Link href="/#games">All games</Link>
         </nav>
       </header>

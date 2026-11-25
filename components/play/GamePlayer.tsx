@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
-import type { PlayResult, PublicRound } from "@/lib/play/types";
+import { PASS_ACCURACY, type PlayResult, type PublicRound } from "@/lib/play/types";
 
 import styles from "./GamePlayer.module.css";
 import { newRoundState, readRoundSession, saveRoundSession, type RoundState } from "./session";
@@ -13,7 +13,7 @@ type Guess = string | boolean;
 type Pending = { action: Action; guess?: Guess };
 type ResumeResponse = { round: PublicRound; hints: string[]; hasMore?: boolean; result?: PlayResult };
 type CheckResponse =
-  | { status: "retry"; message: string }
+  | { status: "retry"; accuracy: number }
   | { status: "settled"; result: PlayResult };
 type HintResponse = { hint?: string; hintCount: number; hasMore?: boolean; result?: PlayResult };
 type Focus = "question" | "input" | "result" | "hint";
@@ -42,13 +42,23 @@ const resultTitles: Record<PlayResult["outcome"], string> = {
   correct: "Correct!",
   assisted: "Correct with a hint!",
   revealed: "Answer revealed",
-  within: "Within range",
+  within: "Level passed",
   low: "Below range",
   high: "Above range",
   incorrect: "Not quite",
 };
 
 const measurement = new Intl.NumberFormat("en-US", { maximumSignificantDigits: 8 });
+
+function Accuracy({ value, retry = false }: { value: number; retry?: boolean }) {
+  return (
+    <div className={styles.accuracy} data-passed={value > PASS_ACCURACY}>
+      <p><strong>{value}%</strong> accuracy</p>
+      <meter min={0} max={100} value={value} aria-label="Answer accuracy" />
+      {retry && <p>Score more than {PASS_ACCURACY}% to unlock the next question. Try again.</p>}
+    </div>
+  );
+}
 
 function displayAnswer(value: PlayResult["answer"], unit?: string) {
   if (typeof value === "boolean") return value ? "Yes" : "No";
@@ -153,6 +163,7 @@ export function GamePlayer({
 
   const requestNext = useCallback((snapshot: RoundState, prefetch: boolean) =>
     request<{ round: PublicRound }>(gameSlug, "next", {
+      roundId: snapshot.round?.id,
       recentQuestionIds: snapshot.recentQuestionIds,
       sessionId: sessionId.current,
       prefetch,
@@ -161,7 +172,8 @@ export function GamePlayer({
     }).then(({ round }) => round), [difficulty, gameSlug, topic]);
 
   useEffect(() => {
-    if (!state.round || !state.result || state.expired || preload.current?.source === state.round.id) return;
+    if (!state.round || (state.result?.accuracy ?? 0) <= PASS_ACCURACY ||
+      state.expired || preload.current?.source === state.round.id) return;
     const source = state.round.id;
     const promise = requestNext(state, true).then(
       (round) => {
@@ -178,7 +190,7 @@ export function GamePlayer({
     const round = snapshot.round;
     if (busy.current || !sessionId.current) return;
     if (action !== "next" && (!round || snapshot.result || snapshot.expired)) return;
-    if (action === "next" && round && !snapshot.result && !snapshot.expired) return;
+    if (action === "next" && (!round || snapshot.expired || (snapshot.result?.accuracy ?? 0) <= PASS_ACCURACY)) return;
     if (action === "hint" && snapshot.hintsExhausted) return;
 
     busy.current = true;
@@ -194,7 +206,7 @@ export function GamePlayer({
         if (!latest()) return;
         preload.current = null;
         focus.current = "question";
-        save(newRoundState(next, snapshot.recentQuestionIds, round ? snapshot.questionNumber + 1 : 1));
+        save(newRoundState(next, snapshot.recentQuestionIds, snapshot.questionNumber + 1));
         if (cached) void resume(next);
         return;
       }
@@ -231,11 +243,11 @@ export function GamePlayer({
       if (!latest()) return;
       if (response.status === "retry") {
         focus.current = "input";
-        setNotice(response.message);
+        save({ ...current.current, lastAccuracy: response.accuracy });
         return;
       }
       focus.current = "result";
-      save({ ...current.current, result: response.result });
+      save({ ...current.current, result: response.result, lastAccuracy: null });
     } catch (error) {
       if (!latest()) return;
       if (error instanceof PlayRequestError && error.code === "expired") {
@@ -259,6 +271,16 @@ export function GamePlayer({
 
   const { round, result, expired } = state;
   const waiting = pending !== null;
+  const canAdvance = !expired && (result?.accuracy ?? 0) > PASS_ACCURACY;
+
+  function startOver() {
+    try {
+      sessionStorage.removeItem(storageKey);
+    } catch {
+      // The page can still reload when browser storage is unavailable.
+    }
+    window.location.reload();
+  }
 
   return (
     <section className={styles.board} aria-labelledby="question-prompt">
@@ -280,10 +302,15 @@ export function GamePlayer({
       <div className={styles.notice} role="status">{notice}</div>
 
       {expired ? (
-        <p className={styles.explanation}>This round has expired. Start a new question to keep playing.</p>
+        <p className={styles.explanation}>This round has expired. Start over to keep playing.</p>
       ) : result ? (
         <div className={styles.result}>
-          <h3 ref={resultHeading} tabIndex={-1}>{resultTitles[result.outcome]}</h3>
+          <h3 ref={resultHeading} tabIndex={-1}>
+            {result.accuracy !== undefined && result.accuracy <= PASS_ACCURACY ? "Not quite"
+              : result.accuracy !== undefined && result.accuracy < 100 ? "Level passed"
+                : resultTitles[result.outcome]}
+          </h3>
+          {result.accuracy !== undefined && <Accuracy value={result.accuracy} />}
           <dl className={styles.values}>
             {result.guess !== undefined && (
               <div><dt>Your guess</dt><dd>{displayAnswer(result.guess, result.unit)}</dd></div>
@@ -307,6 +334,9 @@ export function GamePlayer({
         </div>
       ) : round && (
         <>
+          <div className={styles.attempt} role="status">
+            {state.lastAccuracy !== null && <Accuracy value={state.lastAccuracy} retry />}
+          </div>
           {round.answerType === "boolean" ? (
             <div className={styles.choices} aria-label="Your answer" role="group">
               {[true, false].map((choice) => (
@@ -361,16 +391,21 @@ export function GamePlayer({
             )}
             {round.answerType === "title" && (
               <button className={styles.textButton} type="button" disabled={waiting} onClick={() => void act("reveal")}>
-                {pending?.action === "reveal" ? "Revealing…" : "Show answer"}
+                {pending?.action === "reveal" ? "Revealing…" : "Show answer and end run"}
               </button>
             )}
           </div>
         </>
       )}
 
-      {(!round || result || expired) && (
+      {canAdvance && (
         <button className={styles.primary} type="button" onClick={() => void act("next")} disabled={waiting}>
-          {pending?.action === "next" ? "Loading question…" : round ? "Next Question" : "Try again"}
+          {pending?.action === "next" ? "Loading question…" : "Next Question"}
+        </button>
+      )}
+      {(!round || expired || (result && !canAdvance && (result.accuracy !== undefined || result.outcome === "revealed"))) && (
+        <button className={styles.primary} type="button" onClick={startOver} disabled={waiting}>
+          {round ? "Start over" : "Try again"}
         </button>
       )}
 

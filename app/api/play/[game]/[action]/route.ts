@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { findPlayGame } from "@/lib/play/games";
-import { handleRoundAction, toPublicRound } from "@/lib/play/service";
+import { handleRoundAction, loadNextRound } from "@/lib/play/service";
 import { getQuestionStore } from "@/lib/play/store";
 
 const session = z.object({ sessionId: z.string().uuid() });
@@ -9,7 +9,7 @@ const round = session.extend({ roundId: z.string().uuid() });
 const revision = round.extend({ revision: z.number().int().positive() });
 
 const actionPayload = z.discriminatedUnion("action", [
-  session.extend({
+  round.extend({
     action: z.literal("next"),
     recentQuestionIds: z.array(z.string().max(160)).max(200).optional(),
     topic: z.string().max(80).optional(),
@@ -55,11 +55,8 @@ export async function POST(request: Request, { params }: RouteContext<"/api/play
   try {
     const store = await getQuestionStore();
     if (data.data.action === "next") {
-      const { recentQuestionIds, sessionId, topic, difficulty, prefetch } = data.data;
-      const next = await store.startRound(game, { recentQuestionIds, sessionId, topic, difficulty, prefetch });
-      return next
-        ? reply({ round: toPublicRound(next) })
-        : reply({ message: "No questions are available for this selection." }, 404);
+      const result = await loadNextRound(store, game, data.data);
+      return reply(result.body, result.status);
     }
 
     const result = await handleRoundAction(store, game, data.data);

@@ -1,6 +1,6 @@
-import { gradeAnswer, revealTitle } from "./grading";
+import { gradeAnswer, revealTitle, withResultAccuracy } from "./grading";
 import { getQuestionStore, type QuestionStore } from "./store";
-import type { PlayGame, PrivateRound, PublicRound } from "./types";
+import { PASS_ACCURACY, type PlayGame, type PrivateRound, type PublicRound } from "./types";
 
 export function toPublicRound(round: PrivateRound): PublicRound {
   const { question } = round;
@@ -39,8 +39,28 @@ export type RoundAction =
 
 const expired = {
   code: "expired",
-  message: "This question is no longer available. Choose Next Question to continue.",
+  message: "This question is no longer available. Choose Start over to play again.",
 };
+
+export async function loadNextRound(
+  store: QuestionStore,
+  gameSlug: string,
+  { roundId, sessionId, ...selection }: RoundRequest & NonNullable<Parameters<QuestionStore["startRound"]>[1]>,
+) {
+  const previous = await store.getRound(gameSlug, roundId);
+  if (!previous || previous.sessionId !== sessionId) return { status: 410, body: expired };
+
+  const accuracy = previous.result && withResultAccuracy(previous.question, previous.result).accuracy;
+  if (accuracy == null || accuracy <= PASS_ACCURACY) {
+    return { status: 409, body: { message: `Score more than ${PASS_ACCURACY}% to unlock the next question.` } };
+  }
+
+  const recentQuestionIds = [previous.question.questionId, ...(selection.recentQuestionIds ?? [])];
+  const next = await store.startRound(gameSlug, { ...selection, recentQuestionIds, sessionId });
+  return next
+    ? { status: 200, body: { round: toPublicRound(next) } }
+    : { status: 404, body: { message: "No questions are available for this selection." } };
+}
 
 export async function handleRoundAction(store: QuestionStore, gameSlug: string, request: RoundAction) {
   for (let attempt = 0; attempt < 5; attempt++) {
@@ -53,7 +73,8 @@ export async function handleRoundAction(store: QuestionStore, gameSlug: string, 
     }
 
     const save = { sessionId: request.sessionId };
-    const { question, result } = round;
+    const { question } = round;
+    const result = round.result && withResultAccuracy(question, round.result);
 
     if (request.action === "resume") {
       if (!await store.saveRound(round, save)) continue;
@@ -91,7 +112,10 @@ export async function handleRoundAction(store: QuestionStore, gameSlug: string, 
     if (grade.status === "invalid") {
       return { status: 422, body: { code: "invalid", message: grade.message } };
     }
-    if (grade.status === "retry") return { status: 200, body: grade };
+    if (grade.status === "retry") {
+      if (round.sessionId === null && !await store.saveRound(round, save)) continue;
+      return { status: 200, body: grade };
+    }
     if (await store.saveRound(round, { ...save, result: grade.result })) {
       return { status: 200, body: grade };
     }

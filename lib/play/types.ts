@@ -1,5 +1,7 @@
 export type AnswerType = "title" | "number" | "boolean";
 
+export const PASS_ACCURACY = 80;
+
 export type PlayGame = {
   slug: string;
   name: string;
@@ -38,6 +40,7 @@ export type PublicRound = {
 
 export type PlayResult = {
   outcome: "correct" | "assisted" | "revealed" | "within" | "low" | "high" | "incorrect";
+  accuracy?: number;
   answer: string | number | boolean;
   guess?: string | number | boolean;
   unit?: string;

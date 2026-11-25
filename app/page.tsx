@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
 
+import { Brand } from "@/components/Brand";
 import { QuickGuess } from "@/components/home/QuickGuess";
 import { quickGuessExampleCount } from "@/components/home/quick-guess-examples";
 import { guessingGames } from "@/lib/guessing-games";
@@ -83,20 +84,6 @@ function GameBadge({ kind, soft = false }: { kind: GameArt; soft?: boolean }) {
     <span className={`${styles.badge} ${styles[kind]} ${soft ? styles.soft : ""}`}>
       <Icon kind={kind} />
     </span>
-  );
-}
-
-function Brand() {
-  return (
-    <Link className={styles.brand} href="/" prefetch={false}>
-      <span className={styles.brandMark} aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-      </span>
-      {site.name}
-    </Link>
   );
 }
 
@@ -197,7 +184,7 @@ export default async function Home({ searchParams }: PageProps<"/">) {
     <div className={styles.page}>
       <header className={styles.container}>
         <nav className={styles.header} aria-label="Main">
-          <Brand />
+          <Brand className={styles.brand} />
           <div className={styles.headerLinks}>
             <a href="#games">Games</a>
             <a href="#guides">Guides</a>
@@ -309,7 +296,7 @@ export default async function Home({ searchParams }: PageProps<"/">) {
       </main>
 
       <footer className={`${styles.container} ${styles.footer}`}>
-        <Brand />
+        <Brand className={styles.brand} />
         <nav aria-label="Footer">
           {legalNav.map(({ href, label }) => (
             <Link href={href} key={href}>{label}</Link>

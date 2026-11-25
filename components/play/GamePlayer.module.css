@@ -162,6 +162,59 @@
   clip-path: inset(50%);
 }
 
+.attempt:empty {
+  position: absolute;
+}
+
+.attempt {
+  width: 100%;
+}
+
+.accuracy {
+  display: grid;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border-radius: 0.55rem;
+  background: #f5eee7;
+  color: #643e25;
+  font-size: 0.9rem;
+}
+
+.accuracy[data-passed="true"] {
+  margin-bottom: 0.9rem;
+  background: #e9f3ee;
+  color: #20533f;
+}
+
+.accuracy strong {
+  font-size: 1.35rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.accuracy meter {
+  width: 100%;
+  height: 0.6rem;
+  appearance: none;
+}
+
+.accuracy meter::-webkit-meter-bar {
+  border: 0;
+  border-radius: 0.35rem;
+  background: rgb(22 40 61 / 12%);
+}
+
+.accuracy meter::-webkit-meter-optimum-value {
+  border-radius: 0.35rem;
+  background: currentColor;
+}
+
+.accuracy meter::-moz-meter-bar {
+  border-radius: 0.35rem;
+  background: currentColor;
+}
+
 .board button:not(:disabled) {
   cursor: pointer;
 }

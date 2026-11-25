@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { getPlatformProxy } from "wrangler";
 
 import { QuestionStore } from "../lib/play/store";
+import { handleRoundAction, loadNextRound } from "../lib/play/service";
 import type { PlayResult } from "../lib/play/types";
 
 async function testStore() {
@@ -110,6 +111,21 @@ async function testStore() {
     assert.equal(await store.getRound(game, next.id), null);
     assert.equal(await store.saveRound(next, { sessionId: owner }), false);
     assert.deepEqual((await store.getRound(game, first.id))?.result, settled.result);
+
+    const progression = await store.startRound(game, { recentQuestionIds: ["beta"], difficulty: "easy" });
+    assert.ok(progression);
+    const identity = { roundId: progression.id, revision: progression.question.revision, sessionId: "progression-test" };
+    const miss = await handleRoundAction(store, game, { ...identity, action: "check", guess: "zzzzz" });
+    assert.deepEqual(miss, { status: 200, body: { status: "retry", accuracy: 0 } });
+    assert.equal((await loadNextRound(store, game, { ...identity, prefetch: true })).status, 409);
+    const success = await handleRoundAction(store, game, {
+      ...identity, action: "check", guess: progression.question.questionId,
+    });
+    assert.equal("result" in success.body && success.body.result?.accuracy, 100);
+    const repeated = await handleRoundAction(store, game, { ...identity, action: "check", guess: "zzzzz" });
+    assert.deepEqual(repeated, success);
+    assert.equal((await loadNextRound(store, game, { ...identity, sessionId: "another-session" })).status, 410);
+    assert.equal((await loadNextRound(store, game, { ...identity, prefetch: true })).status, 200);
     console.log("D1 pool selection, concurrent settlements, activity statistics, and pinned revisions passed.");
   } finally {
     await platform.dispose();

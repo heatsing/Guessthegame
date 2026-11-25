@@ -6,6 +6,7 @@ export type RoundState = {
   hints: string[];
   hintsExhausted: boolean;
   result: PlayResult | null;
+  lastAccuracy: number | null;
   recentQuestionIds: string[];
   questionNumber: number;
   expired: boolean;
@@ -21,6 +22,7 @@ export const newRoundState = (
   hints: [],
   hintsExhausted: false,
   result: null,
+  lastAccuracy: null,
   recentQuestionIds: round
     ? [round.questionId, ...history.filter((id) => id !== round.questionId)].slice(0, 200)
     : history,
@@ -38,7 +40,7 @@ export function readRoundSession(key: string): { id: string; state: RoundState }
       Array.isArray(saved.state.hints) &&
       Array.isArray(saved.state.recentQuestionIds)
     ) {
-      return saved;
+      return { id: saved.id, state: { lastAccuracy: null, ...saved.state } };
     }
   } catch {
     // A blocked or damaged browser store still allows a fresh round.

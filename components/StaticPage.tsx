@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import { formatLegalUpdated } from "@/lib/legal/dates";
 import { footerNav, type LegalHref } from "@/lib/legal/nav";
-import { site } from "@/lib/site";
+import { Brand } from "./Brand";
 
 type StaticPageProps = {
   path: LegalHref;
@@ -27,9 +27,7 @@ export function StaticPage({
           aria-label="Site"
           className="mx-auto flex min-h-16 w-full max-w-5xl flex-wrap items-center justify-between gap-x-5 px-5 sm:px-8"
         >
-          <Link href="/" className="inline-flex min-h-11 items-center text-lg font-bold tracking-tight">
-            {site.name}
-          </Link>
+          <Brand className="inline-flex min-h-11 items-center gap-2 text-lg font-bold tracking-tight" />
           <Link href="/#games" className="inline-flex min-h-11 items-center hover:underline">
             All games
           </Link>

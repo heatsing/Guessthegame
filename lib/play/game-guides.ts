@@ -19,11 +19,11 @@ export type GameGuideContent = {
 export const gameGuides = {
   "guess-the-movie": {
     heading: "Guess a movie from its plot",
-    introduction: "Read a clue about a film’s plot, a character’s goal, or a scene that sets the story apart. Type the title that fits the details. If you get stuck, take another guess, ask for a hint, or reveal the answer to see how the clue points to the film.",
+    introduction: "Read a clue about a film’s plot, a character’s goal, or a scene that sets the story apart. Type the title that fits the details to see its accuracy. A score above 80% unlocks the next clue. If you get stuck, try another guess or ask for a hint.",
     steps: [
       "Read the clue and pick out a detail that narrows the possible titles.",
-      "Enter the film title and select Submit guess. An incorrect guess stays in the field so you can edit it.",
-      "Try again, use an available hint, or choose Show answer. Select Next Question after the round ends.",
+      "Enter the film title and select Submit guess to see how closely it matches.",
+      "Select Next Question once your accuracy is above 80%. You can edit your title or use an available hint and try again.",
     ],
     example: {
       prompt: "A television weather reporter travels to a small town for a winter celebration. The morning of the event keeps repeating. What’s the film?",
@@ -44,7 +44,7 @@ export const gameGuides = {
       },
       {
         question: "Will a shortened title count?",
-        answer: "The game accepts the full title and any alternate titles explicitly listed for that question. If a short title is rejected, try the full title, including any subtitle that identifies the film.",
+        answer: "The full title and listed alternatives score 100%. Other guesses are scored by spelling similarity. If a shortened title scores too low, try the full title, including its subtitle.",
       },
       {
         question: "Can I still solve the clue after taking a hint?",
@@ -54,11 +54,11 @@ export const gameGuides = {
   },
   "guess-the-book": {
     heading: "Guess a book from its story",
-    introduction: "Identify a book from what happens in its story. A clue might describe an unlikely friendship, a decision that changes the plot, or a place a character keeps returning to. Enter the title, then read the explanation after you solve the clue or choose to see the answer.",
+    introduction: "Identify a book from what happens in its story. A clue might describe an unlikely friendship, a decision that changes the plot, or a place a character keeps returning to. Submit the title you think fits. A score above 80% reveals the explanation and unlocks the next clue.",
     steps: [
       "Read the clue and note who does what and why.",
-      "Type the book title and select Submit guess. If the title is incorrect, you can edit it and try again.",
-      "Use an available hint or choose Show answer if you get stuck. Select Next Question when you have a result.",
+      "Type the book title and select Submit guess to see its accuracy.",
+      "Edit your guess or use an available hint if you need it. Score above 80% to move to the next question.",
     ],
     example: {
       prompt: "To save a young pig, a barn spider writes words in her web that change how people see him. What’s the book?",
@@ -83,22 +83,22 @@ export const gameGuides = {
       },
       {
         question: "Do I get an explanation if I reveal the title?",
-        answer: "Yes. Show answer ends the round and displays the book title and the explanation. Select Next Question to continue.",
+        answer: "Yes. Show answer and end run displays the book title and explanation. You can then start a new run from Question 1.",
       },
     ],
   },
   "guess-the-size": {
     heading: "Estimate measurements from written clues",
-    introduction: "Work out a size using the measurements and assumptions in a short clue. You might scale up a model, add the widths of repeated parts, or convert units. After your first valid estimate, you can see how close it was and follow the calculation behind the reference value.",
+    introduction: "Work out a size using the measurements and assumptions in a short clue. You might scale up a model, add the widths of repeated parts, or convert units. Every valid estimate shows its accuracy. Score above 80% to see the reference value and calculation.",
     steps: [
       "Read the clue and note the unit beside the answer field.",
       "Work out an estimate in that unit. Use Show hint before answering if a hint is available.",
-      "Select Submit guess, read the reference value and its calculation, then choose Next Question.",
+      "Select Submit guess and check your accuracy. Adjust your estimate if it scores 80% or less.",
     ],
     example: {
       prompt: "A model bridge is built at 1∶25 scale. One span measures 18 cm on the model. How long is the full-size span in meters?",
-      answer: "4.5 m, with an illustrative accepted range of 4.3–4.7 m.",
-      explanation: "Multiply 18 cm by 25 to get 450 cm. Divide by 100 to convert centimeters to meters. An estimate of 4.6 m falls within the accepted range.",
+      answer: "4.5 m.",
+      explanation: "Multiply 18 cm by 25 to get 450 cm. Divide by 100 to convert centimeters to meters. An estimate of 4.95 m is 10% off, so it scores 90%.",
     },
     strategy: {
       heading: "Estimate one part at a time",
@@ -114,21 +114,21 @@ export const gameGuides = {
       },
       {
         question: "How close does my estimate need to be?",
-        answer: "Each puzzle has its own accepted range, including both endpoints. The game checks the value you entered before rounding it for display.",
+        answer: "The score starts at 100% and drops by the percentage error from the reference value, down to a minimum of 0%. A score of exactly 80% keeps the next question locked.",
       },
       {
-        question: "What happens if my estimate is outside the range?",
-        answer: "You see whether it was too low or too high, along with the reference value, accepted range, and explanation. Your first valid estimate completes the round.",
+        question: "What happens if my accuracy is too low?",
+        answer: "You see the score and can adjust your estimate. A score above 80% shows the reference value and explanation.",
       },
     ],
   },
   "yes-or-no": {
     heading: "Decide what follows from the clues",
-    introduction: "Each logic puzzle gives you a set of conditions and a conclusion to test. Decide whether the conclusion holds in every situation that fits the clues. A single valid counterexample is enough for No. After you choose, read the explanation to see which condition decided the answer.",
+    introduction: "Each logic puzzle gives you a set of conditions and a conclusion to test. Decide whether the conclusion holds in every situation that fits the clues. A single valid counterexample is enough for No. A correct choice scores 100% and opens the explanation.",
     steps: [
       "Read the whole setup, paying attention to words such as every, only, and exactly.",
       "Test whether a different outcome could still fit all the conditions. Take a hint first if one is available.",
-      "Choose Yes or No. Read the explanation, then select Next Question.",
+      "Choose Yes or No. A score of 100% unlocks Next Question. You can try again after a score of 0%.",
     ],
     example: {
       prompt: "Three lamps sit in a row. Exactly one is lit. The middle lamp is dark. If the left lamp is lit, the middle lamp is lit. Must the right lamp be lit?",
@@ -149,7 +149,7 @@ export const gameGuides = {
       },
       {
         question: "Can I change my choice?",
-        answer: "Your first choice completes the round. The explanation shows what decided the answer, and Next Question opens another puzzle.",
+        answer: "You can try again after an incorrect choice. A correct choice shows the explanation and opens the next puzzle.",
       },
       {
         question: "Can I see a hint first?",

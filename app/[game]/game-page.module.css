@@ -33,6 +33,10 @@
   font-weight: 600;
 }
 
+.brand {
+  gap: 0.55rem;
+}
+
 .main {
   width: min(calc(100% - 40px), 880px);
   margin-inline: auto;

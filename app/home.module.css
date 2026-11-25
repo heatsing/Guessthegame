@@ -54,19 +54,6 @@
   font-size: clamp(1rem, 2.4vw, 1.4rem);
 }
 
-.brandMark {
-  display: grid;
-  flex: none;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-  gap: 2px;
-  width: 1em;
-  height: 1em;
-}
-
-.brandMark i {
-  background: currentColor;
-}
-
 .hero {
   display: grid;
   gap: 1.45rem;
