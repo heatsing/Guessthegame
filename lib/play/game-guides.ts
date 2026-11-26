@@ -9,6 +9,7 @@ export type GameGuideContent = {
     prompt: string;
     answer: string;
     explanation: string;
+    working?: readonly { step: string; value: string }[];
   };
   strategy: {
     heading: string;
@@ -169,7 +170,12 @@ export const gameGuides = {
     example: {
       prompt: "A model bridge is built at 1∶25 scale. One span measures 18 cm on the model. How long is the full-size span in meters?",
       answer: "4.5 m.",
-      explanation: "Multiply 18 cm by 25 to get 450 cm. Divide by 100 to convert centimeters to meters. An estimate of 4.95 m is 10% off, so it scores 90%.",
+      explanation: "An estimate of 4.95 m is 0.45 m high. That is 10% of the 4.5 m reference, so the estimate scores 90%.",
+      working: [
+        { step: "Length on the model", value: "18 cm" },
+        { step: "Scale up by 25", value: "18 × 25 = 450 cm" },
+        { step: "Convert to meters", value: "450 ÷ 100 = 4.5 m" },
+      ],
     },
     strategy: {
       heading: "Estimate one part at a time",

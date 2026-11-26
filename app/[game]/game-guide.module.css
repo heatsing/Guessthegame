@@ -1,0 +1,318 @@
+.guide {
+  --panel: #f1f2ee;
+  --guide-rule: #d8ddd8;
+  --guide-body: #444f5a;
+
+  margin-top: clamp(4rem, 9vw, 7rem);
+  padding-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.guide :is(h2, h3, [id]) {
+  scroll-margin-top: 1.5rem;
+}
+
+.guide p,
+.guide dd,
+.rules {
+  color: var(--guide-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.guide a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: #7d8b9a;
+}
+
+.guide a:hover {
+  text-decoration-color: currentColor;
+}
+
+.intro {
+  max-width: 42rem;
+  margin-bottom: 1.45rem;
+}
+
+.intro h2 {
+  margin-bottom: 0.7rem;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4.6vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.intro p {
+  font-size: 1.0625rem;
+}
+
+.overview {
+  padding-inline: clamp(1rem, 3.5vw, 1.75rem);
+  border-radius: 0.75rem;
+  background: var(--panel);
+}
+
+.overview summary,
+.practice summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  color: var(--navy);
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.guide summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide summary::after {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin-inline-end: 0.16rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  content: "";
+  flex: none;
+}
+
+.guide details[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.overview summary {
+  padding-block: 0.9rem;
+  font-size: 1.125rem;
+}
+
+.overview[open] > summary {
+  border-bottom: 1px solid var(--guide-rule);
+}
+
+.panel {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 1.2rem 1.55rem;
+}
+
+.panel h3 {
+  color: var(--navy);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.rules {
+  padding-inline-start: 1.45rem;
+  margin-top: 0.45rem;
+  list-style: decimal;
+}
+
+.rules li {
+  padding-inline-start: 0.18rem;
+}
+
+.rules li + li {
+  margin-top: 0.3rem;
+}
+
+.rules li::marker,
+.method li::marker {
+  color: var(--navy);
+  font-weight: 650;
+}
+
+.jumpLinks ul,
+.related ul {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.35rem;
+}
+
+.jumpLinks a,
+.related a,
+.resourceHeading a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  font-size: 0.925rem;
+}
+
+.questions dl {
+  display: grid;
+  max-width: 73ch;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.questions dt {
+  color: var(--ink);
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.questions dd {
+  margin-top: 0.12rem;
+}
+
+.resources {
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--guide-rule);
+}
+
+.resourceHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 1rem;
+}
+
+.resources ul {
+  display: grid;
+  gap: 0.8rem 1.75rem;
+  margin-top: 0.15rem;
+}
+
+.resources li a {
+  font-weight: 600;
+}
+
+.resources li p {
+  margin-top: 0.1rem;
+  font-size: 0.925rem;
+}
+
+.reading {
+  max-width: 42rem;
+  margin-top: clamp(2.65rem, 6vw, 4.25rem);
+  margin-inline-start: auto;
+}
+
+.chapter + .chapter {
+  margin-top: clamp(2.25rem, 5vw, 3.25rem);
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--guide-rule);
+}
+
+.chapter h3,
+.related h3 {
+  margin-bottom: 0.65rem;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.chapter p + p {
+  margin-top: 0.65rem;
+}
+
+.method {
+  display: grid;
+  gap: 1rem;
+  padding-inline-start: 1.85rem;
+  list-style: decimal-leading-zero;
+}
+
+.method li {
+  padding-inline-start: 0.45rem;
+}
+
+.method h4 {
+  font-weight: 680;
+  line-height: 1.5;
+}
+
+.method li p {
+  margin-top: 0.15rem;
+}
+
+.example {
+  padding: clamp(1rem, 3vw, 1.4rem);
+  border-inline-start: 3px solid #718b83;
+  background: #f5f6f2;
+}
+
+.example .prompt {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.working {
+  width: 100%;
+  margin-block: 0.9rem;
+  text-align: start;
+  font-size: 0.925rem;
+}
+
+.working :is(th, td) {
+  padding: 0.45rem 0.5rem 0.45rem 0;
+  border-bottom: 1px solid var(--guide-rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.working th[scope="row"] {
+  font-weight: 500;
+}
+
+.working :is(td, th:last-child) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.guide strong {
+  color: var(--navy);
+}
+
+.practice {
+  margin-top: 0.8rem;
+  border-bottom: 1px solid var(--guide-rule);
+}
+
+.practice details {
+  border-top: 1px solid var(--guide-rule);
+}
+
+.practice summary {
+  padding-block: 0.8rem;
+  line-height: 1.45;
+}
+
+.practice details[open] {
+  padding-bottom: 0.95rem;
+}
+
+.related {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--guide-rule);
+}
+
+.related h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.1rem;
+}
+
+@media (min-width: 40rem) {
+  .resources ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (pointer: coarse) {
+  .jumpLinks a,
+  .related a,
+  .resourceHeading a {
+    min-height: 44px;
+  }
+}
