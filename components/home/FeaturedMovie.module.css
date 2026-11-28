@@ -1,0 +1,68 @@
+.clue {
+  margin-bottom: 0.95rem;
+  color: var(--home-muted, #485a54);
+  line-height: 1.55;
+}
+
+.form label {
+  display: block;
+  font-size: 0.89rem;
+  font-weight: 650;
+}
+
+.form input {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.3rem;
+  padding-inline: 0.65rem;
+  border: 1px solid var(--home-control, #6c8979);
+  border-radius: calc(var(--home-radius, 0.85rem) - 0.28rem);
+  background: var(--home-white, #fff);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.85rem;
+  margin-top: 0.65rem;
+}
+
+.check,
+.textAction {
+  min-height: 44px;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.check {
+  padding-inline: 0.9rem;
+  border-radius: calc(var(--home-radius, 0.85rem) - 0.28rem);
+  background: var(--home-accent, #14533d);
+  color: #fff;
+  cursor: pointer;
+}
+
+.check:hover {
+  background: #103e2f;
+}
+
+.textAction {
+  display: inline-flex;
+  align-items: center;
+  color: var(--home-accent, #14533d);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.feedback:not(:empty) {
+  margin-top: 0.8rem;
+  color: var(--home-muted, #485a54);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.feedback strong {
+  color: var(--home-ink, #172625);
+}

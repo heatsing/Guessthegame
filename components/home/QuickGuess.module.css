@@ -1,38 +1,44 @@
 .panel {
   min-width: 0;
+  padding: clamp(1.3rem, 4vw, 2.15rem);
+  border: 1px solid var(--home-line, #d3ddd2);
+  border-top: 4px solid var(--home-accent, #14533d);
+  border-radius: var(--home-radius, 0.85rem);
+  background: var(--home-white, #fff);
   scroll-margin-top: 1.25rem;
 }
 
 .title {
-  color: var(--muted-ink, #414956);
-  font-size: 0.8125rem;
-  font-weight: 750;
-  line-height: 1.3;
-  text-transform: uppercase;
+  color: var(--home-accent, #14533d);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
 .prompt {
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  line-height: 1.45;
+  margin-block: 0.95rem 1.15rem;
+  font-size: clamp(1.06rem, 2vw, 1.22rem);
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
 .choices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 16rem;
 }
 
 .choices button {
-  min-width: 3.625rem;
-  min-height: 2.125rem;
-  padding-inline: 0.875rem;
-  border: 1px solid #a9b2c3;
-  border-radius: 0.5rem;
-  background: #fff;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  min-height: 48px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--home-control, #6c8979);
+  border-radius: calc(var(--home-radius, 0.85rem) - 0.28rem);
+  background: #edf4ed;
+  color: var(--home-accent, #14533d);
+  font-weight: 700;
 }
 
 .choices button:not([aria-disabled="true"]),
@@ -40,36 +46,41 @@
   cursor: pointer;
 }
 
-.choices button:not([aria-disabled="true"]):hover,
-.choices button[aria-pressed="true"] {
-  border-color: #526984;
-  background: #edf2f8;
+.choices button:not([aria-disabled="true"]):hover {
+  border-color: var(--home-accent, #14533d);
+  background: #dfece1;
 }
 
-.panel button:focus-visible {
-  outline: 2px solid var(--outline, #254a92);
+.choices button[aria-pressed="true"] {
+  border-color: var(--home-accent, #14533d);
+  background: var(--home-accent, #14533d);
+  color: #fff;
+}
+
+.panel :is(button, .prompt):focus-visible {
+  outline: 2px solid var(--home-accent, #14533d);
   outline-offset: 3px;
 }
 
 .feedback:not(:empty) {
-  margin-top: 0.65rem;
-  color: var(--muted-ink, #414956);
-  font-size: 0.9375rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--home-line, #d3ddd2);
+  color: var(--home-muted, #485a54);
+  font-size: 0.94rem;
   line-height: 1.5;
 }
 
+.feedback strong {
+  color: var(--home-ink, #172625);
+}
+
 .next {
-  margin-top: 0.25rem;
-  padding-block: 0.35rem;
-  font-size: 0.9375rem;
+  min-height: 44px;
+  margin-top: 0.3rem;
+  color: var(--home-accent, #14533d);
+  font-size: 0.92rem;
   font-weight: 650;
   text-decoration: underline;
   text-underline-offset: 0.2em;
-}
-
-@media (pointer: coarse) {
-  .choices button,
-  .next {
-    min-height: 2.75rem;
-  }
 }

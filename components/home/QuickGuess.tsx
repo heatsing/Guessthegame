@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { quickGuessExampleCount, quickGuessExamples } from "./quick-guess-examples";
 import styles from "./QuickGuess.module.css";
@@ -15,14 +15,22 @@ export function QuickGuess({ initialIndex = 0 }: { initialIndex?: number }) {
     quickGuessExamples[initialIndex] ? initialIndex : 0,
   );
   const [answer, setAnswer] = useState<boolean | null>(null);
-  const firstChoice = useRef<HTMLButtonElement>(null);
+  const prompt = useRef<HTMLParagraphElement>(null);
+  const focusNextPrompt = useRef(false);
   const example = quickGuessExamples[exampleIndex];
   const answered = answer !== null;
 
+  useEffect(() => {
+    if (focusNextPrompt.current) {
+      focusNextPrompt.current = false;
+      prompt.current?.focus();
+    }
+  }, [exampleIndex]);
+
   function showNextExample() {
+    focusNextPrompt.current = true;
     setExampleIndex((index) => (index + 1) % quickGuessExampleCount);
     setAnswer(null);
-    firstChoice.current?.focus();
   }
 
   return (
@@ -34,7 +42,7 @@ export function QuickGuess({ initialIndex = 0 }: { initialIndex?: number }) {
       <h2 className={styles.title} id="quick-guess-title">
         Quick Guess
       </h2>
-      <p className={styles.prompt} id="quick-guess-prompt">
+      <p className={styles.prompt} id="quick-guess-prompt" ref={prompt} tabIndex={-1}>
         {example.prompt}
       </p>
       <div
@@ -45,7 +53,6 @@ export function QuickGuess({ initialIndex = 0 }: { initialIndex?: number }) {
         {choices.map(({ label, value }) => (
           <button
             key={label}
-            ref={value ? firstChoice : undefined}
             type="button"
             aria-pressed={answer === value}
             aria-disabled={answered}
